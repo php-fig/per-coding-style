@@ -1,1 +1,4 @@
-# PRE DRAFT repository for a coding style PER
+# PER coding style
+
+- [Specification](spec.md)
+- [Meta Document](meta.md)
