@@ -259,6 +259,7 @@ by a blank line.
 Closing braces MUST be on their own line and MUST NOT be preceded by a blank
 line.
 
+
 ```php
 <?php
 
@@ -889,6 +890,7 @@ All operators not described here are left undefined.
 
 The increment/decrement operators MUST NOT have any space between
 the operator and operand.
+
 ```php
 $i++;
 ++$j;
@@ -904,6 +906,7 @@ $intValue = (int) $input;
 All binary [arithmetic][], [comparison][], [assignment][], [bitwise][],
 [logical][], [string][], and [type][] operators MUST be preceded and
 followed by at least one space:
+
 ```php
 if ($a === $b) {
     $foo = $bar ?? $a ?? $b;
@@ -917,6 +920,7 @@ if ($a === $b) {
 The conditional operator, also known simply as the ternary operator, MUST be
 preceded and followed by at least one space around both the `?`
 and `:` characters:
+
 ```php
 $variable = $foo ? 'foo' : 'bar';
 ```
