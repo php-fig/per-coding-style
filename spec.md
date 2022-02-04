@@ -1076,6 +1076,72 @@ $instance = new class extends \Foo implements
 };
 ~~~
 
+## 9. Heredoc and Nowdoc
+
+A nowdoc SHOULD be used wherever possible. Heredoc MAY be used when a nowdoc
+does not satisfy requirements.
+
+Heredoc and nowdoc syntax is largely governed by PHP requirements with the only
+allowed variation being indentation. Declared heredocs or nowdocs MUST
+begin on the same line as the context the declaration is being used in.
+Subsequent lines in the heredoc or nowdoc MUST be indented once past the scope
+indentation they are declared in.
+
+The following is ***not allowed*** due to the heredoc beginning on a
+different line than the context it's being declared in:
+```php
+$notAllowed =
+<<<'COUNTEREXAMPLE'
+    This
+    is
+    not
+    allowed.
+    COUNTEREXAMPLE;
+```
+
+Instead the heredoc MUST be declared on the same line as the variable
+declaration it's being set against.
+
+The follow is ***not allowed*** due to the scope indention not matching the scope the
+heredoc is declared in:
+```php
+function notAllowed()
+{
+    $notAllowed = <<<'COUNTEREXAMPLE'
+This
+is
+not
+allowed.
+COUNTEREXAMPLE
+}
+```
+
+Instead, the heredoc MUST be indented once past the indentation of the scope
+it's declared in.
+
+The following is an example of both a heredoc and a nowdoc declared in a
+compliant way:
+```php
+function allowed()
+{
+    $allowed = <<<COMPLIANT
+        This
+        is
+        a
+        compliant
+        heredoc
+        COMPLIANT;
+
+    $allowedNowdoc = <<<'COMPLIANT'
+        This
+        is
+        a
+        compliant
+        heredoc
+        COMPLIANT;
+}
+```
+
 [PSR-1]: https://www.php-fig.org/psr/psr-1/
 [PSR-2]: https://www.php-fig.org/psr/psr-2/
 [keywords]: http://php.net/manual/en/reserved.keywords.php
