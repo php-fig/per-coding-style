@@ -1081,6 +1081,36 @@ $instance = new class extends \Foo implements
 };
 ```
 
+## 9. Enumerations
+
+Enumerations MUST follow the same guidelines as classes, except where otherwise noted here.
+
+Methods in Enumerations MUST follow the same guidelines as methods in classes.  Non-public methods MUST use `private`
+instead of `protected`.
+
+In the case of a backed enum, there MUST NOT be a space between the enum name and colon, and there MUST be exactly one
+space between the colon and the backing type.
+
+Enumeration cases MUST use CamelCase capitalization.
+
+Constants in Enumerations MAY use either CamelCase or UPPER_CASE capitalization.  CamelCase is RECOMMENDED,
+so that it is consistent with cases.
+
+No more than one case is permitted per line.
+
+```php
+enum Suit: string
+{
+    case Hearts = 'H';
+    case Diamonds = 'D';
+    case Spades = 'S';
+    case Clubs = 'C';
+
+    const Wild = self::Spades;
+}
+
+```
+
 [PSR-1]: https://www.php-fig.org/psr/psr-1/
 [PSR-12]: https://www.php-fig.org/psr/psr-12/
 [keywords]: http://php.net/manual/en/reserved.keywords.php
