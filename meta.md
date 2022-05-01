@@ -180,18 +180,18 @@ specification for a full understanding of its contents.
 
 ### 6.1.  Editor:
 
-* Alexander Makarov
+* Korvin Szanto
 
 ### 6.2. Sponsor:
 
-* 
+* Chris Tankersley
 
 ### 6.3. Working Group Members:
 
 * Alexander Makarov
-* 
-* 
-* 
+* Ken Guest
+* Larry Garfield
+* Woody Gilk
 
 ### 6.4. Special Thanks
 
@@ -199,11 +199,12 @@ specification for a full understanding of its contents.
 
 ## 7. Votes
 
-* **Entrance Vote:** 
-* **Approval Vote:** 
+* **Entrance Vote:** https://groups.google.com/g/php-fig/c/YqPDYGK0RhM/m/pJmThkNKBgAJ
 
 ## 8. Relevant Links
 
 _**Note:** Order descending chronologically._
 
-* 
+* **PSR-12:** https://www.php-fig.org/psr/psr-12/
+* **PSR-2:** https://www.php-fig.org/psr/psr-2/
+* **PSR-1:** https://www.php-fig.org/psr/psr-1/

@@ -8,7 +8,7 @@ interpreted as described in [RFC 2119][].
 
 ## Overview
 
-This specification is a live document that extends, expands and replaces [PSR-12][], the extended coding style guide and
+This specification extends, expands and replaces [PSR-12][], the extended coding style guide and
 requires adherence to [PSR-1][], the basic coding standard.
 
 Like [PSR-12][], the intent of this specification is to reduce cognitive friction when
