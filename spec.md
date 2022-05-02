@@ -68,6 +68,17 @@ class Foo extends Bar implements FooInterface
         // method body
     }
 }
+
+Enum Beep: int
+{
+    case A = 1;
+    case B = 2;
+
+    public function isOdd(): bool
+    {
+        return $this->value() % 2;
+    }
+}
 ```
 
 ## 2. General
@@ -233,7 +244,7 @@ declare(ticks=1) {
 
 ## 4. Classes, Properties, and Methods
 
-The term "class" refers to all classes, interfaces, and traits.
+The term "class" refers to all classes, interfaces, traits, and enums.
 
 Any closing brace MUST NOT be followed by any comment or statement on the
 same line.
@@ -1083,20 +1094,18 @@ $instance = new class extends \Foo implements
 
 ## 9. Enumerations
 
-Enumerations MUST follow the same guidelines as classes, except where otherwise noted here.
+Enumerations (enums) MUST follow the same guidelines as classes, except where otherwise noted here.
 
-Methods in Enumerations MUST follow the same guidelines as methods in classes.  Non-public methods MUST use `private`
-instead of `protected`.
+Methods in enums MUST follow the same guidelines as methods in classes.  Non-public methods MUST use `private`
+instead of `protected`, as enums do not support inheritance.
 
-In the case of a backed enum, there MUST NOT be a space between the enum name and colon, and there MUST be exactly one
-space between the colon and the backing type.
+When using a backed enum, there MUST NOT be a space between the enum name and colon, and there MUST be exactly one
+space between the colon and the backing type.  This is consistent with the style for return types.
 
-Enumeration cases MUST use CamelCase capitalization.
+Enum case declarations MUST use CamelCase capitalization.  Enum case declarations MUST be on their own line.
 
 Constants in Enumerations MAY use either CamelCase or UPPER_CASE capitalization.  CamelCase is RECOMMENDED,
 so that it is consistent with cases.
-
-No more than one case is permitted per line.
 
 ```php
 enum Suit: string
