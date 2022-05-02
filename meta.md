@@ -189,10 +189,10 @@ specification for a full understanding of its contents.
 ### 6.3. Working Group Members:
 
 * Alexander Makarov
+* Kathryn Reeve
 * Ken Guest
 * Larry Garfield
 * Woody Gilk
-* Kathryn Reeve
 
 ### 6.4. Special Thanks
 
