@@ -192,6 +192,7 @@ specification for a full understanding of its contents.
 * Kathryn Reeve
 * Ken Guest
 * Larry Garfield
+* Luke Diggins
 * Woody Gilk
 
 ### 6.4. Special Thanks
