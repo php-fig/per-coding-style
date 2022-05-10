@@ -1094,7 +1094,7 @@ $instance = new class extends \Foo implements
 
 ## 9. Enumerations
 
-Enumerations (enums) MUST follow the same guidelines as classes, except where otherwise noted here.
+Enumerations (enums) MUST follow the same guidelines as classes, except where otherwise noted below.
 
 Methods in enums MUST follow the same guidelines as methods in classes.  Non-public methods MUST use `private`
 instead of `protected`, as enums do not support inheritance.
@@ -1105,7 +1105,7 @@ space between the colon and the backing type.  This is consistent with the style
 Enum case declarations MUST use CamelCase capitalization.  Enum case declarations MUST be on their own line.
 
 Constants in Enumerations MAY use either CamelCase or UPPER_CASE capitalization.  CamelCase is RECOMMENDED,
-so that it is consistent with cases.
+so that it is consistent with case declarations.
 
 ```php
 enum Suit: string
