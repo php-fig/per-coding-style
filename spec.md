@@ -649,6 +649,16 @@ $app->get('/hello/{name}', function ($name) use ($app) {
 });
 ```
 
+Method chaining SHOULD be put on separate lines, where each subsequent line is indented once. When doing so, the first
+method MUST be on the next line.
+
+```php
+$someInstance
+    ->create()
+    ->prepare()
+    ->run();
+```
+
 ## 5. Control Structures
 
 The general style rules for control structures are as follows:
