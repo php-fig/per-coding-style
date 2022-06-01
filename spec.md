@@ -1047,6 +1047,36 @@ $foo->bar(
 );
 ```
 
+### 7.1 Short Closures
+
+Short closures, also known as arrow functions, MUST follow the same guidelines
+and principles as long closures above, with the following additions.
+
+The `fn` keyword MUST be preceded and succeeded by a space.
+
+The `=>` symbol MUST be preceded and succeeded by a space.
+
+The semicolon at the end of the expression MUST NOT be preceded by a space.
+
+The expression portion MAY be split to a subsequent line.  If so, the `=>` MUST be included
+on the second line, and MUST be indented once.
+
+The following examples show proper common usage of short closures.
+
+```php
+
+$func = fn (int $x, int $y): int => $x + $y;
+
+$func = fn (int $x, int $y): int
+    => $x + $y;
+
+$func = fn (
+    int $x,
+    int $y
+): int
+    => $x + $y;
+```
+
 ## 8. Anonymous Classes
 
 Anonymous Classes MUST follow the same guidelines and principles as closures
