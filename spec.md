@@ -611,6 +611,11 @@ abstract class ClassName
         // method body
     }
 }
+
+readonly class ValueObject
+{
+    // ...
+}
 ```
 
 ### 4.7 Method and Function Calls
