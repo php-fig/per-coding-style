@@ -579,13 +579,19 @@ public function process(string $algorithm, &...$parts)
 }
 ```
 
-### 4.6 `abstract`, `final`, and `static`
+### 4.6 Modifier keywords
 
-When present, the `abstract` and `final` declarations MUST precede the
-visibility declaration.
+Properties and methods of a class have numerous keyword modifiers that alter how the
+engine and language handles them.  When present, they MUST be in the following order:
 
-When present, the `static` declaration MUST come after the visibility
-declaration.
+* Inheritance modifier: `abstract` or `final`
+* Visibility modifier: `public`, `protected`, or `private`
+* Scope modifier: `static`
+* Mutation modifier: `readonly`
+* Type declaration
+* Name
+
+All keywords MUST be on a single line, and MUST be separated by a single space.
 
 ```php
 <?php
@@ -594,7 +600,9 @@ namespace Vendor\Package;
 
 abstract class ClassName
 {
-    protected static $foo;
+    protected static readonly string $foo;
+
+    final protected int $beep;
 
     abstract protected function zim();
 
