@@ -117,6 +117,47 @@ Any new types and keywords added to future PHP versions MUST be in lower case.
 Short form of type keywords MUST be used i.e. `bool` instead of `boolean`,
 `int` instead of `integer` etc.
 
+### 2.6 Trailing commas
+
+Numerous PHP constructs allow a sequence of values to be separated by a comma,
+and the final item may have an optional comma.  Examples include array key/value pairs,
+function arguments, closure `use` statements, `match()` statement branches, etc.
+
+If that list is contained on a single line, then the last item MUST NOT have a trailing comma.
+
+If the list is split across multiple lines, then the last item MUST have a trailing comma.
+
+The following are examples of correct comma placement:
+
+```php
+function beep(string $a, string $b, string $c)
+{
+    // ...
+}
+
+function beep(
+    string $a,
+    string $b,
+    string $c,
+) {
+    // ...
+}
+
+$arr = ['a' => 'A', 'b' => 'B', 'c' => 'C'];
+
+$arr = [
+    'a' => 'A',
+    'b' => 'B',
+    'c' => 'C',
+];
+
+$result = match ($a) {
+    'foo' => 'Foo',
+    'bar' => 'Bar',
+    default => 'Baz',
+};
+```
+
 ## 3. Declare Statements, Namespace, and Import Statements
 
 The header of a PHP file may consist of a number of different blocks. If present,
