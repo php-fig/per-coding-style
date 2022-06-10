@@ -579,7 +579,7 @@ public function process(string $algorithm, &...$parts)
 }
 ```
 
-### 4.6 Modifier keywords
+### 4.6 Modifier Keywords
 
 Properties and methods of a class have numerous keyword modifiers that alter how the
 engine and language handles them.  When present, they MUST be in the following order:
