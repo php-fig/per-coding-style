@@ -1056,7 +1056,7 @@ in the above section.
 <?php
 
 $instance = new class () {};
-~~~
+```
 
 The opening brace MAY be on the same line as the `class` keyword so long as
 the list of `implements` interfaces does not wrap. If the list of interfaces
