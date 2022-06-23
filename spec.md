@@ -71,8 +71,8 @@ class Foo extends Bar implements FooInterface
 
 Enum Beep: int
 {
-    case A = 1;
-    case B = 2;
+    case Foo = 1;
+    case Bar = 2;
 
     public function isOdd(): bool
     {
