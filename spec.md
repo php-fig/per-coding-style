@@ -1310,7 +1310,7 @@ they MUST be on separate lines with no blank lines between them.
 
 Multiple attributes MAY be placed in the same attribute block (`#[]`) if and only if the entire block is listed on a
 single line.  They must be separated by a comma with a space following but no space preceding.  If the attribute list
-is split into multiple lines for any reason, then the attributes MUST be placed  in separate attribute blocks.
+is split into multiple lines for any reason, then the attributes MUST be placed in separate attribute blocks.
 Those blocks may themselves contain multiple attributes provided this rule is respected.
 
 If an attribute's argument list is split into multiple lines for any reason, then:
@@ -1333,7 +1333,7 @@ class Demo
     /**
      * Sets the foo.
      */
-     #[Poink('narf'), Narf('poink')]
+    #[Poink('narf'), Narf('poink')]
     public function setFoo(#[Beep] Foo $new): void
     {
       // ...
