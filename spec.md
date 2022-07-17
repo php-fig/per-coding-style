@@ -68,6 +68,17 @@ class Foo extends Bar implements FooInterface
         // method body
     }
 }
+
+Enum Beep: int
+{
+    case Foo = 1;
+    case Bar = 2;
+
+    public function isOdd(): bool
+    {
+        return $this->value() % 2;
+    }
+}
 ```
 
 ## 2. General
@@ -274,7 +285,7 @@ declare(ticks=1) {
 
 ## 4. Classes, Properties, and Methods
 
-The term "class" refers to all classes, interfaces, and traits.
+The term "class" refers to all classes, interfaces, traits, and enums.
 
 Any closing brace MUST NOT be followed by any comment or statement on the
 same line.
@@ -1165,7 +1176,33 @@ $instance = new class extends \Foo implements
 };
 ```
 
-## 9. Heredoc and Nowdoc
+## 9. Enumerations
+
+Enumerations (enums) MUST follow the same guidelines as classes, except where otherwise noted below.
+
+Methods in enums MUST follow the same guidelines as methods in classes.  Non-public methods MUST use `private`
+instead of `protected`, as enums do not support inheritance.
+
+When using a backed enum, there MUST NOT be a space between the enum name and colon, and there MUST be exactly one
+space between the colon and the backing type.  This is consistent with the style for return types.
+
+Enum case declarations MUST use CamelCase capitalization.  Enum case declarations MUST be on their own line.
+
+Constants in Enumerations MAY use either PascalCase or UPPER_CASE capitalization. PascalCase is RECOMMENDED,
+so that it is consistent with case declarations.
+
+```php
+enum Suit: string
+{
+    case Hearts = 'H';
+    case Diamonds = 'D';
+    case Spades = 'S';
+    case Clubs = 'C';
+
+    const Wild = self::Spades;
+}
+
+## 10. Heredoc and Nowdoc
 
 A nowdoc SHOULD be used wherever possible. Heredoc MAY be used when a nowdoc
 does not satisfy requirements.
