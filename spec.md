@@ -649,7 +649,7 @@ $app->get('/hello/{name}', function ($name) use ($app) {
 });
 ```
 
-Method chaining SHOULD be put on separate lines, where each subsequent line is indented once. When doing so, the first
+Method chaining MAY be put on separate lines, where each subsequent line is indented once. When doing so, the first
 method MUST be on the next line.
 
 ```php
