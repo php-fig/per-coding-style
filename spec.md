@@ -261,7 +261,7 @@ For example:
 </html>
 ```
 
-Declare statements MUST contain no spaces and MUST be exactly `declare(strict_types=1)`
+Declare statements MUST NOT contain any spaces and MUST be exactly `declare(strict_types=1)`
 (with an optional semicolon terminator).
 
 Block declare statements are allowed and MUST be formatted as below. Note position of
