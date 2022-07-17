@@ -128,6 +128,47 @@ Any new types and keywords added to future PHP versions MUST be in lower case.
 Short form of type keywords MUST be used i.e. `bool` instead of `boolean`,
 `int` instead of `integer` etc.
 
+### 2.6 Trailing commas
+
+Numerous PHP constructs allow a sequence of values to be separated by a comma,
+and the final item may have an optional comma.  Examples include array key/value pairs,
+function arguments, closure `use` statements, `match()` statement branches, etc.
+
+If that list is contained on a single line, then the last item MUST NOT have a trailing comma.
+
+If the list is split across multiple lines, then the last item MUST have a trailing comma.
+
+The following are examples of correct comma placement:
+
+```php
+function beep(string $a, string $b, string $c)
+{
+    // ...
+}
+
+function beep(
+    string $a,
+    string $b,
+    string $c,
+) {
+    // ...
+}
+
+$arr = ['a' => 'A', 'b' => 'B', 'c' => 'C'];
+
+$arr = [
+    'a' => 'A',
+    'b' => 'B',
+    'c' => 'C',
+];
+
+$result = match ($a) {
+    'foo' => 'Foo',
+    'bar' => 'Bar',
+    default => 'Baz',
+};
+```
+
 ## 3. Declare Statements, Namespace, and Import Statements
 
 The header of a PHP file may consist of a number of different blocks. If present,
@@ -231,7 +272,7 @@ For example:
 </html>
 ```
 
-Declare statements MUST contain no spaces and MUST be exactly `declare(strict_types=1)`
+Declare statements MUST NOT contain any spaces and MUST be exactly `declare(strict_types=1)`
 (with an optional semicolon terminator).
 
 Block declare statements are allowed and MUST be formatted as below. Note position of
@@ -590,13 +631,19 @@ public function process(string $algorithm, &...$parts)
 }
 ```
 
-### 4.6 `abstract`, `final`, and `static`
+### 4.6 Modifier Keywords
 
-When present, the `abstract` and `final` declarations MUST precede the
-visibility declaration.
+Properties and methods of a class have numerous keyword modifiers that alter how the
+engine and language handles them.  When present, they MUST be in the following order:
 
-When present, the `static` declaration MUST come after the visibility
-declaration.
+* Inheritance modifier: `abstract` or `final`
+* Visibility modifier: `public`, `protected`, or `private`
+* Scope modifier: `static`
+* Mutation modifier: `readonly`
+* Type declaration
+* Name
+
+All keywords MUST be on a single line, and MUST be separated by a single space.
 
 ```php
 <?php
@@ -605,7 +652,9 @@ namespace Vendor\Package;
 
 abstract class ClassName
 {
-    protected static $foo;
+    protected static readonly string $foo;
+
+    final protected int $beep;
 
     abstract protected function zim();
 
@@ -613,6 +662,11 @@ abstract class ClassName
     {
         // method body
     }
+}
+
+readonly class ValueObject
+{
+    // ...
 }
 ```
 
@@ -1058,6 +1112,36 @@ $foo->bar(
 );
 ```
 
+### 7.1 Short Closures
+
+Short closures, also known as arrow functions, MUST follow the same guidelines
+and principles as long closures above, with the following additions.
+
+The `fn` keyword MUST be preceded and succeeded by a space.
+
+The `=>` symbol MUST be preceded and succeeded by a space.
+
+The semicolon at the end of the expression MUST NOT be preceded by a space.
+
+The expression portion MAY be split to a subsequent line.  If so, the `=>` MUST be included
+on the second line, and MUST be indented once.
+
+The following examples show proper common usage of short closures.
+
+```php
+
+$func = fn (int $x, int $y): int => $x + $y;
+
+$func = fn (int $x, int $y): int
+    => $x + $y;
+
+$func = fn (
+    int $x,
+    int $y
+): int
+    => $x + $y;
+```
+
 ## 8. Anonymous Classes
 
 Anonymous Classes MUST follow the same guidelines and principles as closures
@@ -1118,6 +1202,70 @@ enum Suit: string
     const Wild = self::Spades;
 }
 
+## 10. Heredoc and Nowdoc
+
+A nowdoc SHOULD be used wherever possible. Heredoc MAY be used when a nowdoc
+does not satisfy requirements.
+
+Heredoc and nowdoc syntax is largely governed by PHP requirements with the only
+allowed variation being indentation. Declared heredocs or nowdocs MUST
+begin on the same line as the context the declaration is being used in.
+Subsequent lines in the heredoc or nowdoc MUST be indented once past the scope
+indentation they are declared in.
+
+The following is ***not allowed*** due to the heredoc beginning on a
+different line than the context it's being declared in:
+```php
+$notAllowed =
+<<<'COUNTEREXAMPLE'
+    This
+    is
+    not
+    allowed.
+    COUNTEREXAMPLE;
+```
+
+Instead the heredoc MUST be declared on the same line as the variable
+declaration it's being set against.
+
+The follow is ***not allowed*** due to the scope indention not matching the scope the
+heredoc is declared in:
+```php
+function notAllowed()
+{
+    $notAllowed = <<<'COUNTEREXAMPLE'
+This
+is
+not
+allowed.
+COUNTEREXAMPLE
+}
+```
+
+Instead, the heredoc MUST be indented once past the indentation of the scope
+it's declared in.
+
+The following is an example of both a heredoc and a nowdoc declared in a
+compliant way:
+```php
+function allowed()
+{
+    $allowed = <<<COMPLIANT
+        This
+        is
+        a
+        compliant
+        heredoc
+        COMPLIANT;
+
+    $allowedNowdoc = <<<'COMPLIANT'
+        This
+        is
+        a
+        compliant
+        heredoc
+        COMPLIANT;
+}
 ```
 
 [PSR-1]: https://www.php-fig.org/psr/psr-1/

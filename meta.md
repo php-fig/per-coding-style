@@ -44,8 +44,8 @@ This PER shares the same goals as PSR-12.
 > of guidelines to be used among all those projects. Thus, the benefit of this guide is
 > not in the rules themselves, but in the sharing of those rules.
 
-This PER is an extension of PSR-12, and therefore also an extension of PSR-1. The basis of PER is
-PSR-12 and therefore a list of differences is provided below to assist with migration,
+This PER is an extension of PSR-12, and therefore also an extension of PSR-1.
+With PSR-12 being the base of this PER, a list of differences is provided below to assist with migration,
 but it should be considered as an independent specification.
 
 This PER will include coding style guidelines related to new functionality added to PHP
@@ -192,6 +192,7 @@ specification for a full understanding of its contents.
 * Kathryn Reeve
 * Ken Guest
 * Larry Garfield
+* Luke Diggins
 * Woody Gilk
 
 ### 6.4. Special Thanks
