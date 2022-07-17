@@ -1104,7 +1104,7 @@ space between the colon and the backing type.  This is consistent with the style
 
 Enum case declarations MUST use CamelCase capitalization.  Enum case declarations MUST be on their own line.
 
-Constants in Enumerations MAY use either CamelCase or UPPER_CASE capitalization.  CamelCase is RECOMMENDED,
+Constants in Enumerations MAY use either PascalCase or UPPER_CASE capitalization. PascalCase is RECOMMENDED,
 so that it is consistent with case declarations.
 
 ```php
