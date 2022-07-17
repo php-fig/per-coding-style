@@ -1201,20 +1201,22 @@ enum Suit: string
 
     const Wild = self::Spades;
 }
+```
 
 ## 10. Heredoc and Nowdoc
 
-A nowdoc SHOULD be used wherever possible. Heredoc MAY be used when a nowdoc
+A Nowdoc SHOULD be used wherever possible. Heredoc MAY be used when a Nowdoc
 does not satisfy requirements.
 
-Heredoc and nowdoc syntax is largely governed by PHP requirements with the only
-allowed variation being indentation. Declared heredocs or nowdocs MUST
+Heredoc and Nowdoc syntax is largely governed by PHP requirements with the only
+allowed variation being indentation. Declared Heredoc's or Nowdoc's MUST
 begin on the same line as the context the declaration is being used in.
-Subsequent lines in the heredoc or nowdoc MUST be indented once past the scope
+Subsequent lines in the Heredoc or Nowdoc MUST be indented once past the scope
 indentation they are declared in.
 
-The following is ***not allowed*** due to the heredoc beginning on a
+The following is ***not allowed*** due to the Heredoc beginning on a
 different line than the context it's being declared in:
+
 ```php
 $notAllowed =
 <<<'COUNTEREXAMPLE'
@@ -1225,11 +1227,12 @@ $notAllowed =
     COUNTEREXAMPLE;
 ```
 
-Instead the heredoc MUST be declared on the same line as the variable
+Instead the Heredoc MUST be declared on the same line as the variable
 declaration it's being set against.
 
 The follow is ***not allowed*** due to the scope indention not matching the scope the
-heredoc is declared in:
+Heredoc is declared in:
+
 ```php
 function notAllowed()
 {
@@ -1242,11 +1245,12 @@ COUNTEREXAMPLE
 }
 ```
 
-Instead, the heredoc MUST be indented once past the indentation of the scope
+Instead, the Heredoc MUST be indented once past the indentation of the scope
 it's declared in.
 
-The following is an example of both a heredoc and a nowdoc declared in a
+The following is an example of both a Heredoc and a Nowdoc declared in a
 compliant way:
+
 ```php
 function allowed()
 {
