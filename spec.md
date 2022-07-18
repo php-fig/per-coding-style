@@ -1261,7 +1261,7 @@ compliant way:
 ```php
 function allowed()
 {
-    $allowed = <<<COMPLIANT
+    $allowedHeredoc = <<<COMPLIANT
         This
         is
         a
@@ -1274,7 +1274,7 @@ function allowed()
         is
         a
         compliant
-        heredoc
+        nowdoc
         COMPLIANT;
 }
 ```
