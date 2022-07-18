@@ -1276,6 +1276,18 @@ function allowed()
         compliant
         heredoc
         COMPLIANT;
+        
+    var_dump(
+        'foo',
+        <<<'COMPLIANT'
+            This
+            is
+            a
+            compliant
+            parameter
+            COMPLIANT,
+         'bar',
+    );
 }
 ```
 
