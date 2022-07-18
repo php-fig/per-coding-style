@@ -553,7 +553,7 @@ class ClassName
     public function aVeryLongMethodName(
         ClassTypeHint $arg1,
         &$arg2,
-        array $arg3 = []
+        array $arg3 = [],
     ) {
         // method body
     }
@@ -582,7 +582,7 @@ class ReturnTypeVariations
     public function anotherFunction(
         string $foo,
         string $bar,
-        int $baz
+        int $baz,
     ): string {
         return 'foo';
     }
@@ -698,7 +698,7 @@ array) does not constitute splitting the argument list itself.
 $foo->bar(
     $longArgument,
     $longerArgument,
-    $muchLongerArgument
+    $muchLongerArgument,
 );
 ```
 
@@ -1065,7 +1065,7 @@ variable lists split across multiple lines.
 $longArgs_noVars = function (
     $longArgument,
     $longerArgument,
-    $muchLongerArgument
+    $muchLongerArgument,
 ) {
    // body
 };
@@ -1073,7 +1073,7 @@ $longArgs_noVars = function (
 $noArgs_longVars = function () use (
     $longVar1,
     $longerVar2,
-    $muchLongerVar3
+    $muchLongerVar3,
 ) {
    // body
 };
@@ -1081,11 +1081,11 @@ $noArgs_longVars = function () use (
 $longArgs_longVars = function (
     $longArgument,
     $longerArgument,
-    $muchLongerArgument
+    $muchLongerArgument,
 ) use (
     $longVar1,
     $longerVar2,
-    $muchLongerVar3
+    $muchLongerVar3,
 ) {
    // body
 };
@@ -1093,7 +1093,7 @@ $longArgs_longVars = function (
 $longArgs_shortVars = function (
     $longArgument,
     $longerArgument,
-    $muchLongerArgument
+    $muchLongerArgument,
 ) use ($var1) {
    // body
 };
@@ -1101,7 +1101,7 @@ $longArgs_shortVars = function (
 $shortArgs_longVars = function ($arg) use (
     $longVar1,
     $longerVar2,
-    $muchLongerVar3
+    $muchLongerVar3,
 ) {
    // body
 };
@@ -1118,7 +1118,7 @@ $foo->bar(
     function ($arg2) use ($var1) {
         // body
     },
-    $arg3
+    $arg3,
 );
 ```
 
@@ -1147,7 +1147,7 @@ $func = fn (int $x, int $y): int
 
 $func = fn (
     int $x,
-    int $y
+    int $y,
 ): int
     => $x + $y;
 ```
