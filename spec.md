@@ -1201,6 +1201,7 @@ enum Suit: string
 
     const Wild = self::Spades;
 }
+```
 
 ## 10. Heredoc and Nowdoc
 
