@@ -1276,11 +1276,12 @@ function allowed()
         compliant
         nowdoc
         COMPLIANT;
+}
 ```
 
 ## 11. Attributes
 
-### 12.1 Basics
+### 11.1 Basics
 
 Attribute names must immediately follow the opening attribute block indicator `#[` with no space.
 
@@ -1289,7 +1290,7 @@ If an attribute has no arguments, the `()` MUST be omitted.
 The closing attribute block indicator `]` MUST follow the last character of the attribute name or the closing `)` of
 its argument list, with no preceding space.
 
-### 12.2 Placement
+### 11.2 Placement
 
 Attributes on classes, methods, functions, constants and properties MUST
 be placed on their own line, immediately prior to the structure being described.
@@ -1306,10 +1307,10 @@ between the docblock and attributes, or the attributes and the structure.
 If two separate attribute blocks (denoted by separate `#[]` markers) are used in a multi-line context,
 they MUST be on separate lines with no blank lines between them.
 
-### 12.3 Compound attributes
+### 11.3 Compound attributes
 
 Multiple attributes MAY be placed in the same attribute block (`#[]`) if and only if the entire block is listed on a
-single line.  They must be separated by a comma with a space following but no space preceding.  If the attribute list
+single line and each attribute is reasonably short.  They MUST be separated by a comma with a space following but no space preceding.  If the attribute list
 is split into multiple lines for any reason, then the attributes MUST be placed in separate attribute blocks.
 Those blocks may themselves contain multiple attributes provided this rule is respected.
 
@@ -1318,7 +1319,7 @@ If an attribute's argument list is split into multiple lines for any reason, the
 * The attribute MUST be the only one in its attribute block.
 * The attribute arguments MUST follow the same rules as defined for multiline function calls.
 
-### 12.4 Example
+### 11.4 Example
 
 The following is an example of valid attribute usage.
 
