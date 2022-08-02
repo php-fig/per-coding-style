@@ -1298,7 +1298,9 @@ be placed on their own line, immediately prior to the structure being described.
 For attributes on parameters, if the parameter list is presented on a single line,
 the attribute MUST be placed inline with the parameter it describes, separated by a single space.
 If the parameter list is split into multiple lines for any reason, the attribute MUST be placed on
-its own line prior to the parameter, indented the same as the parameter.
+its own line prior to the parameter, indented the same as the parameter.  If the parameter list
+is split into multiple lines, a blank line MAY be included between one parameter and the attributes
+of the following parameter in order to aid readability.
 
 If a comment docblock is present on a structure that also includes an attribute, the comment block MUST
 come first, followed by any attributes, followed by the structure itself.  There MUST NOT be any blank lines
@@ -1330,6 +1332,14 @@ class Demo
 {
     #[Beep]
     private Foo $foo;
+
+   public function __construct(
+        #[Load(context: 'foo', bar: true)]
+        private readonly FooService $fooService,
+
+        #[LoadProxy(context: 'bar')]
+        private readonly BarService $barService,
+    ) {}
 
     /**
      * Sets the foo.
