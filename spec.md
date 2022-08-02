@@ -1357,13 +1357,16 @@ class Demo
     #[Other, Stuff, Here]
     public function complicated(
         string $a,
+
         #[Decl]
         string $b,
+
         #[Complex(
             prop: 'val',
             other: 5,
         )]
         string $c,
+
         int $d,
     ): string {
         // ...
