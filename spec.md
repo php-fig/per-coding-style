@@ -724,6 +724,12 @@ $someInstance
     ->run();
 ```
 
+### 4.8 Function Callable References
+
+A function or method may be referenced in a way that creates a closure out of it, by providing `...` in place of arguments.
+
+If so, the `...` MUST NOT include any whitespace before or after.  That is, the correct format is `foo(...)`.
+
 ## 5. Control Structures
 
 The general style rules for control structures are as follows:
