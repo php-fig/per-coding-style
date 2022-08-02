@@ -1333,7 +1333,7 @@ class Demo
     #[Beep]
     private Foo $foo;
 
-   public function __construct(
+    public function __construct(
         #[Load(context: 'foo', bar: true)]
         private readonly FooService $fooService,
 
