@@ -69,7 +69,7 @@ class Foo extends Bar implements FooInterface
     }
 }
 
-Enum Beep: int
+enum Beep: int
 {
     case Foo = 1;
     case Bar = 2;
