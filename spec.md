@@ -1283,12 +1283,14 @@ function allowed()
 
 ### 11.1 Basics
 
-Attribute names must immediately follow the opening attribute block indicator `#[` with no space.
+Attribute names MUST immediately follow the opening attribute block indicator `#[` with no space.
 
 If an attribute has no arguments, the `()` MUST be omitted.
 
 The closing attribute block indicator `]` MUST follow the last character of the attribute name or the closing `)` of
 its argument list, with no preceding space.
+
+The construct `#[...]` is referred to as an "attribute block" in this document.
 
 ### 11.2 Placement
 
@@ -1306,15 +1308,15 @@ If a comment docblock is present on a structure that also includes an attribute,
 come first, followed by any attributes, followed by the structure itself.  There MUST NOT be any blank lines
 between the docblock and attributes, or the attributes and the structure.
 
-If two separate attribute blocks (denoted by separate `#[]` markers) are used in a multi-line context,
-they MUST be on separate lines with no blank lines between them.
+If two separate attribute blocks are used in a multi-line context, they MUST be on separate lines with no blank
+lines between them.
 
 ### 11.3 Compound attributes
 
-Multiple attributes MAY be placed in the same attribute block (`#[]`) if and only if the entire block is listed on a
-single line and each attribute is reasonably short.  They MUST be separated by a comma with a space following but no space preceding.  If the attribute list
-is split into multiple lines for any reason, then the attributes MUST be placed in separate attribute blocks.
-Those blocks may themselves contain multiple attributes provided this rule is respected.
+If multiple attributes are placed in the same attribute block, they MUST be separated by a comma with a space
+following but no space preceding.  If the attribute list is split into multiple lines for any reason, then the
+attributes MUST be placed in separate attribute blocks. Those blocks may themselves contain multiple
+attributes provided this rule is respected.
 
 If an attribute's argument list is split into multiple lines for any reason, then:
 
@@ -1354,7 +1356,8 @@ class Demo
         prop: 'val',
         other: 5,
     )]
-    #[Other, Stuff, Here]
+    #[Other, Stuff]
+    #[Here]
     public function complicated(
         string $a,
 
