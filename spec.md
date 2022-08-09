@@ -791,7 +791,7 @@ if (
 }
 ```
 
-### 5.2 `switch`, `case`
+### 5.2 `switch`, `case`, `match`
 
 A `switch` structure looks like the following. Note the placement of
 parentheses, spaces, and braces. The `case` statement MUST be indented once
@@ -836,6 +836,19 @@ switch (
 ) {
     // structure body
 }
+```
+
+Similarly, a `match` expression looks like the following. Note the placement
+of parentheses, spaces, and braces.
+
+```php
+<?php
+
+$returnValue = match ($expr) {
+    0 => 'First case',
+    1, 2, 3 => multipleCases(),
+    default => 'Default case',
+};
 ```
 
 ### 5.3 `while`, `do while`
