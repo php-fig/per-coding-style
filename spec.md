@@ -1187,20 +1187,25 @@ the list of `implements` interfaces does not wrap. If the list of interfaces
 wraps, the brace MUST be placed on the line immediately following the last
 interface.
 
+If the anonymous class has no arguments, the `()` after `class` MUST be omitted.
+
 ```php
 <?php
 
 // Brace on the same line
+// No arguments
 $instance = new class extends \Foo implements \HandleableInterface {
     // Class content
 };
 
 // Brace on the next line
-$instance = new class extends \Foo implements
+// Constructor arguments
+$instance = new class($a) extends \Foo implements
     \ArrayAccess,
     \Countable,
     \Serializable
 {
+    public function __construct(public int $a) {}
     // Class content
 };
 ```
