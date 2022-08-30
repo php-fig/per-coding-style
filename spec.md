@@ -1205,7 +1205,9 @@ $instance = new class($a) extends \Foo implements
     \Countable,
     \Serializable
 {
-    public function __construct(public int $a) {}
+    public function __construct(public int $a)
+    {
+    }
     // Class content
 };
 ```
