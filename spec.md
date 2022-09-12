@@ -631,10 +631,6 @@ public function process(string $algorithm, &...$parts)
 }
 ```
 
-When invoking a function or method, the same rules apply for the arguments to the function as for the parameters.
-Additionally, if using named arguments, there MUST NOT be a space between the argument name
-and colon, and there MUST be a single space between the colon and the argument value.
-
 ### 4.6 Modifier Keywords
 
 Properties and methods of a class have numerous keyword modifiers that alter how the
@@ -716,6 +712,13 @@ somefunction($foo, $bar, [
 $app->get('/hello/{name}', function ($name) use ($app) {
     return 'Hello ' . $app->escape($name);
 });
+```
+
+If using named arguments, there MUST NOT be a space between the argument name
+and colon, and there MUST be a single space between the colon and the argument value.
+
+```php
+somefunction($a, b: $b, c: 'c');
 ```
 
 Method chaining MAY be put on separate lines, where each subsequent line is indented once. When doing so, the first
