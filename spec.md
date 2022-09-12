@@ -297,6 +297,14 @@ there are no arguments passed to the constructor.
 new Foo();
 ```
 
+If class contains no additional declarations (such as an exception that exists only extend another exception with a new type),
+then the body of the class SHOULD be abbreviated as `{}` and placed on the same line as the previous symbol,
+separated by a space.  For example:
+
+```php
+class MyException extends \RuntimeException {}
+```
+
 ### 4.1 Extends and Implements
 
 The `extends` and `implements` keywords MUST be declared on the same line as
