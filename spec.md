@@ -513,6 +513,29 @@ function fooBarBaz($arg1, &$arg2, $arg3 = [])
 }
 ```
 
+If a function or method contains no statements (such as a no-op implementation or when using
+constructor property promotion), then the body SHOULD be abbreviated as `{}` and placed on the same
+line as the previous symbol, separated by a space.  For example:
+
+```php
+class Point
+{
+    public function __construct(private int $x, private int $y) {}
+    
+    // ...
+}
+```
+
+```php
+class Point
+{
+    public function __construct(
+      public readonly int $x,
+      public readonly int $y,
+    ) {}
+}
+```
+
 ### 4.5 Method and Function Arguments
 
 In the argument list, there MUST NOT be a space before each comma, and there
