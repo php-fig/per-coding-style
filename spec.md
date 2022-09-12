@@ -1025,6 +1025,10 @@ MUST follow the same style rules as other binary [comparison][] operators:
 $variable = $foo ?: 'bar';
 ```
 
+In some cases, a compound ternary may require parentheses in order to disambiguate meaning.
+If that is the case, the ternary SHOULD NOT be used, and a more expressive syntax, such as
+`if`-`else` or `match`, should be used instead.
+
 ## 7. Closures
 
 Closures MUST be declared with a space after the `function` keyword, and a
