@@ -513,12 +513,12 @@ function fooBarBaz($arg1, &$arg2, $arg3 = [])
 }
 ```
 
-### 4.5 Method and Function Arguments
+### 4.5 Method and Function Parameters
 
 In the argument list, there MUST NOT be a space before each comma, and there
 MUST be one space after each comma.
 
-Method and function arguments with default values MUST go at the end of the argument
+Method and function parameters with default values MUST go at the end of the argument
 list.
 
 ```php
@@ -630,6 +630,10 @@ public function process(string $algorithm, &...$parts)
     // processing
 }
 ```
+
+When invoking a function or method, the same rules apply for the arguments to the function as for the parameters.
+Additionally, if using named arguments, there MUST NOT be a space between the argument name
+and colon, and there MUST be a single space between the colon and the argument value.
 
 ### 4.6 Modifier Keywords
 
