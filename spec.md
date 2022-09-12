@@ -128,6 +128,55 @@ Any new types and keywords added to future PHP versions MUST be in lower case.
 Short form of type keywords MUST be used i.e. `bool` instead of `boolean`,
 `int` instead of `integer` etc.
 
+Compound types includes intersection, union, and mixed intersection and union type declarations. PHP requires
+that all compound types be structured as an ORed (unioned) series of ANDs (intersections), and that each set of
+intersections be encased with parentheses.
+
+The union symbol `|` and intersection symbol `&` MUST NOT have a leading or trailing space.  The parentheses MUST NOT
+have a leading or trailing space.
+
+If it is necessary to split a compound type into multiple lines:
+
+* If the type contains only intersections or only unions, then each line MUST have a single type.
+* If the type contains both intersections and unions, then each line MUST have a single union segment. All intersections in a segment MUST be on the same line.
+* The symbol on which the compound type is split MUST be at the start of each line.
+
+The following are correct ways to format compound types:
+
+```php
+function foo(int|string $a): User|Product
+{
+    // ...
+}
+
+function somethingWithReflection(
+    \RelfectionObject
+    |\ReflectionClass
+    |\ReflectionMethod
+    |\ReflectionParameter
+    |\ReflectionProperty $reflect
+): object|null {
+        // ...
+}
+
+function complex(array|(ArrayAccess&Traversable) $input): ArrayAccess&Traversable
+{
+    // ...
+}
+
+function veryComplex(
+    array
+    |(ArrayAccess&Traversable)
+    |(Traversable&Countable) $input): ArrayAccess&Traversable
+{
+    // ...
+}
+```
+
+If one of the ORed conditions is `null`, it MUST be the last item in the list.
+
+An intersection of a single simple type with `null` SHOULD be abbreviated using the `?` alternate syntax: `?T`.
+
 ### 2.6 Trailing commas
 
 Numerous PHP constructs allow a sequence of values to be separated by a comma,
