@@ -990,7 +990,9 @@ $i++;
 ++$j;
 ```
 
-Type casting operators MUST NOT have any space within the parentheses:
+Type casting operators MUST NOT have any space within the parentheses and MUST be separated from the variable they are
+operating on by exactly one space:
+
 ```php
 $intValue = (int) $input;
 ```
