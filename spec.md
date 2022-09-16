@@ -126,7 +126,11 @@ All PHP reserved keywords and types [[1]][keywords][[2]][types] MUST be in lower
 Any new types and keywords added to future PHP versions MUST be in lower case.
 
 Short form of type keywords MUST be used i.e. `bool` instead of `boolean`,
-`int` instead of `integer` etc.
+`int` instead of `integer`, etc. When declaring an `array`, short array syntax MUST be used:
+
+```php
+$arr = [];
+```
 
 ### 2.6 Trailing commas
 
