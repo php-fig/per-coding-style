@@ -1317,7 +1317,7 @@ function allowed()
 }
 ```
 
-## 12. Arrays
+## 11. Arrays
 
 Arrays MUST be declared using the short array syntax.
 
