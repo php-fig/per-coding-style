@@ -150,7 +150,7 @@ function foo(int|string $a): User|Product
 }
 
 function somethingWithReflection(
-    \RelfectionObject
+    \ReflectionObject
     |\ReflectionClass
     |\ReflectionMethod
     |\ReflectionParameter
