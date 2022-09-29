@@ -773,7 +773,9 @@ subsequent line is indented at least once. When doing so, the first condition
 MUST be on the next line. The closing parenthesis and opening brace MUST be
 placed together on their own line with one space between them. Boolean
 operators between conditions MUST always be at the beginning or at the end of
-the line, not a mix of both.
+the line, not a mix of both. An expression being split across multiple lines (as 
+might be the case with an anonymous function or array) does not constitute 
+splitting the expressions list itself.
 
 ```php
 <?php
@@ -825,7 +827,9 @@ subsequent line is indented at least once. When doing so, the first condition
 MUST be on the next line. The closing parenthesis and opening brace MUST be
 placed together on their own line with one space between them. Boolean
 operators between conditions MUST always be at the beginning or at the end of
-the line, not a mix of both.
+the line, not a mix of both. An expression being split across multiple lines (as 
+might be the case with an anonymous function or array) does not constitute 
+splitting the expressions list itself.
 
 ```php
 <?php
@@ -869,7 +873,9 @@ subsequent line is indented at least once. When doing so, the first condition
 MUST be on the next line. The closing parenthesis and opening brace MUST be
 placed together on their own line with one space between them. Boolean
 operators between conditions MUST always be at the beginning or at the end of
-the line, not a mix of both.
+the line, not a mix of both. An expression being split across multiple lines (as 
+might be the case with an anonymous function or array) does not constitute 
+splitting the expressions list itself.
 
 ```php
 <?php
@@ -896,7 +902,10 @@ do {
 Expressions in parentheses MAY be split across multiple lines, where each
 subsequent line is indented at least once. When doing so, the first condition
 MUST be on the next line. Boolean operators between conditions MUST
-always be at the beginning or at the end of the line, not a mix of both.
+always be at the beginning or at the end of the line, not a mix of both. An 
+expression being split across multiple lines (as might be the case with an 
+anonymous function or array) does not constitute splitting the expressions 
+list itself.
 
 ```php
 <?php
@@ -925,7 +934,9 @@ for ($i = 0; $i < 10; $i++) {
 Expressions in parentheses MAY be split across multiple lines, where each
 subsequent line is indented at least once. When doing so, the first expression
 MUST be on the next line. The closing parenthesis and opening brace MUST be
-placed together on their own line with one space between them.
+placed together on their own line with one space between them. An expression 
+being split across multiple lines (as might be the case with an anonymous 
+function or array) does not constitute splitting the expressions list itself.
 
 ```php
 <?php
@@ -952,6 +963,21 @@ foreach ($iterable as $key => $value) {
 }
 ```
 
+```php
+<?php
+
+foreach ([
+    [1, 2],
+    [3, 4],
+    [5, 6],
+] as $key => [
+    $value1,
+    $value2,
+]) {
+    // foreach body
+}
+```
+
 ### 5.6 `try`, `catch`, `finally`
 
 A `try-catch-finally` block looks like the following. Note the placement of
@@ -965,6 +991,27 @@ try {
 } catch (FirstThrowableType $e) {
     // catch body
 } catch (OtherThrowableType | AnotherThrowableType $e) {
+    // catch body
+} finally {
+    // finally body
+}
+```
+
+Expressions in parentheses MAY be split across multiple lines, where each
+subsequent line is indented at least once. When doing so, the first expression
+MUST be on the next line. The closing parenthesis and opening brace MUST be
+placed together on their own line with one space between them.
+
+```php
+<?php
+
+try {
+    // try body
+} catch (
+    FirstThrowableType $e
+    | OtherThrowableType
+    | AnotherThrowableType $e
+) {
     // catch body
 } finally {
     // finally body
