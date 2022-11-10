@@ -544,12 +544,12 @@ class Point
 }
 ```
 
-### 4.5 Method and Function Arguments
+### 4.5 Method and Function Parameters
 
 In the argument list, there MUST NOT be a space before each comma, and there
 MUST be one space after each comma.
 
-Method and function arguments with default values MUST go at the end of the argument
+Method and function parameters with default values MUST go at the end of the argument
 list.
 
 ```php
@@ -664,7 +664,7 @@ public function process(string $algorithm, &...$parts)
 
 ### 4.6 Modifier Keywords
 
-Properties and methods of a class have numerous keyword modifiers that alter how the
+Classes, properties, and methods have numerous keyword modifiers that alter how the
 engine and language handles them.  When present, they MUST be in the following order:
 
 * Inheritance modifier: `abstract` or `final`
@@ -743,6 +743,13 @@ somefunction($foo, $bar, [
 $app->get('/hello/{name}', function ($name) use ($app) {
     return 'Hello ' . $app->escape($name);
 });
+```
+
+If using named arguments, there MUST NOT be a space between the argument name
+and colon, and there MUST be a single space between the colon and the argument value.
+
+```php
+somefunction($a, b: $b, c: 'c');
 ```
 
 Method chaining MAY be put on separate lines, where each subsequent line is indented once. When doing so, the first
@@ -1021,7 +1028,9 @@ $i++;
 ++$j;
 ```
 
-Type casting operators MUST NOT have any space within the parentheses:
+Type casting operators MUST NOT have any space within the parentheses and MUST be separated from the variable they are
+operating on by exactly one space:
+
 ```php
 $intValue = (int) $input;
 ```
@@ -1345,6 +1354,104 @@ function allowed()
             COMPLIANT,
          'bar',
     );
+}
+```
+
+## 11. Attributes
+
+### 11.1 Basics
+
+Attribute names MUST immediately follow the opening attribute block indicator `#[` with no space.
+
+If an attribute has no arguments, the `()` MUST be omitted.
+
+The closing attribute block indicator `]` MUST follow the last character of the attribute name or the closing `)` of
+its argument list, with no preceding space.
+
+The construct `#[...]` is referred to as an "attribute block" in this document.
+
+### 11.2 Placement
+
+Attributes on classes, methods, functions, constants and properties MUST
+be placed on their own line, immediately prior to the structure being described.
+
+For attributes on parameters, if the parameter list is presented on a single line,
+the attribute MUST be placed inline with the parameter it describes, separated by a single space.
+If the parameter list is split into multiple lines for any reason, the attribute MUST be placed on
+its own line prior to the parameter, indented the same as the parameter.  If the parameter list
+is split into multiple lines, a blank line MAY be included between one parameter and the attributes
+of the following parameter in order to aid readability.
+
+If a comment docblock is present on a structure that also includes an attribute, the comment block MUST
+come first, followed by any attributes, followed by the structure itself.  There MUST NOT be any blank lines
+between the docblock and attributes, or the attributes and the structure.
+
+If two separate attribute blocks are used in a multi-line context, they MUST be on separate lines with no blank
+lines between them.
+
+### 11.3 Compound attributes
+
+If multiple attributes are placed in the same attribute block, they MUST be separated by a comma with a space
+following but no space preceding.  If the attribute list is split into multiple lines for any reason, then the
+attributes MUST be placed in separate attribute blocks. Those blocks may themselves contain multiple
+attributes provided this rule is respected.
+
+If an attribute's argument list is split into multiple lines for any reason, then:
+
+* The attribute MUST be the only one in its attribute block.
+* The attribute arguments MUST follow the same rules as defined for multiline function calls.
+
+### 11.4 Example
+
+The following is an example of valid attribute usage.
+
+```php
+#[Foo]
+#[Bar('baz')]
+class Demo
+{
+    #[Beep]
+    private Foo $foo;
+
+    public function __construct(
+        #[Load(context: 'foo', bar: true)]
+        private readonly FooService $fooService,
+
+        #[LoadProxy(context: 'bar')]
+        private readonly BarService $barService,
+    ) {}
+
+    /**
+     * Sets the foo.
+     */
+    #[Poink('narf'), Narf('poink')]
+    public function setFoo(#[Beep] Foo $new): void
+    {
+      // ...
+    }
+
+    #[Complex(
+        prop: 'val',
+        other: 5,
+    )]
+    #[Other, Stuff]
+    #[Here]
+    public function complicated(
+        string $a,
+
+        #[Decl]
+        string $b,
+
+        #[Complex(
+            prop: 'val',
+            other: 5,
+        )]
+        string $c,
+
+        int $d,
+    ): string {
+        // ...
+    }
 }
 ```
 
