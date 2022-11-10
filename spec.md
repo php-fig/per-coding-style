@@ -1394,6 +1394,7 @@ $arr2 = [
         'array',
     ],
 ];
+```
 
 ## 12. Attributes
 
