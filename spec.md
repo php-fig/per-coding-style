@@ -633,7 +633,7 @@ public function process(string $algorithm, &...$parts)
 
 ### 4.6 Modifier Keywords
 
-Properties and methods of a class have numerous keyword modifiers that alter how the
+Classes, properties, and methods have numerous keyword modifiers that alter how the
 engine and language handles them.  When present, they MUST be in the following order:
 
 * Inheritance modifier: `abstract` or `final`
