@@ -1357,9 +1357,48 @@ function allowed()
 }
 ```
 
-## 11. Attributes
+## 11. Arrays
 
-### 11.1 Basics
+Arrays MUST be declared using the short array syntax.
+
+```php
+<?php
+
+$arr = [];
+```
+
+Arrays MUST follow the trailing comma guidelines.
+
+Array declarations MAY be split across multiple lines, where each subsequent line 
+is indented once. When doing so, the first value in the array MUST be on the 
+next line, and there MUST be only one value per line.
+
+When the array declaration is split across multiple lines, the opening bracket 
+MUST be placed on the same line as the equals sign. The closing bracket 
+MUST be placed on the next line after the last value. There MUST NOT be more 
+than one value assignment per line. Value assignments MAY use a single line
+or multiple lines.
+
+```php
+<?php
+
+$arr1 = ['single', 'line', 'declaration'];
+
+$arr2 = [
+    'multi',
+    'line',
+    'declaration',
+    ['values' => 1, 5, 7],
+    [
+        'nested',
+        'array',
+    ],
+];
+```
+
+## 12. Attributes
+
+### 12.1 Basics
 
 Attribute names MUST immediately follow the opening attribute block indicator `#[` with no space.
 
@@ -1370,7 +1409,7 @@ its argument list, with no preceding space.
 
 The construct `#[...]` is referred to as an "attribute block" in this document.
 
-### 11.2 Placement
+### 12.2 Placement
 
 Attributes on classes, methods, functions, constants and properties MUST
 be placed on their own line, immediately prior to the structure being described.
@@ -1389,7 +1428,7 @@ between the docblock and attributes, or the attributes and the structure.
 If two separate attribute blocks are used in a multi-line context, they MUST be on separate lines with no blank
 lines between them.
 
-### 11.3 Compound attributes
+### 12.3 Compound attributes
 
 If multiple attributes are placed in the same attribute block, they MUST be separated by a comma with a space
 following but no space preceding.  If the attribute list is split into multiple lines for any reason, then the
@@ -1401,7 +1440,7 @@ If an attribute's argument list is split into multiple lines for any reason, the
 * The attribute MUST be the only one in its attribute block.
 * The attribute arguments MUST follow the same rules as defined for multiline function calls.
 
-### 11.4 Example
+### 12.4 Example
 
 The following is an example of valid attribute usage.
 
