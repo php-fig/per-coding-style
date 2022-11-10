@@ -213,6 +213,7 @@ namespace Vendor\Package;
 use Vendor\Package\{ClassA as A, ClassB, ClassC as C};
 use Vendor\Package\SomeNamespace\ClassD as D;
 use Vendor\Package\AnotherNamespace\ClassE as E;
+use SomeVendor\Pack\ANamespace\SubNamespace\ClassF;
 
 use function Vendor\Package\{functionA, functionB, functionC};
 use function Another\Vendor\functionD;
@@ -229,8 +230,8 @@ class FooBar
 }
 ```
 
-Compound namespaces with a depth of more than two MUST NOT be used. Therefore, the
-following is the maximum compounding depth allowed:
+When using compound namespaces, there MUST NOT be more than two sub-namespaces within the group.
+That is, the following is allowed:
 
 ```php
 <?php
@@ -249,6 +250,7 @@ And the following would not be allowed:
 <?php
 
 use Vendor\Package\SomeNamespace\{
+    // This has too many namespace segments to be in a group.
     SubnamespaceOne\AnotherNamespace\ClassA,
     SubnamespaceOne\ClassB,
     ClassZ,
