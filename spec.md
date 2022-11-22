@@ -1188,7 +1188,7 @@ $foo->bar(
 Short closures, also known as arrow functions, MUST follow the same guidelines
 and principles as long closures above, with the following additions.
 
-The `fn` keyword MUST be preceded and succeeded by a space.
+The `fn` keyword MUST be preceded by a space, and MUST NOT be succeeded by a space.
 
 The `=>` symbol MUST be preceded and succeeded by a space.
 
@@ -1201,12 +1201,12 @@ The following examples show proper common usage of short closures.
 
 ```php
 
-$func = fn (int $x, int $y): int => $x + $y;
+$func = fn(int $x, int $y): int => $x + $y;
 
-$func = fn (int $x, int $y): int
+$func = fn(int $x, int $y): int
     => $x + $y;
 
-$func = fn (
+$func = fn(
     int $x,
     int $y,
 ): int
