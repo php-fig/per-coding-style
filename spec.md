@@ -1188,7 +1188,7 @@ $foo->bar(
 Short closures, also known as arrow functions, MUST follow the same guidelines
 and principles as long closures above, with the following additions.
 
-The `fn` keyword MUST be preceded by a space, and MUST NOT be succeeded by a space.
+The `fn` keyword MUST NOT be succeeded by a space.
 
 The `=>` symbol MUST be preceded and succeeded by a space.
 
@@ -1211,6 +1211,8 @@ $func = fn(
     int $y,
 ): int
     => $x + $y;
+
+$result = $collection->reduce(fn(int $x, int $y): int => $x + $y, 0);
 ```
 
 ## 8. Anonymous Classes
