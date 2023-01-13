@@ -279,6 +279,7 @@ Declare statements MUST NOT contain any spaces and MUST be exactly `declare(stri
 
 Block declare statements are allowed and MUST be formatted as below. Note position of
 braces and spacing:
+
 ```php
 declare(ticks=1) {
     // some code
@@ -293,7 +294,7 @@ Any closing brace MUST NOT be followed by any comment or statement on the
 same line.
 
 When instantiating a new class, parentheses MUST always be present even when
-there are no arguments passed to the constructor.
+there are no arguments passed to the constructor.  For example:
 
 ```php
 new Foo();
@@ -312,15 +313,13 @@ class MyException extends \RuntimeException {}
 The `extends` and `implements` keywords MUST be declared on the same line as
 the class name.
 
-The opening brace for the class MUST go on its own line; the closing brace
-for the class MUST go on the next line after the body.
+The opening brace for the class MUST go on its own line, and MUST NOT be
+preceded or followed by a blank line.
 
-Opening braces MUST be on their own line and MUST NOT be preceded or followed
-by a blank line.
+The closing brace for the class MUST go on its own line, immediately following
+the last line of the class body, and MUST NOT be preceded by a blank line.
 
-Closing braces MUST be on their own line and MUST NOT be preceded by a blank
-line.
-
+The following is a validly formatted class:
 
 ```php
 <?php
@@ -340,7 +339,7 @@ class ClassName extends ParentClass implements \ArrayAccess, \Countable
 Lists of `implements` and, in the case of interfaces, `extends` MAY be split
 across multiple lines, where each subsequent line is indented once. When doing
 so, the first item in the list MUST be on the next line, and there MUST be only
-one interface per line.
+one interface per line.  For example:
 
 ```php
 <?php
@@ -365,21 +364,10 @@ class ClassName extends ParentClass implements
 The `use` keyword used inside the classes to implement traits MUST be
 declared on the next line after the opening brace.
 
-```php
-<?php
-
-namespace Vendor\Package;
-
-use Vendor\Package\FirstTrait;
-
-class ClassName
-{
-    use FirstTrait;
-}
-```
-
 Each individual trait that is imported into a class MUST be included
 one-per-line and each inclusion MUST have its own `use` import statement.
+
+The following is a correct example of trait `use`age.
 
 ```php
 <?php
@@ -400,6 +388,7 @@ class ClassName
 
 When the class has nothing after the `use` import statement, the class
 closing brace MUST be on the next line after the `use` import statement.
+For example:
 
 ```php
 <?php
@@ -414,7 +403,7 @@ class ClassName
 }
 ```
 
-Otherwise, it MUST have a blank line after the `use` import statement.
+Otherwise, it MUST have a blank line after the `use` import statement, as in:
 
 ```php
 <?php
@@ -431,7 +420,7 @@ class ClassName
 }
 ```
 
-When using the `insteadof` and `as` operators they must be used as follows taking
+When using the `insteadof` and `as` operators they MUST be used as follows taking
 note of indentation, spacing, and new lines.
 
 ```php
@@ -552,7 +541,7 @@ In the argument list, there MUST NOT be a space before each comma, and there
 MUST be one space after each comma.
 
 Method and function parameters with default values MUST go at the end of the argument
-list.
+list.  For example:
 
 ```php
 <?php
@@ -574,7 +563,7 @@ next line, and there MUST be only one argument per line.
 
 When the argument list is split across multiple lines, the closing parenthesis
 and opening brace MUST be placed together on their own line with one space
-between them.
+between them.  For example:
 
 ```php
 <?php
@@ -596,7 +585,7 @@ class ClassName
 When you have a return type declaration present, there MUST be one space after
 the colon followed by the type declaration. The colon and declaration MUST be
 on the same line as the argument list closing parenthesis with no spaces between
-the two characters.
+the two characters.  For example:
 
 ```php
 <?php
@@ -623,7 +612,7 @@ class ReturnTypeVariations
 ```
 
 In nullable type declarations, there MUST NOT be a space between the question mark
-and the type.
+and the type.  For example:
 
 ```php
 <?php
@@ -678,6 +667,8 @@ engine and language handles them.  When present, they MUST be in the following o
 
 All keywords MUST be on a single line, and MUST be separated by a single space.
 
+The following is a correct example of modifier keyword usage:
+
 ```php
 <?php
 
@@ -711,6 +702,8 @@ after the opening parenthesis, and there MUST NOT be a space before the
 closing parenthesis. In the argument list, there MUST NOT be a space before
 each comma, and there MUST be one space after each comma.
 
+The following lines show correct calls:
+
 ```php
 <?php
 
@@ -724,6 +717,8 @@ is indented once. When doing so, the first item in the list MUST be on the
 next line, and there MUST be only one argument per line. A single argument being
 split across multiple lines (as might be the case with an anonymous function or
 array) does not constitute splitting the argument list itself.
+
+The following examples show correct argument usage.
 
 ```php
 <?php
@@ -748,14 +743,14 @@ $app->get('/hello/{name}', function ($name) use ($app) {
 ```
 
 If using named arguments, there MUST NOT be a space between the argument name
-and colon, and there MUST be a single space between the colon and the argument value.
+and colon, and there MUST be a single space between the colon and the argument value.  For example:
 
 ```php
 somefunction($a, b: $b, c: 'c');
 ```
 
 Method chaining MAY be put on separate lines, where each subsequent line is indented once. When doing so, the first
-method MUST be on the next line.
+method MUST be on the next line.  For example:
 
 ```php
 $someInstance
@@ -815,6 +810,8 @@ placed together on their own line with one space between them. Boolean
 operators between conditions MUST always be at the beginning or at the end of
 the line, not a mix of both.
 
+For example:
+
 ```php
 <?php
 
@@ -866,6 +863,8 @@ MUST be on the next line. The closing parenthesis and opening brace MUST be
 placed together on their own line with one space between them. Boolean
 operators between conditions MUST always be at the beginning or at the end of
 the line, not a mix of both.
+
+For example:
 
 ```php
 <?php
@@ -936,7 +935,7 @@ do {
 Expressions in parentheses MAY be split across multiple lines, where each
 subsequent line is indented at least once. When doing so, the first condition
 MUST be on the next line. Boolean operators between conditions MUST
-always be at the beginning or at the end of the line, not a mix of both.
+always be at the beginning or at the end of the line, not a mix of both. For example:
 
 ```php
 <?php
@@ -965,7 +964,8 @@ for ($i = 0; $i < 10; $i++) {
 Expressions in parentheses MAY be split across multiple lines, where each
 subsequent line is indented at least once. When doing so, the first expression
 MUST be on the next line. The closing parenthesis and opening brace MUST be
-placed together on their own line with one space between them.
+placed together on their own line with one space between them. The semicolons
+MUST be on the component the follow, not on the subsequent line.  For example:
 
 ```php
 <?php
@@ -1023,7 +1023,7 @@ All operators not described here are left undefined.
 ### 6.1. Unary operators
 
 The increment/decrement operators MUST NOT have any space between
-the operator and operand.
+the operator and operand:
 
 ```php
 $i++;
@@ -1063,6 +1063,7 @@ $variable = $foo ? 'foo' : 'bar';
 
 When the middle operand of the conditional operator is omitted, the operator
 MUST follow the same style rules as other binary [comparison][] operators:
+
 ```php
 $variable = $foo ?: 'bar';
 ```
@@ -1231,7 +1232,7 @@ the list of `implements` interfaces does not wrap. If the list of interfaces
 wraps, the brace MUST be placed on the line immediately following the last
 interface.
 
-If the anonymous class has no arguments, the `()` after `class` MUST be omitted.
+If the anonymous class has no arguments, the `()` after `class` MUST be omitted. For example:
 
 ```php
 <?php
@@ -1271,6 +1272,8 @@ Enum case declarations MUST use PascalCase capitalization.  Enum case declaratio
 Constants in Enumerations MAY use either PascalCase or UPPER_CASE capitalization. PascalCase is RECOMMENDED,
 so that it is consistent with case declarations.
 
+The following example shows a typical valid Enum:
+
 ```php
 enum Suit: string
 {
@@ -1296,6 +1299,7 @@ indentation they are declared in.
 
 The following is ***not allowed*** due to the heredoc beginning on a
 different line than the context it's being declared in:
+
 ```php
 $notAllowed =
 <<<'COUNTEREXAMPLE'
@@ -1306,11 +1310,12 @@ $notAllowed =
     COUNTEREXAMPLE;
 ```
 
-Instead the heredoc MUST be declared on the same line as the variable
+Instead, the heredoc MUST be declared on the same line as the variable
 declaration it's being set against.
 
 The follow is ***not allowed*** due to the scope indention not matching the scope the
 heredoc is declared in:
+
 ```php
 function notAllowed()
 {
@@ -1328,6 +1333,7 @@ it's declared in.
 
 The following is an example of both a heredoc and a nowdoc declared in a
 compliant way:
+
 ```php
 function allowed()
 {
@@ -1382,6 +1388,8 @@ MUST be placed on the same line as the equals sign. The closing bracket
 MUST be placed on the next line after the last value. There MUST NOT be more 
 than one value assignment per line. Value assignments MAY use a single line
 or multiple lines.
+
+The following example shows correct array usage:
 
 ```php
 <?php
