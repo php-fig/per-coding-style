@@ -367,7 +367,7 @@ declared on the next line after the opening brace.
 Each individual trait that is imported into a class MUST be included
 one-per-line and each inclusion MUST have its own `use` import statement.
 
-The following is a correct example of trait `use`age.
+The following is a correct example of trait usage.
 
 ```php
 <?php
@@ -965,7 +965,7 @@ Expressions in parentheses MAY be split across multiple lines, where each
 subsequent line is indented at least once. When doing so, the first expression
 MUST be on the next line. The closing parenthesis and opening brace MUST be
 placed together on their own line with one space between them. The semicolons
-MUST be on the component the follow, not on the subsequent line.  For example:
+MUST be on the component they follow, not on the subsequent line.  For example:
 
 ```php
 <?php
