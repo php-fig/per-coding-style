@@ -131,7 +131,7 @@ Short form of type keywords MUST be used i.e. `bool` instead of `boolean`,
 ### 2.6 Trailing commas
 
 Numerous PHP constructs allow a sequence of values to be separated by a comma,
-and the final item may have an optional comma.  Examples include array key/value pairs,
+and the final item may have an optional comma. Examples include array key/value pairs,
 function arguments, closure `use` statements, `match()` statement branches, etc.
 
 If that list is contained on a single line, then the last item MUST NOT have a trailing comma.
@@ -294,7 +294,7 @@ Any closing brace MUST NOT be followed by any comment or statement on the
 same line.
 
 When instantiating a new class, parentheses MUST always be present even when
-there are no arguments passed to the constructor.  For example:
+there are no arguments passed to the constructor. For example:
 
 ```php
 new Foo();
@@ -302,7 +302,7 @@ new Foo();
 
 If class contains no additional declarations (such as an exception that exists only extend another exception with a new type),
 then the body of the class SHOULD be abbreviated as `{}` and placed on the same line as the previous symbol,
-separated by a space.  For example:
+separated by a space. For example:
 
 ```php
 class MyException extends \RuntimeException {}
@@ -339,7 +339,7 @@ class ClassName extends ParentClass implements \ArrayAccess, \Countable
 Lists of `implements` and, in the case of interfaces, `extends` MAY be split
 across multiple lines, where each subsequent line is indented once. When doing
 so, the first item in the list MUST be on the next line, and there MUST be only
-one interface per line.  For example:
+one interface per line. For example:
 
 ```php
 <?php
@@ -514,7 +514,7 @@ function fooBarBaz($arg1, &$arg2, $arg3 = [])
 
 If a function or method contains no statements (such as a no-op implementation or when using
 constructor property promotion), then the body SHOULD be abbreviated as `{}` and placed on the same
-line as the previous symbol, separated by a space.  For example:
+line as the previous symbol, separated by a space. For example:
 
 ```php
 class Point
@@ -541,7 +541,7 @@ In the argument list, there MUST NOT be a space before each comma, and there
 MUST be one space after each comma.
 
 Method and function parameters with default values MUST go at the end of the argument
-list.  For example:
+list. For example:
 
 ```php
 <?php
@@ -563,7 +563,7 @@ next line, and there MUST be only one argument per line.
 
 When the argument list is split across multiple lines, the closing parenthesis
 and opening brace MUST be placed together on their own line with one space
-between them.  For example:
+between them. For example:
 
 ```php
 <?php
@@ -585,7 +585,7 @@ class ClassName
 When you have a return type declaration present, there MUST be one space after
 the colon followed by the type declaration. The colon and declaration MUST be
 on the same line as the argument list closing parenthesis with no spaces between
-the two characters.  For example:
+the two characters. For example:
 
 ```php
 <?php
@@ -612,7 +612,7 @@ class ReturnTypeVariations
 ```
 
 In nullable type declarations, there MUST NOT be a space between the question mark
-and the type.  For example:
+and the type. For example:
 
 ```php
 <?php
@@ -656,7 +656,7 @@ public function process(string $algorithm, &...$parts)
 ### 4.6 Modifier Keywords
 
 Classes, properties, and methods have numerous keyword modifiers that alter how the
-engine and language handles them.  When present, they MUST be in the following order:
+engine and language handles them. When present, they MUST be in the following order:
 
 * Inheritance modifier: `abstract` or `final`
 * Visibility modifier: `public`, `protected`, or `private`
@@ -743,14 +743,14 @@ $app->get('/hello/{name}', function ($name) use ($app) {
 ```
 
 If using named arguments, there MUST NOT be a space between the argument name
-and colon, and there MUST be a single space between the colon and the argument value.  For example:
+and colon, and there MUST be a single space between the colon and the argument value. For example:
 
 ```php
 somefunction($a, b: $b, c: 'c');
 ```
 
 Method chaining MAY be put on separate lines, where each subsequent line is indented once. When doing so, the first
-method MUST be on the next line.  For example:
+method MUST be on the next line. For example:
 
 ```php
 $someInstance
@@ -763,7 +763,7 @@ $someInstance
 
 A function or method may be referenced in a way that creates a closure out of it, by providing `...` in place of arguments.
 
-If so, the `...` MUST NOT include any whitespace before or after.  That is, the correct format is `foo(...)`.
+If so, the `...` MUST NOT include any whitespace before or after. That is, the correct format is `foo(...)`.
 
 ## 5. Control Structures
 
@@ -964,8 +964,7 @@ for ($i = 0; $i < 10; $i++) {
 Expressions in parentheses MAY be split across multiple lines, where each
 subsequent line is indented at least once. When doing so, the first expression
 MUST be on the next line. The closing parenthesis and opening brace MUST be
-placed together on their own line with one space between them. The semicolons
-MUST be on the component they follow, not on the subsequent line.  For example:
+placed together on their own line with one space between them. For example:
 
 ```php
 <?php
@@ -1195,7 +1194,7 @@ The `=>` symbol MUST be preceded and succeeded by a space.
 
 The semicolon at the end of the expression MUST NOT be preceded by a space.
 
-The expression portion MAY be split to a subsequent line.  If so, the `=>` MUST be included
+The expression portion MAY be split to a subsequent line. If so, the `=>` MUST be included
 on the second line, and MUST be indented once.
 
 The following examples show proper common usage of short closures.
@@ -1261,13 +1260,13 @@ $instance = new class($a) extends \Foo implements
 
 Enumerations (enums) MUST follow the same guidelines as classes, except where otherwise noted below.
 
-Methods in enums MUST follow the same guidelines as methods in classes.  Non-public methods MUST use `private`
+Methods in enums MUST follow the same guidelines as methods in classes. Non-public methods MUST use `private`
 instead of `protected`, as enums do not support inheritance.
 
 When using a backed enum, there MUST NOT be a space between the enum name and colon, and there MUST be exactly one
-space between the colon and the backing type.  This is consistent with the style for return types.
+space between the colon and the backing type. This is consistent with the style for return types.
 
-Enum case declarations MUST use PascalCase capitalization.  Enum case declarations MUST be on their own line.
+Enum case declarations MUST use PascalCase capitalization. Enum case declarations MUST be on their own line.
 
 Constants in Enumerations MAY use either PascalCase or UPPER_CASE capitalization. PascalCase is RECOMMENDED,
 so that it is consistent with case declarations.
@@ -1429,12 +1428,12 @@ be placed on their own line, immediately prior to the structure being described.
 For attributes on parameters, if the parameter list is presented on a single line,
 the attribute MUST be placed inline with the parameter it describes, separated by a single space.
 If the parameter list is split into multiple lines for any reason, the attribute MUST be placed on
-its own line prior to the parameter, indented the same as the parameter.  If the parameter list
+its own line prior to the parameter, indented the same as the parameter. If the parameter list
 is split into multiple lines, a blank line MAY be included between one parameter and the attributes
 of the following parameter in order to aid readability.
 
 If a comment docblock is present on a structure that also includes an attribute, the comment block MUST
-come first, followed by any attributes, followed by the structure itself.  There MUST NOT be any blank lines
+come first, followed by any attributes, followed by the structure itself. There MUST NOT be any blank lines
 between the docblock and attributes, or the attributes and the structure.
 
 If two separate attribute blocks are used in a multi-line context, they MUST be on separate lines with no blank
@@ -1443,7 +1442,7 @@ lines between them.
 ### 12.3 Compound attributes
 
 If multiple attributes are placed in the same attribute block, they MUST be separated by a comma with a space
-following but no space preceding.  If the attribute list is split into multiple lines for any reason, then the
+following but no space preceding. If the attribute list is split into multiple lines for any reason, then the
 attributes MUST be placed in separate attribute blocks. Those blocks may themselves contain multiple
 attributes provided this rule is respected.
 
