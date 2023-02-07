@@ -512,7 +512,7 @@ function fooBarBaz($arg1, &$arg2, $arg3 = [])
 }
 ```
 
-If a function or method contains no statements (such as a no-op implementation or when using
+If a function or method contains no statements or comments (such as an empty no-op implementation or when using
 constructor property promotion), then the body SHOULD be abbreviated as `{}` and placed on the same
 line as the previous symbol, separated by a space. For example:
 
