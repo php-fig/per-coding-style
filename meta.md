@@ -44,18 +44,23 @@ This PER shares the same goals as PSR-12.
 > of guidelines to be used among all those projects. Thus, the benefit of this guide is
 > not in the rules themselves, but in the sharing of those rules.
 
-This PER is an extension of PSR-12, and therefore also an extension of PSR-1.
+This PER extends, expands and replaces PSR-12, and is therefore also an extension of PSR-1.
 With PSR-12 being the base of this PER, a list of differences is provided below to assist with migration,
 but it should be considered as an independent specification.
 
+It is a long term goal of this PER to incorporate requirements found in PSR-1 that exclusively concern coding style,
+so that all coding style guidelines can eventually be found in one specification.
+However, this PER is not a replacement for PSR-1 and requires adherence to it.
+
 This PER will include coding style guidelines related to new functionality added to PHP
-after the publication of PSR-12. This PER will also include clarifications on the text of
-PSR-12.
+after the publication of PSR-12, as well as clarifications on the text of PSR-12.
+It is a goal of this PER to maintain style consistency between old and new PHP syntax.
+In rare cases, this may require new releases to include coding style guidelines that break backwards compatibility, limited by the non-goals sub-section below.
 
 ### 3.2. Non-Goals
 
-It is not the intention of this PER to add entirely new coding style guidelines. It will
-also not change anything stipulated in PSR-1 and PSR-12.
+It is not the intention of this PER to significantly alter the coding style guidelines specified in PSR-1 and PSR-12.
+It will not change anything stipulated in PSR-1 that concerns technical interoperability or runtime behaviour.
 
 ## 4. Approaches
 
