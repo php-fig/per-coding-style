@@ -80,8 +80,7 @@ new code contributions processed by an automatic formatter follow (or disregard)
 existing code.
 
 Please note this backwards compatibility promise does not extend to projects that use new PHP syntax yet to be specified
-in this PER. In this circumstance, a minor version may introduce new requirements that conflict with syntax usage in 
-existing code.
+in this PER. In this circumstance, a minor version may introduce new requirements that are effectively breaking changes.
 
 It is ultimately determined whether a meaningful change may be included in a minor release on a case-by-case basis by 
 consensus. The addition of `MAY` or `OPTIONAL` requirements or the removal of requirements with non-optional RFC 2119 
