@@ -59,22 +59,35 @@ also not change anything stipulated in PSR-1 and PSR-12.
 
 ## 4. Versioning
 
-New releases of this PER are assigned version numbers in keeping with [semantic versioning](https://semver.org/). Semantic versioning is well defined when applied to software releases but has no common definition in other contexts. This PER applies the following meanings:
+New releases of this PER are assigned version numbers in keeping with [semantic versioning](https://semver.org/). 
+Semantic versioning is well defined when applied to software releases but has no common definition in other contexts. 
+This PER applies the following meanings:
 
 * **Patch** versions may contain:
-  * Any changes that do not alter the underlying requirements of the PER, such as fixing typos, adding clarifications or other modifications with no compatibility impact.
+  * Any changes that do not alter the underlying requirements of this PER, such as fixing typos, adding clarifications or 
+other modifications with no compatibility impact.
 * **Minor** versions may additionally:
-  * Add new `MAY` or `OPTIONAL` requirements.
-  * Add any new requirements for PHP syntax previously unspecified in this PER.
-  * Remove `MUST NOT`, `SHALL NOT`, `SHOULD NOT` or `NOT RECOMMENDED` requirements.
+  * Add new requirements for PHP syntax previously unspecified in this PER.
+  * Add, remove or alter requirements in a way that is both contravariant or more permissive for individual authors and
+backwards compatible for existing projects accepting contributions.
 * **Major** versions may additionally:
-  * Add any new requirements.
-  * Remove any requirements.
-  * Meaningfully alter any requirements.
+  * Add, remove or alter any requirements.
 
-Projects are expected to pin their own coding style guidelines to a major version of this PER, allowing for regular upgrades to minor and patch releases as they are published. When performing such upgrades, it is intended that no change to existing code is required to maintain compliance with all requirements and recommendations of the PER. This ensures new code contributions processed by an automatic formatter follow (or disregard) recommendations consistently with the existing code.
+Projects are expected to pin their own coding style guidelines to a major version of this PER, allowing for regular 
+upgrades to minor and patch releases as they are published. When performing such upgrades, it is intended that no change
+to existing code is required to maintain compliance with all requirements and recommendations of this PER. This ensures 
+new code contributions processed by an automatic formatter follow (or disregard) recommendations consistently with the 
+existing code.
 
-Please note this backwards compatibility promise does not extend to projects that use new PHP syntax yet to be specified in this PER. In this circumstance, a minor version may introduce new requirements that conflict with syntax usage in existing code.
+Please note this backwards compatibility promise does not extend to projects that use new PHP syntax yet to be specified
+in this PER. In this circumstance, a minor version may introduce new requirements that conflict with syntax usage in 
+existing code.
+
+It is ultimately determined whether a meaningful change may be included in a minor release on a case-by-case basis by 
+consensus. The addition of `MAY` or `OPTIONAL` requirements or the removal of requirements with non-optional RFC 2119 
+keywords will not always meet the criteria for minor release. For example, specifying that projects may use tabs instead
+of spaces for indentation creates a new implicit requirement that projects must use one style consistently; this new 
+burden on projects to reformat incoming contributions to their chosen style defines the change as major.
 
 ## 5. Approaches
 
