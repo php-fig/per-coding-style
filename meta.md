@@ -52,7 +52,7 @@ It is a long term goal of this PER to incorporate requirements found in PSR-1 th
 so that all coding style guidelines can eventually be found in one specification.
 However, this PER is not a replacement for PSR-1 and requires adherence to it and any errata.
 
-This PER will include coding style guidelines related to new functionality added to PHP 
+This PER will include coding style guidelines related to new functionality added to PHP
 after the publication of PSR-12, as well as clarifications on the text of PSR-12.
 It is a goal of this PER to maintain style consistency between related old and new PHP syntax,
 such as class constants and constants in enumerations. In rare cases, this may cause new
