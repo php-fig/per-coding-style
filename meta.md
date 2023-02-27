@@ -48,7 +48,7 @@ This PER extends, expands and replaces PSR-12, and is therefore also an extensio
 With PSR-12 being the base of this PER, a list of differences is provided below to assist with migration,
 but it should be considered as an independent specification.
 
-It is a long term goal of this PER to incorporate requirements found in PSR-1 that concern coding style,
+It is a long term goal of this PER to incorporate coding syle requirements found in PSR-1,
 so that all coding style guidelines can eventually be found in one specification.
 However, this PER is not a replacement for PSR-1 and requires adherence to it and any errata.
 
@@ -61,7 +61,7 @@ the non-goals and versioning sections below.
 
 ### 3.2. Non-Goals
 
-It is not the intention of this PER to substantially alter the coding style guidelines specified in PSR-1 and PSR-12.
+It is not the intention of this PER to substantially or arbitrarily alter coding style guidelines found in PSR-1 and PSR-12.
 It will not change anything stipulated in PSR-1 that concerns technical interoperability or runtime behaviour.
 
 ## 4. Approaches
