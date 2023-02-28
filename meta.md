@@ -48,9 +48,12 @@ This PER extends, expands and replaces PSR-12, and is therefore also an extensio
 With PSR-12 being the base of this PER, a list of differences is provided below to assist with migration,
 but it should be considered as an independent specification.
 
-It is a long term goal of this PER to incorporate coding syle requirements found in PSR-1,
-so that all coding style guidelines can eventually be found in one specification.
-However, this PER is not a replacement for PSR-1 and requires adherence to it and any errata.
+This PER will eventually incorporate and replace any stylistic requirements found in PSR-1.
+PER-1 includes a number of non-stylistic requirements that affect runtime behavior, which are
+out of scope for this PER.
+
+If a particular rule is mentioned in both this PER and PSR-1, this PER takes precedence. If not,
+the PSR-1 rule (including errata) still applies.
 
 This PER will include coding style guidelines related to new functionality added to PHP
 after the publication of PSR-12, as well as clarifications on the text of PSR-12.
