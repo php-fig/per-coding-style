@@ -68,8 +68,7 @@ This PER applies the following meanings:
 other modifications with no compatibility impact.
 * **Minor** versions may additionally:
   * Add new requirements for PHP syntax previously unspecified in this PER.
-  * Add, remove or alter requirements in a way that is both contravariant or more permissive for individual authors and
-backwards compatible for existing projects accepting contributions.
+  * Add, remove or alter requirements in a way that is both more permissive and backwards compatible for implementers.
 * **Major** versions may additionally:
   * Add, remove or alter any requirements.
 
