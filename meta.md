@@ -26,7 +26,7 @@ To help alleviate this issue with PSR-12, we have taken a more prescriptive appr
 defined the standards for new language features as they are released.
 
 However, it is for a lack of wanting to be dictatorial that we aimed to apply PSR-2
-styling, rationale and stances (Described in Section 4, Approaches) in PSR-12 instead of
+styling, rationale and stances (Described in Section 5, Approaches) in PSR-12 instead of
 establishing new conventions.
 
 The same approach is applied to the current PER.
@@ -57,12 +57,42 @@ PSR-12.
 It is not the intention of this PER to add entirely new coding style guidelines. It will
 also not change anything stipulated in PSR-1 and PSR-12.
 
-## 4. Approaches
+## 4. Versioning
+
+New releases of this PER are assigned version numbers in keeping with [semantic versioning](https://semver.org/). 
+Semantic versioning is well defined when applied to software releases but has no common definition in other contexts. 
+This PER applies the following meanings:
+
+* **Patch** versions may contain:
+  * Any changes that do not alter the underlying requirements of this PER, such as fixing typos, adding clarifications or 
+other modifications with no compatibility impact.
+* **Minor** versions may additionally:
+  * Add new requirements for PHP syntax previously unspecified in this PER.
+  * Add, remove or alter requirements in a way that is both more permissive and backwards compatible for implementers.
+* **Major** versions may additionally:
+  * Add, remove or alter any requirements.
+
+Projects are expected to pin their own coding style guidelines to a major version of this PER, allowing for regular 
+upgrades to minor and patch releases as they are published. When performing such upgrades, it is intended that no change
+to existing code is required to maintain compliance with all requirements and recommendations of this PER. This ensures 
+new code contributions processed by an automatic formatter follow (or disregard) recommendations consistently with the 
+existing code.
+
+Please note this backwards compatibility promise does not extend to projects that use new PHP syntax yet to be specified
+in this PER. In this circumstance, a minor version may introduce new requirements that are effectively breaking changes.
+
+It is ultimately determined whether a meaningful change may be included in a minor release on a case-by-case basis by 
+consensus. The addition of `MAY` or `OPTIONAL` requirements or the removal of requirements with non-optional RFC 2119 
+keywords will not always meet the criteria for minor release. For example, specifying that projects may use tabs instead
+of spaces for indentation creates a new implicit requirement that projects must use one style consistently; this new 
+burden on projects to reformat incoming contributions to their chosen style defines the change as major.
+
+## 5. Approaches
 
 The overarching approach is to attempt to apply existing PSR-12 styling and rationale to
 new functionality as opposed to establishing new conventions.
 
-### 4.1. Strict Types Declarations
+### 5.1. Strict Types Declarations
 
 There was a discussion about whether strict types should be enforced in the standard
 https://github.com/cs-extended/fig-standards/issues/7. All were in agreement we should only
@@ -71,25 +101,25 @@ to say that strict types could not be declared. The discussion was whether it sh
 considered a coding style item which should be covered or whether it was out of scope, and it
 was decided to be out of scope of a coding style guide.
 
-### 4.2. Finally and Return Types Declaration Spacing
+### 5.2. Finally and Return Types Declaration Spacing
 
 Numerous options were suggested, and they can be seen
 [here for return type declarations](https://gist.github.com/michaelcullum/c025f3870c9ea1dd2668#file-returntypesspacing-php) or
 [here for finally blocks](https://gist.github.com/michaelcullum/c025f3870c9ea1dd2668#file-finallyblocks-php)
 and the current implementation was chosen due to consistency with other parts of the standard.
 
-### 4.3. Enforcing short form for all type keywords
+### 5.3. Enforcing short form for all type keywords
 
 PHP 7.0 introduced [scalar types declaration](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration)
 which does not support long type aliases. Therefore, it makes sense to enforce primary short type forms to be used to
 have uniform syntax and prevent possible confusion.
 
-### 4.4. Public Survey
+### 5.4. Public Survey
 
 In order to settle things using data, survey was conducted and responses from 142 people
 including 17 project representatives were gathered:
 
-#### 4.4.1. PHP-FIG Representative Results
+#### 5.4.1. PHP-FIG Representative Results
 
 | Representative          | Project           | Compound namespaces with a depth of two or more MUST not be used | Header statement grouping and ordering | Declare statements must each be on their own line | Declare statements in PHP files containing markup | Declare statements have no spaces: `declare(strict_types=1);` | Block declare statement formatting | `new` keyword usage, parenthesis required |Return type declaration formatting |Use statement leading slashes disallowed | Block namespace declaration formatting | General operator spacing |Try, Catch, Finally formatting | Anonymous class declaration formatting | Keyword casing, only lower case | Type keywords, short form only |
 | --------------          | -------           | ---------------------------------------------------- | ---------------------------------- | ----------------------------------------- | ------------------------------------------- | -------------------------------------------------------- | ------------------------------- | ------------------------------------- |------------------------------- |------------------------------------ | ----------------------------------- | ---------------------- |--------------------------- | ----------------------------------- | --------------------------- | -------------------------- |
@@ -111,7 +141,7 @@ including 17 project representatives were gathered:
 | Chuck Burgess           | PEAR              | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 |                         | **Totals**:       |13/3|15/1|15/1|13/3|14/2|15/1|14/2|15/1|14/2|14/2|15/1|16/0|15/1|15/1|15/1|
 
-#### 4.4.2. General non-representative voters
+#### 5.4.2. General non-representative voters
 
 | Question | For | Against | Percentage For |
 | -------- | --- | ------- | -------------- |
@@ -131,7 +161,7 @@ including 17 project representatives were gathered:
 | Keyword casing, only lower case | 124 | 2 | 98.39% |
 | Type keywords, short form only | 121 | 5 | 95.87% |
 
-### 4.5. Multiline Function Arguments Mixed With Multiline Return
+### 5.5. Multiline Function Arguments Mixed With Multiline Return
 
 A potential readability issue [was raised on the mailing list](https://groups.google.com/d/msg/php-fig/ULSL4gqK8GY/cgDELuPOCQAJ).
 We reviewed options for changes to the specification that could provide better readability and
@@ -140,13 +170,13 @@ arguments and the return are both multiline. Instead, it was pointed out that th
 _already_ allows you to decide where you'd like to add blank lines, and so we will leave it to
 the implementors to decide.
 
-## 5. Changelog
+## 6. Changelog
 
 Please note this changelog is not a verbose list of changes from PSR-12 and further but highlights the most
 notable changes. It should be considered a new specification, and therefore you should read the
 specification for a full understanding of its contents.
 
-### 5.1. New Statements
+### 6.1. New Statements
 
 * Lowercase for all keywords - Section 2.5
 * Short form for all type keywords - Section 2.5
@@ -165,7 +195,7 @@ specification for a full understanding of its contents.
 * Ternary operators - Section 6.3
 * Anonymous classes - Section 8
 
-### 5.2. Clarifications and Errata
+### 6.2. Clarifications and Errata
 
 * Adjust 'methods' to 'methods and functions' in a number of instances - Throughout
 * Adjust references to classes and interfaces to also include traits - Throughout
@@ -176,17 +206,17 @@ specification for a full understanding of its contents.
 * PSR-2 errata statement about extending multiple interfaces - Section 4
 * Forbid blank lines before/after closing/opening braces for classes - Section 4
 
-## 6. People
+## 7. People
 
-### 6.1.  Editor:
+### 7.1.  Editor:
 
 * Korvin Szanto
 
-### 6.2. Sponsor:
+### 7.2. Sponsor:
 
 * Chris Tankersley
 
-### 6.3. Working Group Members:
+### 7.3. Working Group Members:
 
 * Alexander Makarov
 * Ken Guest
@@ -194,15 +224,15 @@ specification for a full understanding of its contents.
 * Luke Diggins
 * Woody Gilk
 
-### 6.4. Special Thanks
+### 7.4. Special Thanks
 
 * Everyone involved in PSR-1, PSR-2, PSR-12.
 
-## 7. Votes
+## 8. Votes
 
 * **Entrance Vote:** https://groups.google.com/g/php-fig/c/YqPDYGK0RhM/m/pJmThkNKBgAJ
 
-## 8. Relevant Links
+## 9. Relevant Links
 
 _**Note:** Order descending chronologically._
 
