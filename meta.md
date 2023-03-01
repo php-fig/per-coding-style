@@ -53,7 +53,7 @@ after the publication of PSR-12. This PER will also include clarifications on th
 PSR-12.
 
 The Working Group considered whether incorporating stylistic requirements found in PSR-1 was in scope.
-The Working Group determined to leave this deliberately undefined to consider in a later version.
+The Working Group determined to leave this deliberately undefined to consider in a later release.
 
 ### 3.2. Non-Goals
 
