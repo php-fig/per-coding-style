@@ -715,7 +715,7 @@ Foo::bar($arg2, $arg3);
 Argument lists MAY be split across multiple lines, where each subsequent line
 is indented once. When doing so, the first item in the list MUST be on the
 next line, and there MUST be only one argument per line. A single argument being
-split across multiple lines (as might be the case with an anonymous function or
+split across multiple lines (as might be the case with a closure or
 array) does not constitute splitting the argument list itself.
 
 The following examples show correct argument usage.
@@ -1069,8 +1069,8 @@ $variable = $foo ?: 'bar';
 
 ## 7. Closures
 
-Closures MUST be declared with a space after the `function` keyword, and a
-space before and after the `use` keyword.
+Closures, also known as anonymous functions, MUST be declared with a space
+after the `function` keyword, and a space before and after the `use` keyword.
 
 The opening brace MUST go on the same line, and the closing brace MUST go on
 the next line following the body.
