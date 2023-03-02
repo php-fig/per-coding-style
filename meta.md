@@ -52,8 +52,7 @@ This PER will include coding style guidelines related to new functionality added
 after the publication of PSR-12. This PER will also include clarifications on the text of
 PSR-12.
 
-The Working Group considered whether incorporating stylistic requirements found in PSR-1 was in scope.
-The Working Group determined to leave this deliberately undefined to consider in a later release.
+The question of whether to include or replace requirements from PSR-1 was examined by the Working Group. However it was decided to omit any such requirements for further consideration in a subsequent release.
 
 ### 3.2. Non-Goals
 
