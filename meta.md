@@ -224,7 +224,6 @@ specification for a full understanding of its contents.
 * Ken Guest
 * Larry Garfield
 * Luke Diggins
-* Woody Gilk
 
 ### 7.4. Special Thanks
 
