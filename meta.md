@@ -212,7 +212,7 @@ specification for a full understanding of its contents.
 
 ### 7.1.  Editor:
 
-* Korvin Szanto
+* Larry Garfield
 
 ### 7.2. Sponsor:
 
@@ -222,7 +222,7 @@ specification for a full understanding of its contents.
 
 * Alexander Makarov
 * Ken Guest
-* Larry Garfield
+* Korvin Szanto
 * Luke Diggins
 
 ### 7.4. Special Thanks
