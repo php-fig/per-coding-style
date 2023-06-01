@@ -141,6 +141,8 @@ If the list is split across multiple lines, then the last item MUST have a trail
 The following are examples of correct comma placement:
 
 ```php
+<?php
+
 function beep(string $a, string $b, string $c)
 {
     // ...
@@ -281,6 +283,8 @@ Block declare statements are allowed and MUST be formatted as below. Note positi
 braces and spacing:
 
 ```php
+<?php
+
 declare(ticks=1) {
     // some code
 }
@@ -297,6 +301,8 @@ When instantiating a new class, parentheses MUST always be present even when
 there are no arguments passed to the constructor. For example:
 
 ```php
+<?php
+
 new Foo();
 ```
 
@@ -305,6 +311,8 @@ then the body of the class SHOULD be abbreviated as `{}` and placed on the same 
 separated by a space. For example:
 
 ```php
+<?php
+
 class MyException extends \RuntimeException {}
 ```
 
@@ -517,6 +525,8 @@ constructor property promotion), then the body SHOULD be abbreviated as `{}` and
 line as the previous symbol, separated by a space. For example:
 
 ```php
+<?php
+
 class Point
 {
     public function __construct(private int $x, private int $y) {}
@@ -526,6 +536,8 @@ class Point
 ```
 
 ```php
+<?php
+
 class Point
 {
     public function __construct(
@@ -637,6 +649,8 @@ There MUST NOT be a space between the variadic three dot operator and the argume
 name:
 
 ```php
+<?php
+
 public function process(string $algorithm, ...$parts)
 {
     // processing
@@ -647,6 +661,8 @@ When combining both the reference operator and the variadic three dot operator,
 there MUST NOT be any space between the two of them:
 
 ```php
+<?php
+
 public function process(string $algorithm, &...$parts)
 {
     // processing
@@ -746,6 +762,8 @@ If using named arguments, there MUST NOT be a space between the argument name
 and colon, and there MUST be a single space between the colon and the argument value. For example:
 
 ```php
+<?php
+
 somefunction($a, b: $b, c: 'c');
 ```
 
@@ -753,6 +771,8 @@ Method chaining MAY be put on separate lines, where each subsequent line is inde
 method MUST be on the next line. For example:
 
 ```php
+<?php
+
 $someInstance
     ->create()
     ->prepare()
@@ -1025,6 +1045,8 @@ The increment/decrement operators MUST NOT have any space between
 the operator and operand:
 
 ```php
+<?php
+
 $i++;
 ++$j;
 ```
@@ -1033,6 +1055,8 @@ Type casting operators MUST NOT have any space within the parentheses and MUST b
 operating on by exactly one space:
 
 ```php
+<?php
+
 $intValue = (int) $input;
 ```
 
@@ -1043,6 +1067,8 @@ All binary [arithmetic][], [comparison][], [assignment][], [bitwise][],
 followed by at least one space:
 
 ```php
+<?php
+
 if ($a === $b) {
     $foo = $bar ?? $a ?? $b;
 } elseif ($a > $b) {
@@ -1057,6 +1083,8 @@ preceded and followed by at least one space around both the `?`
 and `:` characters:
 
 ```php
+<?php
+
 $variable = $foo ? 'foo' : 'bar';
 ```
 
@@ -1064,6 +1092,8 @@ When the middle operand of the conditional operator is omitted, the operator
 MUST follow the same style rules as other binary [comparison][] operators:
 
 ```php
+<?php
+
 $variable = $foo ?: 'bar';
 ```
 
@@ -1200,6 +1230,7 @@ on the second line, and MUST be indented once.
 The following examples show proper common usage of short closures.
 
 ```php
+<?php
 
 $func = fn(int $x, int $y): int => $x + $y;
 
@@ -1274,6 +1305,8 @@ so that it is consistent with case declarations.
 The following example shows a typical valid Enum:
 
 ```php
+<?php
+
 enum Suit: string
 {
     case Hearts = 'H';
@@ -1300,6 +1333,8 @@ The following is ***not allowed*** due to the heredoc beginning on a
 different line than the context it's being declared in:
 
 ```php
+<?php
+
 $notAllowed =
 <<<'COUNTEREXAMPLE'
     This
@@ -1316,6 +1351,8 @@ The follow is ***not allowed*** due to the scope indention not matching the scop
 heredoc is declared in:
 
 ```php
+<?php
+
 function notAllowed()
 {
     $notAllowed = <<<'COUNTEREXAMPLE'
@@ -1334,6 +1371,8 @@ The following is an example of both a heredoc and a nowdoc declared in a
 compliant way:
 
 ```php
+<?php
+
 function allowed()
 {
     $allowedHeredoc = <<<COMPLIANT
@@ -1456,6 +1495,8 @@ If an attribute's argument list is split into multiple lines for any reason, the
 The following is an example of valid attribute usage.
 
 ```php
+<?php
+
 #[Foo]
 #[Bar('baz')]
 class Demo
