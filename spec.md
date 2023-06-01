@@ -65,7 +65,7 @@ class Foo extends Bar implements FooInterface
 
     final public static function bar()
     {
-        // method body
+        // Method body
     }
 }
 
@@ -143,7 +143,7 @@ The following are examples of correct comma placement:
 ```php
 function beep(string $a, string $b, string $c)
 {
-    // ...
+    // Function body
 }
 
 function beep(
@@ -151,7 +151,7 @@ function beep(
     string $b,
     string $c,
 ) {
-    // ...
+    // Function body
 }
 
 $arr = ['a' => 'A', 'b' => 'B', 'c' => 'C'];
@@ -226,7 +226,7 @@ use const Another\Vendor\CONSTANT_D;
  */
 class FooBar
 {
-    // ... additional PHP code ...
+    // Class body
 }
 ```
 
@@ -250,7 +250,7 @@ And the following would not be allowed:
 <?php
 
 use Vendor\Package\SomeNamespace\{
-    // This has too many namespace segments to be in a group.
+    // This has too many namespace segments to be in a group
     SubnamespaceOne\AnotherNamespace\ClassA,
     SubnamespaceOne\ClassB,
     ClassZ,
@@ -268,7 +268,7 @@ For example:
 <html>
 <body>
     <?php
-        // ... additional PHP code ...
+        // Additional PHP code
     ?>
 </body>
 </html>
@@ -282,7 +282,7 @@ braces and spacing:
 
 ```php
 declare(ticks=1) {
-    // some code
+    // Block declare statements
 }
 ```
 
@@ -332,7 +332,7 @@ use OtherVendor\OtherPackage\BazClass;
 
 class ClassName extends ParentClass implements \ArrayAccess, \Countable
 {
-    // constants, properties, methods
+    // Constants, properties, methods
 }
 ```
 
@@ -355,7 +355,7 @@ class ClassName extends ParentClass implements
     \Countable,
     \Serializable
 {
-    // constants, properties, methods
+    // Constants, properties, methods
 }
 ```
 
@@ -495,7 +495,7 @@ class ClassName
 {
     public function fooBarBaz($arg1, &$arg2, $arg3 = [])
     {
-        // method body
+        // Method body
     }
 }
 ```
@@ -508,7 +508,7 @@ parentheses, commas, spaces, and braces:
 
 function fooBarBaz($arg1, &$arg2, $arg3 = [])
 {
-    // function body
+    // Function body
 }
 ```
 
@@ -521,7 +521,7 @@ class Point
 {
     public function __construct(private int $x, private int $y) {}
     
-    // ...
+    // Rest of class body
 }
 ```
 
@@ -552,7 +552,7 @@ class ClassName
 {
     public function foo(int $arg1, &$arg2, $arg3 = [])
     {
-        // method body
+        // Method body
     }
 }
 ```
@@ -577,7 +577,7 @@ class ClassName
         &$arg2,
         array $arg3 = [],
     ) {
-        // method body
+        // Method body
     }
 }
 ```
@@ -639,7 +639,7 @@ name:
 ```php
 public function process(string $algorithm, ...$parts)
 {
-    // processing
+    // Method/function body
 }
 ```
 
@@ -649,7 +649,7 @@ there MUST NOT be any space between the two of them:
 ```php
 public function process(string $algorithm, &...$parts)
 {
-    // processing
+    // Method/function body
 }
 ```
 
@@ -684,13 +684,13 @@ abstract class ClassName
 
     final public static function bar()
     {
-        // method body
+        // Method body
     }
 }
 
 readonly class ValueObject
 {
-    // ...
+    // Class body
 }
 ```
 
@@ -734,7 +734,7 @@ $foo->bar(
 <?php
 
 somefunction($foo, $bar, [
-  // ...
+  // Array data
 ], $baz);
 
 $app->get('/hello/{name}', function ($name) use ($app) {
@@ -792,11 +792,11 @@ closing brace from the earlier body.
 <?php
 
 if ($expr1) {
-    // if body
+    // If body
 } elseif ($expr2) {
-    // elseif body
+    // Elseif body
 } else {
-    // else body;
+    // Else body
 }
 ```
 
@@ -819,12 +819,12 @@ if (
     $expr1
     && $expr2
 ) {
-    // if body
+    // If body
 } elseif (
     $expr3
     && $expr4
 ) {
-    // elseif body
+    // Elseif body
 }
 ```
 
@@ -834,7 +834,7 @@ A `switch` structure looks like the following. Note the placement of
 parentheses, spaces, and braces. The `case` statement MUST be indented once
 from `switch`, and the `break` keyword (or other terminating keywords) MUST be
 indented at the same level as the `case` body. There MUST be a comment such as
-`// no break` when fall-through is intentional in a non-empty `case` body.
+`// No break` when fall-through is intentional in a non-empty `case` body.
 
 ```php
 <?php
@@ -845,7 +845,7 @@ switch ($expr) {
         break;
     case 1:
         echo 'Second case, which falls through';
-        // no break
+        // No break
     case 2:
     case 3:
     case 4:
@@ -873,7 +873,7 @@ switch (
     $expr1
     && $expr2
 ) {
-    // structure body
+    // Structure body
 }
 ```
 
@@ -899,7 +899,7 @@ parentheses, spaces, and braces.
 <?php
 
 while ($expr) {
-    // structure body
+    // Structure body
 }
 ```
 
@@ -917,7 +917,7 @@ while (
     $expr1
     && $expr2
 ) {
-    // structure body
+    // Structure body
 }
 ```
 
@@ -928,7 +928,7 @@ of parentheses, spaces, and braces.
 <?php
 
 do {
-    // structure body;
+    // Structure body;
 } while ($expr);
 ```
 
@@ -941,7 +941,7 @@ always be at the beginning or at the end of the line, not a mix of both. For exa
 <?php
 
 do {
-    // structure body;
+    // Structure body;
 } while (
     $expr1
     && $expr2
@@ -957,7 +957,7 @@ spaces, and braces.
 <?php
 
 for ($i = 0; $i < 10; $i++) {
-    // for body
+    // For body
 }
 ```
 
@@ -974,7 +974,7 @@ for (
     $i < 10;
     $i++
 ) {
-    // for body
+    // For body
 }
 ```
 
@@ -987,7 +987,7 @@ parentheses, spaces, and braces.
 <?php
 
 foreach ($iterable as $key => $value) {
-    // foreach body
+    // Foreach body
 }
 ```
 
@@ -1000,13 +1000,13 @@ parentheses, spaces, and braces.
 <?php
 
 try {
-    // try body
+    // Try body
 } catch (FirstThrowableType $e) {
-    // catch body
+    // Catch body
 } catch (OtherThrowableType | AnotherThrowableType $e) {
-    // catch body
+    // Catch body
 } finally {
-    // finally body
+    // Finally body
 }
 ```
 
@@ -1096,15 +1096,15 @@ parentheses, commas, spaces, and braces:
 <?php
 
 $closureWithArgs = function ($arg1, $arg2) {
-    // body
+    // Closure body
 };
 
 $closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
-    // body
+    // Closure body
 };
 
 $closureWithArgsVarsAndReturn = function ($arg1, $arg2) use ($var1, $var2): bool {
-    // body
+    // Closure body
 };
 ```
 
@@ -1128,7 +1128,7 @@ $longArgs_noVars = function (
     $longerArgument,
     $muchLongerArgument,
 ) {
-   // body
+   // Closure body
 };
 
 $noArgs_longVars = function () use (
@@ -1136,7 +1136,7 @@ $noArgs_longVars = function () use (
     $longerVar2,
     $muchLongerVar3,
 ) {
-   // body
+   // Closure body
 };
 
 $longArgs_longVars = function (
@@ -1148,7 +1148,7 @@ $longArgs_longVars = function (
     $longerVar2,
     $muchLongerVar3,
 ) {
-   // body
+   // Closure body
 };
 
 $longArgs_shortVars = function (
@@ -1156,7 +1156,7 @@ $longArgs_shortVars = function (
     $longerArgument,
     $muchLongerArgument,
 ) use ($var1) {
-   // body
+   // Closure body
 };
 
 $shortArgs_longVars = function ($arg) use (
@@ -1164,7 +1164,7 @@ $shortArgs_longVars = function ($arg) use (
     $longerVar2,
     $muchLongerVar3,
 ) {
-   // body
+   // Closure body
 };
 ```
 
@@ -1177,7 +1177,7 @@ in a function or method call as an argument.
 $foo->bar(
     $arg1,
     function ($arg2) use ($var1) {
-        // body
+        // Closure body
     },
     $arg3,
 );
@@ -1239,7 +1239,7 @@ If the anonymous class has no arguments, the `()` after `class` MUST be omitted.
 // Brace on the same line
 // No arguments
 $instance = new class extends \Foo implements \HandleableInterface {
-    // Class content
+    // Class body
 };
 
 // Brace on the next line
@@ -1252,7 +1252,7 @@ $instance = new class($a) extends \Foo implements
     public function __construct(public int $a)
     {
     }
-    // Class content
+    // Class body
 };
 ```
 
@@ -1477,7 +1477,7 @@ class Demo
     #[Poink('narf'), Narf('poink')]
     public function setFoo(#[Beep] Foo $new): void
     {
-      // ...
+      // Method body
     }
 
     #[Complex(
@@ -1500,7 +1500,7 @@ class Demo
 
         int $d,
     ): string {
-        // ...
+        // Method body
     }
 }
 ```
