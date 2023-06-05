@@ -639,7 +639,7 @@ name:
 ```php
 public function process(string $algorithm, ...$parts)
 {
-    // Method/function body
+    // Method body
 }
 ```
 
@@ -649,7 +649,7 @@ there MUST NOT be any space between the two of them:
 ```php
 public function process(string $algorithm, &...$parts)
 {
-    // Method/function body
+    // Method body
 }
 ```
 
@@ -928,7 +928,7 @@ of parentheses, spaces, and braces.
 <?php
 
 do {
-    // Structure body;
+    // Structure body
 } while ($expr);
 ```
 
@@ -941,7 +941,7 @@ always be at the beginning or at the end of the line, not a mix of both. For exa
 <?php
 
 do {
-    // Structure body;
+    // Structure body
 } while (
     $expr1
     && $expr2
