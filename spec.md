@@ -1199,7 +1199,6 @@ on the second line, and MUST be indented once.
 The following examples show proper common usage of short closures.
 
 ```php
-
 $func = fn(int $x, int $y): int => $x + $y;
 
 $func = fn(int $x, int $y): int
