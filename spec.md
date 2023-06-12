@@ -447,9 +447,9 @@ Visibility MUST be declared on all constants.
 
 The `var` keyword MUST NOT be used to declare a property.
 
-There MUST NOT be more than one property declared per statement.
+There MUST NOT be more than one property or constant declared per statement.
 
-Property names MUST NOT be prefixed with a single underscore to indicate
+Property or constant names MUST NOT be prefixed with a single underscore to indicate
 protected or private visibility. That is, an underscore prefix explicitly has
 no meaning.
 
