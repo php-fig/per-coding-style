@@ -79,7 +79,9 @@ Function callable references - there must not be whitespace surrounding the '...
 The match keyword is now covered 
 
 
-##Short Closures (Arrow functions) (7.1)
+##[Section 7.1](https://www.php-fig.org/per/coding-style/#71-short-closures)
+Short Closures.
+
 As with standard closures, 'fn' must not be succeeded by a space.
 The '=>' symbol MUST be preceeded and succeeded by a space. (No leading or trailing spaces)
 The semicolon at the end must not be preceeded by a leading space.
@@ -87,7 +89,7 @@ The expression portion MAY be split to a subsequent line. If so, the => MUST be
 included on the second line, and MUST be indented once.
 
 
-## Enums. https://www.php-fig.org/per/coding-style/#9-enumerations
+## [Section 9](https://www.php-fig.org/per/coding-style/#9-enumerations)
 
 Enums - enums, or rather enumerations are a layer on top of classes and class
 constants that provide a way to define a very limited set of possible values
