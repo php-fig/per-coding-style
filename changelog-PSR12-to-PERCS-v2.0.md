@@ -57,8 +57,6 @@ before the closing parenthesis.
 In the argument list, there MUST NOT be a space before each comma,
 and there MUST be one space after each comma.
 
-
-
 Argument lists MAY be split across multiple lines, where each subsequent
 line is indented once. When doing so, the first item in the list MUST be
 on the next line, and there MUST be only one argument per line. A single
@@ -79,12 +77,13 @@ Function callable references - there must not be whitespace surrounding the '...
 The match keyword is now covered 
 
 
-##[Section 7.1](https://www.php-fig.org/per/coding-style/#71-short-closures)
-Short Closures.
+## [Section 7.1](https://www.php-fig.org/per/coding-style/#71-short-closures)
+
+A new subsection about Short Closures.
 
 As with standard closures, 'fn' must not be succeeded by a space.
 The '=>' symbol MUST be preceeded and succeeded by a space. (No leading or trailing spaces)
-The semicolon at the end must not be preceeded by a leading space.
+The semicolon at the end MUST NOT be preceeded by a leading space.
 The expression portion MAY be split to a subsequent line. If so, the => MUST be 
 included on the second line, and MUST be indented once.
 
