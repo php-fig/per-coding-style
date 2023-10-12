@@ -1,4 +1,6 @@
-### Changelog of differences between PSR-12 and PER-CS v2.0 ###
+# Changelog of differences between PSR-12 and PER-CS v2.0 ###
+
+## Summary
 
 PER-CS is the next evolution of the PSR set of Coding Standards from the
 PHP-FIG (Framework Interoperability Group). It extends the Coding Standards
@@ -6,16 +8,17 @@ laid out in PSR-12 to the newest functionality added to PHP such as the match
 keyword, enums, attributes and more.
 
 This document describes the changes and additions on a section by section
-basis. Any section not specified in this document does not have any PER-CS
-specific changes.
+basis between PER-CS (v2.0) and PSR-12. 
 
-## Section 2.6 https://www.php-fig.org/psr/psr-12/#25-keywords-and-types
+Any section not specified in this document does not have any PER-CS specific changes.
+
+## [Section 2.6](https://www.php-fig.org/per/coding-style/#26-trailing-commas)
 Numerous constructs now allow a sequence of values to have an optional trailing
 comma:
  * If the final item is on the same line then there MUST NOT be a trailing comma
  * If the final item is not on the same line then there MUST be a trailing comma
 
-## Section 4.4 https://www.php-fig.org/per/coding-style/#44-methods-and-functions
+## [Section 4.4](https://www.php-fig.org/per/coding-style/#44-methods-and-functions)
 
 If a function or method contains no statements or comments (such as an empty
 no-op implementation or when using constructor property promotion), then the
@@ -29,7 +32,7 @@ So, for a method of a subclass that does nothing:
         protected function init() {}
     }
 
-## Section 4.6 https://www.php-fig.org/per/coding-style/#46-modifier-keywords
+## [Section 4.6](https://www.php-fig.org/per/coding-style/#46-modifier-keywords)
 
 Modifier keywords are keywords that alter how PHP handles classes,
 properties and methods.
@@ -42,7 +45,7 @@ These keywords MUST BE ordered as follows:
 Furthermore all keywords must be on a single line and MUST be separated
 by a single space.
 
-## Section 4.7 https://www.php-fig.org/per/coding-style/#47-method-and-function-calls
+## [Section 4.7](https://www.php-fig.org/per/coding-style/#47-method-and-function-calls)
 
 Named arguments and method chaining
 
@@ -67,12 +70,12 @@ name and colon, and there MUST be a single space between the colon and
 the argument value.
 
 
-## Section 4.8 https://www.php-fig.org/per/coding-style/#48-function-callable-references
+## [Section 4.8](https://www.php-fig.org/per/coding-style/#48-function-callable-references)
 
 Function callable references - there must not be whitespace surrounding the '...' operator ()
 
 
-## Section 5.2 https://www.php-fig.org/per/coding-style/#52-switch-case-match
+## [Section 5.2](https://www.php-fig.org/per/coding-style/#52-switch-case-match)
 The match keyword is now covered 
 
 
@@ -129,7 +132,7 @@ is RECOMMENDED, so that it is consistent with case declarations.
     }
     ?>
 
-## Section 10  https://www.php-fig.org/per/coding-style/#10-heredoc-and-nowdoc
+## [Section 10](https://www.php-fig.org/per/coding-style/#10-heredoc-and-nowdoc)
 
 This is a new section about HereDocs and NowDocs.
 
@@ -144,7 +147,7 @@ declared in.
 The heredoc MUST be declared on the same line as the variable declaration it's being set against.
 The heredoc MUST be indented once past the indentation of the scope it's declared in.
 
-## Section 11 https://www.php-fig.org/per/coding-style/#11-arrays
+## [Section 11](https://www.php-fig.org/per/coding-style/#11-arrays)
 
 This too is a new section. It is about arrays.
 
@@ -164,7 +167,7 @@ There MUST NOT be more than one value assignment per line.
 
 Value assignments MAY use a single line or multiple lines.
 
-## Section 12 https://www.php-fig.org/per/coding-style/#12-attributes
+## [Section 12](https://www.php-fig.org/per/coding-style/#12-attributes)
 
 This is a new section about attributes. Attributes are new in PHP 8 and
 offer the ability to add structured, machine-readable metadata information on 
