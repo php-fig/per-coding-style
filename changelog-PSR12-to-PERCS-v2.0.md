@@ -8,7 +8,10 @@ laid out in PSR-12 to the newest functionality added to PHP such as the match
 keyword, enums, attributes and more.
 
 This document describes the changes and additions on a section by section
-basis between PER-CS (v2.0) and PSR-12. 
+basis between PER-CS (v2.0) and PSR-12 which is a direct equivalent of 
+PER-CS v1.0 with very minor changes.
+It is derived in part from [a GitHub generated changelog](https://github.com/php-fig/per-coding-style/compare/1.0.0...2.0.0)
+and focuses on the changes in a section-by-section basis as it's focus is to be more readable.
 
 Any section not specified in this document does not have any PER-CS specific changes.
 
