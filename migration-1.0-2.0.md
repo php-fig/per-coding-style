@@ -8,8 +8,8 @@ laid out in PSR-12 to the newest functionality added to PHP such as the match
 keyword, enums, attributes and more.
 
 This document describes the changes and additions on a section by section
-basis between PER-CS v2.0 and PER-CS v1.0 which is a direct equivalent of 
-PSR12 with very minor changes.
+basis between PER-CS v2.0 and PER-CS v1.0 (which is a direct equivalent of 
+PSR12 with very minor changes).
 
 It is derived in part from [a GitHub generated changelog](https://github.com/php-fig/per-coding-style/compare/1.0.0...2.0.0)
 and focuses on the changes in a section-by-section basis as it's focus is to be more readable.
@@ -17,15 +17,17 @@ and focuses on the changes in a section-by-section basis as it's focus is to be 
 The intent of this document is to provide a summary of these changes that can
 then be used to drive action-lists for toolset producers to support PER-CS v2.0.
 
-Any section not specified in this document does not have any PER-CS specific changes.
+This document is non-normative.  The published [2.0 PER-CS](https://www.php-fig.org/per/coding-style/) specification 
+is the canonical source for the PER-CS formatting expectations.
 
-## [Section 2.6](https://www.php-fig.org/per/coding-style/#26-trailing-commas)
+## [Section 2.6 - Trailing Commas](https://www.php-fig.org/per/coding-style/#26-trailing-commas)
+
 Numerous constructs now allow a sequence of values to have an optional trailing
 comma:
  * If the final item is on the same line then there MUST NOT be a trailing comma
  * If the final item is not on the same line then there MUST be a trailing comma
 
-## [Section 4.4](https://www.php-fig.org/per/coding-style/#44-methods-and-functions)
+## [Section 4.4 - Methods and Functions](https://www.php-fig.org/per/coding-style/#44-methods-and-functions)
 
 If a function or method contains no statements or comments (such as an empty
 no-op implementation or when using constructor property promotion), then the
@@ -39,7 +41,7 @@ So, for a method of a subclass that does nothing:
         protected function init() {}
     }
 
-## [Section 4.6](https://www.php-fig.org/per/coding-style/#46-modifier-keywords)
+## [Section 4.6 - Modifier Keywords](https://www.php-fig.org/per/coding-style/#46-modifier-keywords)
 
 Modifier keywords are keywords that alter how PHP handles classes,
 properties and methods.
@@ -52,7 +54,7 @@ These keywords MUST BE ordered as follows:
 Furthermore all keywords must be on a single line and MUST be separated
 by a single space.
 
-## [Section 4.7](https://www.php-fig.org/per/coding-style/#47-method-and-function-calls)
+## [Section 4.7 - Method and Function Calls](https://www.php-fig.org/per/coding-style/#47-method-and-function-calls)
 
 Named arguments and method chaining
 
@@ -74,17 +76,15 @@ If using named arguments, there MUST NOT be a space between the argument
 name and colon, and there MUST be a single space between the colon and
 the argument value.
 
-
-## [Section 4.8](https://www.php-fig.org/per/coding-style/#48-function-callable-references)
+## [Section 4.8 - Function Callable References](https://www.php-fig.org/per/coding-style/#48-function-callable-references)
 
 Function callable references - there must not be whitespace surrounding the '...' operator ()
 
+## [Section 5.2 - Switch, Case, Match](https://www.php-fig.org/per/coding-style/#52-switch-case-match)
 
-## [Section 5.2](https://www.php-fig.org/per/coding-style/#52-switch-case-match)
-The match keyword is now covered 
+The match keyword is now covered.
 
-
-## [Section 7.1](https://www.php-fig.org/per/coding-style/#71-short-closures)
+## [Section 7.1 - Short Closures](https://www.php-fig.org/per/coding-style/#71-short-closures)
 
 A new subsection about Short Closures.
 
@@ -95,16 +95,9 @@ The expression portion MAY be split to a subsequent line. If so, the => MUST be
 included on the second line, and MUST be indented once.
 
 
-## [Section 9](https://www.php-fig.org/per/coding-style/#9-enumerations)
+## [Section 9 - Enumerations](https://www.php-fig.org/per/coding-style/#9-enumerations)
 
-Enums - enums, or rather enumerations are a layer on top of classes and class
-constants that provide a way to define a very limited set of possible values
-for a custom type. Enums are new to PHP since 8.1 and so could not be covered
-by PSR12.
-
-PER-CS addresses aspects on how standardise on coding Enums in new section 9.
-As Enums do not support inheritance non-public methods MUST use the private
-keyword.
+Enums are now covered.
 
 When using backed enums, there MUST NOT be a space between the enum name and 
 colon, and there must be exactly one space between the colon and the backing
@@ -140,12 +133,12 @@ is RECOMMENDED, so that it is consistent with case declarations.
     }
     ?>
 
-## [Section 10](https://www.php-fig.org/per/coding-style/#10-heredoc-and-nowdoc)
+## [Section 10 - Heredoc and Nowdoc](https://www.php-fig.org/per/coding-style/#10-heredoc-and-nowdoc)
 
 This is a new section about HereDocs and NowDocs.
 
 NowDoc SHOULD be used whereever possible. Heredoc MAY be used where a
-nowdoc does not satisfy.
+nowdoc is not sufficient.
 
 Declared heredocs or nowdocs MUST begin on the same line as the context
 the declaration is being used in. Subsequent lines in the heredoc
@@ -155,9 +148,9 @@ declared in.
 The heredoc MUST be declared on the same line as the variable declaration it's being set against.
 The heredoc MUST be indented once past the indentation of the scope it's declared in.
 
-## [Section 11](https://www.php-fig.org/per/coding-style/#11-arrays)
+## [Section 11 - Arrays](https://www.php-fig.org/per/coding-style/#11-arrays)
 
-This too is a new section. It is about arrays.
+This is a new section.
 
 Arrays MUST be declared using the short array syntax.
 Arrays MUST follow the trailing comma guidelines.
@@ -175,11 +168,9 @@ There MUST NOT be more than one value assignment per line.
 
 Value assignments MAY use a single line or multiple lines.
 
-## [Section 12](https://www.php-fig.org/per/coding-style/#12-attributes)
+## [Section 12 - Attributes](https://www.php-fig.org/per/coding-style/#12-attributes)
 
-This is a new section about attributes. Attributes are new in PHP 8 and
-offer the ability to add structured, machine-readable metadata information on 
-declarations in code (https://www.php.net/manual/en/language.attributes.overview.php) 
+This is a new section.
 
 Attribute names MUST immediately follow the opening attribute block indicator #[ with no space.
 
