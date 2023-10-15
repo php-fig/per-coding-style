@@ -94,7 +94,6 @@ The semicolon at the end MUST NOT be preceeded by a leading space.
 The expression portion MAY be split to a subsequent line. If so, the => MUST be 
 included on the second line, and MUST be indented once.
 
-
 ## [Section 9 - Enumerations](https://www.php-fig.org/per/coding-style/#9-enumerations)
 
 Enums are now covered.
@@ -120,7 +119,6 @@ An example of this can be seen in the online php documentation at https://www.ph
 
 Constants in Enums MAY be either PascalCase or UPPER_CASE, PascalCase
 is RECOMMENDED, so that it is consistent with case declarations.
-
 
     <?php
     enum Size
