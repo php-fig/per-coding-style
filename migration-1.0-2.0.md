@@ -59,6 +59,8 @@ by a single space.
 If using named arguments, there MUST NOT be a space between the argument name and colon, 
 and there MUST be a single space between the colon and the argument value.
 
+Method chaining MAY be put on separate lines, where each subsequent line is indented once. When doing so, the first method MUST be on the next line.
+
 ## [Section 4.8 - Function Callable References](https://www.php-fig.org/per/coding-style/#48-function-callable-references)
 
 Function callable references - there must not be whitespace surrounding the '...' operator ()
