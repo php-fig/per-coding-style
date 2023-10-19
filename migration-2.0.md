@@ -15,7 +15,7 @@ It is derived in part from [a GitHub-generated changelog](https://github.com/php
 and focuses on the changes on a section-by-section basis as its focus is to be more readable.
 
 This document intends to provide a summary of these changes that can
-then be used to drive action-lists for toolset producers to support PER-CS v2.0.
+then be used to drive action lists for toolset producers to support PER-CS v2.0.
 
 This document is non-normative.  The published [2.0 PER-CS](https://www.php-fig.org/per/coding-style/) specification 
 is the canonical source for the PER-CS formatting expectations.
