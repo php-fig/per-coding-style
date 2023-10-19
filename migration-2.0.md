@@ -124,7 +124,7 @@ NowDoc SHOULD be used whereever possible. Heredoc MAY be used where a
 nowdoc is not sufficient.
 
 Declared heredocs or nowdocs MUST begin on the same line as the context
-the declaration is being used in. Subsequent lines in the heredoc
+the declaration is being used. Subsequent lines in the heredoc
 or nowdoc MUST be indented once past the scope indentation they are
 declared in.
 
