@@ -14,7 +14,7 @@ PSR12 with very minor changes).
 It is derived in part from [a GitHub-generated changelog](https://github.com/php-fig/per-coding-style/compare/1.0.0...2.0.0)
 and focuses on the changes on a section-by-section basis as its focus is to be more readable.
 
-The intent of this document is to provide a summary of these changes that can
+This document intends to provide a summary of these changes that can
 then be used to drive action-lists for toolset producers to support PER-CS v2.0.
 
 This document is non-normative.  The published [2.0 PER-CS](https://www.php-fig.org/per/coding-style/) specification 
