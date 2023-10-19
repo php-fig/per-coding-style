@@ -12,7 +12,7 @@ basis between PER-CS v2.0 and PER-CS v1.0 (which is a direct equivalent of
 PSR12 with very minor changes).
 
 It is derived in part from [a GitHub-generated changelog](https://github.com/php-fig/per-coding-style/compare/1.0.0...2.0.0)
-and focuses on the changes in a section-by-section basis as it's focus is to be more readable.
+and focuses on the changes on a section-by-section basis as its focus is to be more readable.
 
 The intent of this document is to provide a summary of these changes that can
 then be used to drive action-lists for toolset producers to support PER-CS v2.0.
