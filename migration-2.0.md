@@ -118,7 +118,7 @@ is RECOMMENDED, so that it is consistent with case declarations.
 
 ## [Section 10 - Heredoc and Nowdoc](https://www.php-fig.org/per/coding-style/#10-heredoc-and-nowdoc)
 
-This is a new section about HereDocs and NowDocs.
+This is a new section.
 
 NowDoc SHOULD be used whereever possible. Heredoc MAY be used where a
 nowdoc is not sufficient.
