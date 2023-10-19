@@ -173,7 +173,7 @@ For attributes on parameters, if the parameter list is presented on a
 single line, the attribute MUST be placed inline with the parameter it
 describes, separated by a single space. If the parameter list is split
 into multiple lines for any reason, the attribute MUST be placed on its
-own line prior to the parameter, indented the same as the parameter. If
+own line before the parameter, indented the same as the parameter. If
 the parameter list is split into multiple lines, a blank line MAY be
 included between one parameter and the attributes of the following
 parameter in order to aid readability.
