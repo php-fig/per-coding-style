@@ -165,7 +165,7 @@ preceding space.
 
 The construct #[...] is referred to as an "attribute block" in this document.
 
-Attributes on classes, methods, functions, constants and properties
+Attributes on classes, methods, functions, constants, and properties
 MUST be placed on their own line, immediately prior to the structure
 being described.
 
