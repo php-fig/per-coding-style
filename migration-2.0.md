@@ -166,7 +166,7 @@ preceding space.
 The construct #[...] is referred to as an "attribute block" in this document.
 
 Attributes on classes, methods, functions, constants, and properties
-MUST be placed on their own line, immediately prior to the structure
+MUST be placed on their own line, immediately before the structure
 being described.
 
 For attributes on parameters, if the parameter list is presented on a
