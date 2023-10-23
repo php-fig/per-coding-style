@@ -120,7 +120,7 @@ is RECOMMENDED, so that it is consistent with case declarations.
 
 This is a new section.
 
-NowDoc SHOULD be used whereever possible. Heredoc MAY be used where a
+NowDoc SHOULD be used wherever possible. Heredoc MAY be used where a
 nowdoc is not sufficient.
 
 Declared heredocs or nowdocs MUST begin on the same line as the context
