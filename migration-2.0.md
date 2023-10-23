@@ -51,7 +51,7 @@ These keywords MUST BE ordered as follows:
 [abstract|final] [public|protected|private] [static] [readonly]
 [type] name
 
-Furthermore all keywords must be on a single line and MUST be separated
+Furthermore, all keywords must be on a single line and MUST be separated
 by a single space.
 
 ## [Section 4.7 - Method and Function Calls](https://www.php-fig.org/per/coding-style/#47-method-and-function-calls)
