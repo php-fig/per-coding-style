@@ -74,10 +74,10 @@ The match keyword is now covered.
 A new subsection about Short Closures.
 
 As with standard closures, 'fn' must not be succeeded by a space.
-The '=>' symbol MUST be preceeded and succeeded by a space. (No leading or trailing spaces)
-The semicolon at the end MUST NOT be preceeded by a leading space.
+The '=>' symbol MUST be preceded and succeeded by a space (No leading or trailing spaces).
+The semicolon at the end MUST NOT be preceded by a leading space.
 The expression portion MAY be split to a subsequent line. If so, the => MUST be 
-included on the second line, and MUST be indented once.
+included on the second line and MUST be indented once.
 
 ## [Section 9 - Enumerations](https://www.php-fig.org/per/coding-style/#9-enumerations)
 
@@ -90,7 +90,7 @@ type, e.g. "enum Suit: string" or "enum BanExpiry: int".
 Enum case declarations MUST use PascalCase capitalization. Enum case
 declarations MUST be on their own line.
 
-An example of this can be seen in the online php documentation at https://www.php.net/manual/en/language.enumerations.backed.php
+An example of this can be seen in the online PHP documentation at https://www.php.net/manual/en/language.enumerations.backed.php
 
     <?php
     enum Suit: string
