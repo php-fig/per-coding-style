@@ -56,7 +56,7 @@ by a single space.
 
 ## [Section 4.7 - Method and Function Calls](https://www.php-fig.org/per/coding-style/#47-method-and-function-calls)
 
-If using named arguments, there MUST NOT be a space between the argument name and colon, 
+If using named arguments, there MUST NOT be a space between the argument name and the colon, 
 and there MUST be a single space between the colon and the argument value.
 
 Method chaining MAY be put on separate lines, where each subsequent line is indented once. When doing so, the first method MUST be on the next line.
