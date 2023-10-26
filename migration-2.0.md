@@ -48,8 +48,7 @@ properties and methods.
 
 These keywords MUST BE ordered as follows:
 
-[abstract|final] [public|protected|private] [static] [readonly]
-[type] name
+[abstract|final] [public|protected|private] [static] [readonly] [type] name
 
 Furthermore, all keywords must be on a single line and MUST be separated
 by a single space.
@@ -71,26 +70,26 @@ The match keyword is now covered.
 
 ## [Section 7.1 - Short Closures](https://www.php-fig.org/per/coding-style/#71-short-closures)
 
-A new subsection about Short Closures.
+A new subsection about Short Closures, as per the link above. Example as follows:
 
-As with standard closures, 'fn' must not be succeeded by a space.
-The '=>' symbol MUST be preceded and succeeded by a space (No leading or trailing spaces).
-The semicolon at the end MUST NOT be preceded by a leading space.
-The expression portion MAY be split to a subsequent line. If so, the => MUST be 
-included on the second line and MUST be indented once.
+    <?php
+    $func = fn(int $x, int $y): int => $x + $y;
+
+    $func = fn(int $x, int $y): int
+        => $x + $y;
+
+    $func = fn(
+        int $x,
+        int $y,
+    ): int
+        => $x + $y;
+
+    $result = $collection->reduce(fn(int $x, int $y): int => $x + $y, 0);
+    ?>
 
 ## [Section 9 - Enumerations](https://www.php-fig.org/per/coding-style/#9-enumerations)
 
-Enums are now covered.
-
-When using backed enums, there MUST NOT be a space between the enum name and 
-colon, and there must be exactly one space between the colon and the backing
-type, e.g. "enum Suit: string" or "enum BanExpiry: int".
-
-Enum case declarations MUST use PascalCase capitalization. Enum case
-declarations MUST be on their own line.
-
-An example of this can be seen in the online PHP documentation at https://www.php.net/manual/en/language.enumerations.backed.php
+Enums are now covered, as per the link above. Please see below for examples.
 
     <?php
     enum Suit: string
@@ -101,9 +100,6 @@ An example of this can be seen in the online PHP documentation at https://www.ph
         case Spades = 'S';
     }
     ?>
-
-Constants in Enums MAY be either PascalCase or UPPER_CASE, PascalCase
-is RECOMMENDED, so that it is consistent with case declarations.
 
     <?php
     enum Size
@@ -118,79 +114,107 @@ is RECOMMENDED, so that it is consistent with case declarations.
 
 ## [Section 10 - Heredoc and Nowdoc](https://www.php-fig.org/per/coding-style/#10-heredoc-and-nowdoc)
 
-This is a new section.
+This is a new section about Heredoc and Nowdoc notation as per the link above.
+Example follows:
 
-NowDoc SHOULD be used wherever possible. Heredoc MAY be used where a
-nowdoc is not sufficient.
+    function allowed()
+    {
+        $allowedHeredoc = <<<COMPLIANT
+            This
+            is
+            a
+            compliant
+            heredoc
+            COMPLIANT;
 
-Declared heredocs or nowdocs MUST begin on the same line as the context
-the declaration is being used. Subsequent lines in the heredoc
-or nowdoc MUST be indented once past the scope indentation they are
-declared in.
+        $allowedNowdoc = <<<'COMPLIANT'
+            This
+            is
+            a
+            compliant
+            nowdoc
+            COMPLIANT;
 
-The heredoc MUST be declared on the same line as the variable declaration it's being set against.
-The heredoc MUST be indented once past the indentation of the scope it's declared in.
+        var_dump(
+            'foo',
+            <<<'COMPLIANT'
+                This
+                is
+                a
+                compliant
+                parameter
+                COMPLIANT,
+            'bar',
+        );
+    }
 
 ## [Section 11 - Arrays](https://www.php-fig.org/per/coding-style/#11-arrays)
 
-This is a new section.
+This is a new section about arrays, as per the link above.
+Example as follows:
 
-Arrays MUST be declared using the short array syntax.
-Arrays MUST follow the trailing comma guidelines.
-
-Array declarations MAY be split across multiple lines, where each
-subsequent line is indented once. When doing so, the first value in the
-array MUST be on the next line, and there MUST be only one value per line.
-
-When the array declaration is split across multiple lines, the opening
-bracket MUST be placed on the same line as the equals sign. 
-
-The closing bracket MUST be placed on the next line after the last value. 
-
-There MUST NOT be more than one value assignment per line. 
-
-Value assignments MAY use a single line or multiple lines.
+    <?php
+    $arr1 = ['single', 'line', 'declaration'];
+    $arr2 = [
+        'multi',
+        'line',
+        'declaration',
+        ['values' => 1, 5, 7],
+        [
+            'nested',
+            'array',
+        ],
+    ];
 
 ## [Section 12 - Attributes](https://www.php-fig.org/per/coding-style/#12-attributes)
 
-This is a new section.
+This is a new section, as per the above link.
+The following is an example of valid usage.
 
-Attribute names MUST immediately follow the opening attribute block indicator #[ with no space.
+    #[Foo]
+    #[Bar('baz')]
+    class Demo
+    {
+        #[Beep]
+        private Foo $foo;
 
-If an attribute has no arguments, the () MUST be omitted.
+        public function __construct(
+            #[Load(context: 'foo', bar: true)]
+            private readonly FooService $fooService,
 
-The closing attribute block indicator ] MUST follow the last character
-of the attribute name or the closing ) of its argument list, with no
-preceding space.
+            #[LoadProxy(context: 'bar')]
+            private readonly BarService $barService,
+        ) {}
 
-The construct #[...] is referred to as an "attribute block" in this document.
+        /**
+        * Sets the foo.
+        */
+        #[Poink('narf'), Narf('poink')]
+        public function setFoo(#[Beep] Foo $new): void
+        {
+        // ...
+        }
 
-Attributes on classes, methods, functions, constants, and properties
-MUST be placed on their own line, immediately before the structure
-being described.
+        #[Complex(
+            prop: 'val',
+            other: 5,
+        )]
+        #[Other, Stuff]
+        #[Here]
+        public function complicated(
+            string $a,
 
-For attributes on parameters, if the parameter list is presented on a
-single line, the attribute MUST be placed inline with the parameter it
-describes, separated by a single space. If the parameter list is split
-into multiple lines for any reason, the attribute MUST be placed on its
-own line before the parameter, indented the same as the parameter. If
-the parameter list is split into multiple lines, a blank line MAY be
-included between one parameter and the attributes of the following
-parameter to aid readability.
+            #[Decl]
+            string $b,
 
-If a comment docblock is present on a structure that also includes an
-attribute, the comment block MUST come first, followed by any attributes,
-followed by the structure itself. There MUST NOT be any blank lines
-between the docblock and attributes, or the attributes and the structure.
+            #[Complex(
+                prop: 'val',
+                other: 5,
+            )]
+            string $c,
 
-If two separate attribute blocks are used in a multi-line context,
-they MUST be on separate lines with no blank lines between them.
-
- * If multiple attributes are placed in the same attribute block, they MUST be separated by a comma with a space following but no space preceding. 
- * If the attribute list is split into multiple lines for any reason, then the attributes MUST be placed in separate attribute blocks. Those blocks may themselves contain multiple attributes provided this rule is respected.
-
-If an attribute's argument list is split into multiple lines for any reason, then:
-
- * The attribute MUST be the only one in its attribute block.
- * The attribute arguments MUST follow the same rules as defined for multiline function calls.
-
+            int $d,
+        ): string {
+            // ...
+        }
+    }
