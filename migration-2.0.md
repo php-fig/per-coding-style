@@ -35,6 +35,7 @@ body SHOULD be abbreviated as {} and placed on the same line as the previous
 symbol, separated by a space.
 So, for a method of a subclass that does nothing:
 
+    ```php
     <?php
     class SubClass extends BaseClass
     {
@@ -72,6 +73,7 @@ The match keyword is now covered.
 
 A new subsection about Short Closures, as per the link above. Example as follows:
 
+    ```php
     <?php
     $func = fn(int $x, int $y): int => $x + $y;
 
@@ -91,6 +93,7 @@ A new subsection about Short Closures, as per the link above. Example as follows
 
 Enums are now covered, as per the link above. Please see below for examples.
 
+    ```php
     <?php
     enum Suit: string
     {
@@ -99,8 +102,8 @@ Enums are now covered, as per the link above. Please see below for examples.
         case Clubs = 'C';
         case Spades = 'S';
     }
-    ?>
 
+    ```php
     <?php
     enum Size
     {
@@ -153,6 +156,7 @@ Example follows:
 This is a new section about arrays, as per the link above.
 Example as follows:
 
+    ```php
     <?php
     $arr1 = ['single', 'line', 'declaration'];
     $arr2 = [
@@ -171,6 +175,8 @@ Example as follows:
 This is a new section, as per the above link.
 The following is an example of valid usage.
 
+    ```php
+    <?php
     #[Foo]
     #[Bar('baz')]
     class Demo
