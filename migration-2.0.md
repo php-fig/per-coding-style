@@ -41,6 +41,7 @@ class SubClass extends BaseClass
 {
     protected function init() {}
 }
+```
 
 ## [Section 4.6 - Modifier Keywords](https://www.php-fig.org/per/coding-style/#46-modifier-keywords)
 
@@ -87,7 +88,7 @@ $func = fn(
     => $x + $y;
 
 $result = $collection->reduce(fn(int $x, int $y): int => $x + $y, 0);
-?>
+```
 
 ## [Section 9 - Enumerations](https://www.php-fig.org/per/coding-style/#9-enumerations)
 
@@ -102,6 +103,7 @@ enum Suit: string
     case Clubs = 'C';
     case Spades = 'S';
 }
+```
 
 ```php
 <?php
@@ -113,6 +115,7 @@ enum Size
 
     public const Huge = self::Large;
 }
+```
 
 ## [Section 10 - Heredoc and Nowdoc](https://www.php-fig.org/per/coding-style/#10-heredoc-and-nowdoc)
 
@@ -151,6 +154,7 @@ function allowed()
         'bar',
     );
 }
+```
 
 ## [Section 11 - Arrays](https://www.php-fig.org/per/coding-style/#11-arrays)
 
@@ -170,6 +174,7 @@ $arr2 = [
         'array',
     ],
 ];
+```
 
 ## [Section 12 - Attributes](https://www.php-fig.org/per/coding-style/#12-attributes)
 
@@ -225,3 +230,4 @@ class Demo
         // ...
     }
 }
+```
