@@ -35,12 +35,12 @@ body SHOULD be abbreviated as {} and placed on the same line as the previous
 symbol, separated by a space.
 So, for a method of a subclass that does nothing:
 
-    ```php
-    <?php
-    class SubClass extends BaseClass
-    {
-        protected function init() {}
-    }
+```php
+<?php
+class SubClass extends BaseClass
+{
+    protected function init() {}
+}
 
 ## [Section 4.6 - Modifier Keywords](https://www.php-fig.org/per/coding-style/#46-modifier-keywords)
 
@@ -73,154 +73,155 @@ The match keyword is now covered.
 
 A new subsection about Short Closures, as per the link above. Example as follows:
 
-    ```php
-    <?php
-    $func = fn(int $x, int $y): int => $x + $y;
+```php
+<?php
+$func = fn(int $x, int $y): int => $x + $y;
 
-    $func = fn(int $x, int $y): int
-        => $x + $y;
+$func = fn(int $x, int $y): int
+    => $x + $y;
 
-    $func = fn(
-        int $x,
-        int $y,
-    ): int
-        => $x + $y;
+$func = fn(
+    int $x,
+    int $y,
+): int
+    => $x + $y;
 
-    $result = $collection->reduce(fn(int $x, int $y): int => $x + $y, 0);
-    ?>
+$result = $collection->reduce(fn(int $x, int $y): int => $x + $y, 0);
+?>
 
 ## [Section 9 - Enumerations](https://www.php-fig.org/per/coding-style/#9-enumerations)
 
 Enums are now covered, as per the link above. Please see below for examples.
 
-    ```php
-    <?php
-    enum Suit: string
-    {
-        case Hearts = 'H';
-        case Diamonds = 'D';
-        case Clubs = 'C';
-        case Spades = 'S';
-    }
+```php
+<?php
+enum Suit: string
+{
+    case Hearts = 'H';
+    case Diamonds = 'D';
+    case Clubs = 'C';
+    case Spades = 'S';
+}
 
-    ```php
-    <?php
-    enum Size
-    {
-        case Small;
-        case Medium;
-        case Large;
-    
-        public const Huge = self::Large;
-    }
-    ?>
+```php
+<?php
+enum Size
+{
+    case Small;
+    case Medium;
+    case Large;
+
+    public const Huge = self::Large;
+}
 
 ## [Section 10 - Heredoc and Nowdoc](https://www.php-fig.org/per/coding-style/#10-heredoc-and-nowdoc)
 
 This is a new section about Heredoc and Nowdoc notation as per the link above.
 Example follows:
 
-    function allowed()
-    {
-        $allowedHeredoc = <<<COMPLIANT
+```php
+<?php
+function allowed()
+{
+    $allowedHeredoc = <<<COMPLIANT
+        This
+        is
+        a
+        compliant
+        heredoc
+        COMPLIANT;
+
+    $allowedNowdoc = <<<'COMPLIANT'
+        This
+        is
+        a
+        compliant
+        nowdoc
+        COMPLIANT;
+
+    var_dump(
+        'foo',
+        <<<'COMPLIANT'
             This
             is
             a
             compliant
-            heredoc
-            COMPLIANT;
-
-        $allowedNowdoc = <<<'COMPLIANT'
-            This
-            is
-            a
-            compliant
-            nowdoc
-            COMPLIANT;
-
-        var_dump(
-            'foo',
-            <<<'COMPLIANT'
-                This
-                is
-                a
-                compliant
-                parameter
-                COMPLIANT,
-            'bar',
-        );
-    }
+            parameter
+            COMPLIANT,
+        'bar',
+    );
+}
 
 ## [Section 11 - Arrays](https://www.php-fig.org/per/coding-style/#11-arrays)
 
 This is a new section about arrays, as per the link above.
 Example as follows:
 
-    ```php
-    <?php
-    $arr1 = ['single', 'line', 'declaration'];
-    $arr2 = [
-        'multi',
-        'line',
-        'declaration',
-        ['values' => 1, 5, 7],
-        [
-            'nested',
-            'array',
-        ],
-    ];
+```php
+<?php
+$arr1 = ['single', 'line', 'declaration'];
+$arr2 = [
+    'multi',
+    'line',
+    'declaration',
+    ['values' => 1, 5, 7],
+    [
+        'nested',
+        'array',
+    ],
+];
 
 ## [Section 12 - Attributes](https://www.php-fig.org/per/coding-style/#12-attributes)
 
 This is a new section, as per the above link.
 The following is an example of valid usage.
 
-    ```php
-    <?php
-    #[Foo]
-    #[Bar('baz')]
-    class Demo
+```php
+<?php
+#[Foo]
+#[Bar('baz')]
+class Demo
+{
+    #[Beep]
+    private Foo $foo;
+
+    public function __construct(
+        #[Load(context: 'foo', bar: true)]
+        private readonly FooService $fooService,
+
+        #[LoadProxy(context: 'bar')]
+        private readonly BarService $barService,
+    ) {}
+
+    /**
+    * Sets the foo.
+    */
+    #[Poink('narf'), Narf('poink')]
+    public function setFoo(#[Beep] Foo $new): void
     {
-        #[Beep]
-        private Foo $foo;
+    // ...
+    }
 
-        public function __construct(
-            #[Load(context: 'foo', bar: true)]
-            private readonly FooService $fooService,
+    #[Complex(
+        prop: 'val',
+        other: 5,
+    )]
+    #[Other, Stuff]
+    #[Here]
+    public function complicated(
+        string $a,
 
-            #[LoadProxy(context: 'bar')]
-            private readonly BarService $barService,
-        ) {}
-
-        /**
-        * Sets the foo.
-        */
-        #[Poink('narf'), Narf('poink')]
-        public function setFoo(#[Beep] Foo $new): void
-        {
-        // ...
-        }
+        #[Decl]
+        string $b,
 
         #[Complex(
             prop: 'val',
             other: 5,
         )]
-        #[Other, Stuff]
-        #[Here]
-        public function complicated(
-            string $a,
+        string $c,
 
-            #[Decl]
-            string $b,
-
-            #[Complex(
-                prop: 'val',
-                other: 5,
-            )]
-            string $c,
-
-            int $d,
-        ): string {
-            // ...
-        }
+        int $d,
+    ): string {
+        // ...
     }
+}
