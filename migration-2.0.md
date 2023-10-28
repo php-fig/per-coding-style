@@ -27,6 +27,18 @@ comma:
  * If the final item is on the same line then there MUST NOT be a trailing comma
  * If the final item is not on the same line then there MUST be a trailing comma
 
+```php
+<?php
+$sequence = [0, 0, 0, 1, 2, 3, 5, 8, 13];
+
+function beep(
+    string $a,
+    string $b,
+    string $c,
+) {
+    // ...
+}
+
 ## [Section 4.4 - Methods and Functions](https://www.php-fig.org/per/coding-style/#44-methods-and-functions)
 
 If a function or method contains no statements or comments (such as an empty
@@ -52,6 +64,10 @@ These keywords MUST BE ordered as follows:
 
 [abstract|final] [public|protected|private] [static] [readonly] [type] name
 
+```php
+<?php
+abstract public static function cases(): array;
+
 Furthermore, all keywords must be on a single line and MUST be separated
 by a single space.
 
@@ -60,15 +76,47 @@ by a single space.
 If using named arguments, there MUST NOT be a space between the argument name and the colon, 
 and there MUST be a single space between the colon and the argument value.
 
+```php
+<?php
+somefunction($a, b: $b, c: 'c');
+
 Method chaining MAY be put on separate lines, where each subsequent line is indented once. When doing so, the first method MUST be on the next line.
+
+```php
+<?php
+$someInstance
+    ->create()
+    ->prepare()
+    ->run();
 
 ## [Section 4.8 - Function Callable References](https://www.php-fig.org/per/coding-style/#48-function-callable-references)
 
 Function callable references - there must not be whitespace surrounding the '...' operator ()
 
+```php
+<?php
+$callable = $item->doSomething(...);
+
 ## [Section 5.2 - Switch, Case, Match](https://www.php-fig.org/per/coding-style/#52-switch-case-match)
 
 The match keyword is now covered.
+
+```php
+<?php
+$result = match ($a) {
+    'foo' => 'Foo',
+    'bar' => 'Bar',
+    default => 'Baz',
+};
+
+
+```php
+<?php
+$returnValue = match ($expr) {
+    0 => 'First case',
+    1, 2, 3 => multipleCases(),
+    default => 'Default case',
+};
 
 ## [Section 7.1 - Short Closures](https://www.php-fig.org/per/coding-style/#71-short-closures)
 
