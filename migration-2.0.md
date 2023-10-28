@@ -29,7 +29,7 @@ comma:
 
 ```php
 <?php
-$sequence = [0, 0, 0, 1, 2, 3, 5, 8, 13];
+$sequence = [1, 2, 3, 5, 8, 13];
 
 function beep(
     string $a,
@@ -67,7 +67,21 @@ These keywords MUST BE ordered as follows:
 
 ```php
 <?php
-abstract public static function cases(): array;
+namespace Vendor\Package;
+
+abstract class ClassName
+{
+    protected static readonly string $foo;
+
+    final protected int $beep;
+
+    abstract protected function zim();
+
+    final public static function bar()
+    {
+        // method body
+    }
+}
 ```
 
 Furthermore, all keywords must be on a single line and MUST be separated
