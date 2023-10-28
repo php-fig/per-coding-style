@@ -38,6 +38,7 @@ function beep(
 ) {
     // ...
 }
+```
 
 ## [Section 4.4 - Methods and Functions](https://www.php-fig.org/per/coding-style/#44-methods-and-functions)
 
@@ -67,6 +68,7 @@ These keywords MUST BE ordered as follows:
 ```php
 <?php
 abstract public static function cases(): array;
+```
 
 Furthermore, all keywords must be on a single line and MUST be separated
 by a single space.
@@ -79,6 +81,7 @@ and there MUST be a single space between the colon and the argument value.
 ```php
 <?php
 somefunction($a, b: $b, c: 'c');
+```
 
 Method chaining MAY be put on separate lines, where each subsequent line is indented once. When doing so, the first method MUST be on the next line.
 
@@ -88,6 +91,7 @@ $someInstance
     ->create()
     ->prepare()
     ->run();
+```
 
 ## [Section 4.8 - Function Callable References](https://www.php-fig.org/per/coding-style/#48-function-callable-references)
 
@@ -96,6 +100,7 @@ Function callable references - there must not be whitespace surrounding the '...
 ```php
 <?php
 $callable = $item->doSomething(...);
+```
 
 ## [Section 5.2 - Switch, Case, Match](https://www.php-fig.org/per/coding-style/#52-switch-case-match)
 
@@ -108,7 +113,7 @@ $result = match ($a) {
     'bar' => 'Bar',
     default => 'Baz',
 };
-
+```
 
 ```php
 <?php
@@ -117,6 +122,7 @@ $returnValue = match ($expr) {
     1, 2, 3 => multipleCases(),
     default => 'Default case',
 };
+```
 
 ## [Section 7.1 - Short Closures](https://www.php-fig.org/per/coding-style/#71-short-closures)
 
