@@ -1279,7 +1279,7 @@ enum Suit: string
     case Spades = 'S';
     case Clubs = 'C';
 
-    const Wild = self::Spades;
+    public const Wild = self::Spades;
 }
 ```
 
