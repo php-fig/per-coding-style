@@ -1310,7 +1310,7 @@ $notAllowed =
 Instead, the heredoc MUST be declared on the same line as the variable
 declaration it's being set against.
 
-The follow is ***not allowed*** due to the scope indention not matching the scope the
+The following is ***not allowed*** due to the scope indention not matching the scope the
 heredoc is declared in:
 
 ```php
