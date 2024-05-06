@@ -1349,7 +1349,7 @@ function allowed()
         compliant
         nowdoc
         COMPLIANT;
-        
+
     var_dump(
         'foo',
         <<<'COMPLIANT'
@@ -1359,7 +1359,7 @@ function allowed()
             compliant
             parameter
             COMPLIANT,
-         'bar',
+        'bar',
     );
 }
 ```
