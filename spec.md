@@ -1242,7 +1242,7 @@ $instance = new class extends \Foo implements \HandleableInterface {
 
 // Brace on the next line
 // Constructor arguments
-$instance = new class($a) extends \Foo implements
+$instance = new class ($a) extends \Foo implements
     \ArrayAccess,
     \Countable,
     \Serializable
