@@ -1057,6 +1057,10 @@ and `:` characters:
 
 ```php
 $variable = $foo ? 'foo' : 'bar';
+
+$variableMultiLine = $foo
+    ? 'foo'
+    : 'bar';
 ```
 
 When the middle operand of the conditional operator is omitted, the operator
