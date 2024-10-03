@@ -1057,10 +1057,6 @@ and `:` characters:
 
 ```php
 $variable = $foo ? 'foo' : 'bar';
-
-$variableMultiLine = $foo
-    ? 'foo'
-    : 'bar';
 ```
 
 When the middle operand of the conditional operator is omitted, the operator
@@ -1068,6 +1064,25 @@ MUST follow the same style rules as other binary [comparison][] operators:
 
 ```php
 $variable = $foo ?: 'bar';
+```
+
+### 6.4. Operator's placement
+
+When a statement that includes an operator must be split into multiple lines,
+the operator SHOULD be placed at the beginning of the new line.
+
+```php
+<?php
+
+$variable1 = $possibleNullableExpr
+    ?? 'fallback';
+
+$variable2 = $ternaryOperatorExpr
+    ? 'fizz'
+    : 'buzz';
+
+$variable3 = $elvisExpr
+    ?: 'qix';
 ```
 
 ## 7. Closures
