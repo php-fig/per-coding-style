@@ -1068,18 +1068,21 @@ $variable = $foo ?: 'bar';
 
 ### 6.4. Operator's placement
 
-When a statement that includes an operator must be split into multiple lines,
-the operator SHOULD be placed at the beginning of the new line.
+A statement that includes an operator MAY be split across multiple lines, where
+each subsequent line is indented once. When doing so, the operator MUST be
+placed at the beginning of the new line; ternaries MUST occupy 3 lines, never 2.
+
+For example:
 
 ```php
 <?php
 
-$variable1 = $possibleNullableExpr
-    ?? 'fallback';
-
-$variable2 = $ternaryOperatorExpr
+$variable1 = $ternaryOperatorExpr
     ? 'fizz'
     : 'buzz';
+
+$variable2 = $possibleNullableExpr
+    ?? 'fallback';
 
 $variable3 = $elvisExpr
     ?: 'qix';
