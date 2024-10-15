@@ -169,6 +169,14 @@ $result = match ($a) {
 };
 ```
 
+### 2.7 Naming
+
+This PSR RECOMMENDS following the [php-src coding standards](https://github.com/php/php-src/blob/master/CODING_STANDARDS.md#user-functionsmethods-naming-conventions) with regard to abbreviations and acronyms.
+
+Specifically:
+
+> Abbreviations and acronyms as well as initialisms SHOULD be avoided wherever possible, unless they are much more widely used than the long form (e.g. HTTP or URL). Abbreviations, acronyms, and initialisms SHOULD be treated like regular words, thus they SHOULD be written with an uppercase first character, followed by lowercase characters.
+
 ## 3. Declare Statements, Namespace, and Import Statements
 
 The header of a PHP file may consist of a number of different blocks. If present,
