@@ -1066,6 +1066,28 @@ MUST follow the same style rules as other binary [comparison][] operators:
 $variable = $foo ?: 'bar';
 ```
 
+### 6.4. Operator's placement
+
+A statement that includes an operator MAY be split across multiple lines, where
+each subsequent line is indented once. When doing so, the operator MUST be
+placed at the beginning of the new line; ternaries MUST occupy 3 lines, never 2.
+
+For example:
+
+```php
+<?php
+
+$variable1 = $ternaryOperatorExpr
+    ? 'fizz'
+    : 'buzz';
+
+$variable2 = $possibleNullableExpr
+    ?? 'fallback';
+
+$variable3 = $elvisExpr
+    ?: 'qix';
+```
+
 ## 7. Closures
 
 Closures, also known as anonymous functions, MUST be declared with a space
