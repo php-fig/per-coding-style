@@ -806,10 +806,7 @@ Expressions in parentheses MAY be split across multiple lines, where each
 subsequent line is indented at least once. When doing so, the first condition
 MUST be on the next line. The closing parenthesis and opening brace MUST be
 placed together on their own line with one space between them. Boolean
-operators between conditions MUST always be at the beginning or at the end of
-the line, not a mix of both.
-
-For example:
+operators between conditions MUST always be at the beginning. For example:
 
 ```php
 <?php
@@ -860,10 +857,7 @@ Expressions in parentheses MAY be split across multiple lines, where each
 subsequent line is indented at least once. When doing so, the first condition
 MUST be on the next line. The closing parenthesis and opening brace MUST be
 placed together on their own line with one space between them. Boolean
-operators between conditions MUST always be at the beginning or at the end of
-the line, not a mix of both.
-
-For example:
+operators between conditions MUST always be at the beginning. For example:
 
 ```php
 <?php
@@ -906,8 +900,7 @@ Expressions in parentheses MAY be split across multiple lines, where each
 subsequent line is indented at least once. When doing so, the first condition
 MUST be on the next line. The closing parenthesis and opening brace MUST be
 placed together on their own line with one space between them. Boolean
-operators between conditions MUST always be at the beginning or at the end of
-the line, not a mix of both.
+operators between conditions MUST always be at the beginning.
 
 ```php
 <?php
@@ -934,7 +927,7 @@ do {
 Expressions in parentheses MAY be split across multiple lines, where each
 subsequent line is indented at least once. When doing so, the first condition
 MUST be on the next line. Boolean operators between conditions MUST
-always be at the beginning or at the end of the line, not a mix of both. For example:
+always be at the beginning. For example:
 
 ```php
 <?php
