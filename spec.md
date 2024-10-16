@@ -192,7 +192,7 @@ PHP.
 
 When the opening `<?php` tag is on the first line of the file, it MUST be on its
 own line with no other statements unless it is a file containing markup outside of PHP
-opening and closing tags.  The `<?php` tag MUST always be lower-case.
+opening and closing tags.  The `<?php` tag MUST always be lower case.
 
 Import statements MUST never begin with a leading backslash as they
 must always be fully qualified.
