@@ -1343,14 +1343,14 @@ This
 is
 not
 allowed.
-COUNTEREXAMPLE
+COUNTEREXAMPLE;
 }
 ```
 
 Instead, the heredoc MUST be indented once past the indentation of the scope
 it's declared in.
 
-The following is an example of both a heredoc and a nowdoc declared in a
+The following is an example of both heredocs and nowdocs declared in a
 compliant way:
 
 ```php
