@@ -665,7 +665,7 @@ engine and language handles them. When present, they MUST be in the following or
 * Type declaration
 * Name
 
-All keywords MUST be on a single line, and MUST be separated by a single space.  All keywords MUST be all lower-case.  When using a set-visibility on a public-read property, omitting the `public` keyword is RECOMMENDED but NOT REQUIRED.
+All keywords MUST be on a single line, and MUST be separated by a single space.  All keywords MUST be all lower-case.  The `public` keyword MAY be omitted when using a set-visibility on a public-read property.
 
 The following is a correct example of modifier keyword usage:
 
