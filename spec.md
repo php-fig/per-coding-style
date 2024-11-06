@@ -1497,7 +1497,7 @@ class Demo
     #[Poink('narf'), Narf('poink')]
     public function setFoo(#[Beep] Foo $new): void
     {
-      // ...
+        // ...
     }
 
     #[Complex(
