@@ -477,7 +477,9 @@ class ClassName
 }
 ```
 
-### 4.4 Methods and Functions
+### 4.4 Property Hooks
+
+### 4.5 Methods and Functions
 
 Visibility MUST be declared on all methods.
 
@@ -542,7 +544,7 @@ class Point
 }
 ```
 
-### 4.5 Method and Function Parameters
+### 4.6 Method and Function Parameters
 
 In the argument list, there MUST NOT be a space before each comma, and there
 MUST be one space after each comma.
@@ -660,7 +662,7 @@ public function process(string $algorithm, &...$parts)
 }
 ```
 
-### 4.6 Modifier Keywords
+### 4.7 Modifier Keywords
 
 Classes, properties, and methods have numerous keyword modifiers that alter how the
 engine and language handles them. When present, they MUST be in the following order:
@@ -701,7 +703,7 @@ readonly class ValueObject
 }
 ```
 
-### 4.7 Method and Function Calls
+### 4.8 Method and Function Calls
 
 When making a method or function call, there MUST NOT be a space between the
 method or function name and the opening parenthesis, there MUST NOT be a space
@@ -766,7 +768,7 @@ $someInstance
     ->run();
 ```
 
-### 4.8 Function Callable References
+### 4.9 Function Callable References
 
 A function or method may be referenced in a way that creates a closure out of it, by providing `...` in place of arguments.
 
