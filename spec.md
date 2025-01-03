@@ -667,12 +667,13 @@ engine and language handles them. When present, they MUST be in the following or
 
 * Inheritance modifier: `abstract` or `final`
 * Visibility modifier: `public`, `protected`, or `private`
+* Set-visibility modifier: `public(set)`, `protected(set)`, or `private(set)`
 * Scope modifier: `static`
 * Mutation modifier: `readonly`
 * Type declaration
 * Name
 
-All keywords MUST be on a single line, and MUST be separated by a single space.
+All keywords MUST be on a single line, and MUST be separated by a single space.  All keywords MUST be all lower-case.  The `public` keyword MAY be omitted when using a set-visibility on a public-read property.
 
 The following is a correct example of modifier keyword usage:
 
@@ -686,6 +687,10 @@ abstract class ClassName
     protected static string $foo;
 
     private readonly int $beep;
+
+    protected private(set) string $name;
+
+    protected(set) string $boop;
 
     abstract protected function zim();
 
