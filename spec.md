@@ -479,6 +479,109 @@ class ClassName
 
 ### 4.4 Property Hooks
 
+Object properties may also include hooks, which have a number of syntactic options.
+
+If there is only one hook implementation, and that hook implementation itself uses
+the short-hook syntax, then the hook declaration MAY be listed entirely inline.  The hook
+name MUST be separated from the opening brace and the arrow operator by a single
+space, and the semicolon ending of the hook MUST be separated from the cosing brace
+by a single space.  For example:
+
+```php
+class Example
+{
+    public string $myName { get => __CLASS__; }
+
+    public string $newName { set => ucfirst($value); }
+}
+```
+
+If those two criteria are not met, then the hook block MUST be spread across multiple lines:
+
+```php
+class Example
+{
+    public string $myName {
+        get => __CLASS__;
+    }
+
+    public string $newName {
+        set => ucfirst($value);
+    }
+}
+```
+
+When using the multi-line form, the opening brace MUST be on the same line as the property and
+the closing brace MUST be on its own line, with the body indented one level.
+
+The `=>` operator MUST have a single space on either side.
+
+If multiple hooks are declared, they MUST be separated by at least a single line break.  They
+MAY be separated by an additional blank line to aid readability.
+
+If the property includes a default value, there MUST be a single space between the default value
+and the opening brace.
+
+```php
+class Example
+{
+    public string $newName = 'Me' {
+        set => ucfirst($value);
+    }
+}
+```
+
+If a hook is using its multi-line form, the opening brace MUST be on the same line as the hook
+name, and the closing brace MUST be on its own line.  The body MUST be indented one level.
+
+```php
+class Example
+{
+    public string $newName = 'Me' {
+        set {
+            if (strlen($value) < 3) {
+                throw new \Exception('Too short');
+            }
+            $this->newName = ucfirst($value);
+        }
+    }
+}
+```
+
+For a `set` hook, if the argument name and type do not need to be redefined, then they MAY be omitted.
+
+Property hooks MAY also be defined in constructor-promoted properties.  However, they
+MUST be only a single hook, with a short-syntax body, defined on a single line as above.
+If those criteria are not met, then the promoted property MUST NOT have any hooks defined
+inline, and SHOULD instead be defined as normal property and not promoted.
+
+```php
+class Example
+{
+    public function __construct(
+        public string $name { set => ucfirst($value; }
+    ) {}
+}
+```
+
+The following is ***not allowed*** due to the hook being too complex:
+
+```php
+class Example
+{
+    public function __construct(
+        public string $name {
+            set {
+                if (strlen($value) < 3) {
+                    throw new \Exception('Too short');
+                }
+                $this->newName = ucfirst($value);
+            }
+        }
+    ) {}
+}
+```
+
 ### 4.5 Methods and Functions
 
 Visibility MUST be declared on all methods.
