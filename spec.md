@@ -849,13 +849,13 @@ For a `set` hook, if the argument name and type do not need to be redefined, the
 Property hooks MAY also be defined in constructor-promoted properties.  However, they
 MUST be only a single hook, with a short-syntax body, defined on a single line as above.
 If those criteria are not met, then the promoted property MUST NOT have any hooks defined
-inline, and SHOULD instead be defined as normal property and not promoted.
+inline.
 
 ```php
 class Example
 {
     public function __construct(
-        public string $name { set => ucfirst($value; }
+        public string $name { set => ucfirst($value); }
     ) {}
 }
 ```
