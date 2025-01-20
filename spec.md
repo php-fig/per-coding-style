@@ -897,6 +897,30 @@ class Example
 }
 ```
 
+## 4.10 Interface properties
+
+Abstract roperties may be defined in interfaces or abstract classes, but are required to
+specify if they must support `get` operations, `set` operations, or both.
+
+* The operation block MUST be on the same line as the property.
+* There MUST be a single space between the property name and the operation block `{}`.
+* There MUST be a single space after the opening `{`.
+* There MUST be a single space before the closing `}`;
+* There MUST NOT be a space between the operation and its required semicolon.
+* If multiple operations are specified, they MUST be separated by a single space.
+* The `get` operation MUST be listed before the `set` operation.
+
+```php
+interface Example
+{
+    public string $readable { get; }
+
+    public string $writeable { set; }
+
+    public string $both { get; set; }
+}
+```
+
 ## 5. Control Structures
 
 The general style rules for control structures are as follows:
