@@ -777,22 +777,59 @@ If so, the `...` MUST NOT include any whitespace before or after. That is, the c
 
 Object properties may also include hooks, which have a number of syntactic options.
 
-If there is only one hook implementation, and that hook implementation itself uses
-the short-hook syntax, then the hook declaration MAY be listed entirely inline.  The hook
-name MUST be separated from the opening brace and the arrow operator by a single
-space, and the semicolon ending of the hook MUST be separated from the closing brace
-by a single space.  For example:
+When using the long form of hooks:
+
+* The opening brace MUST be on the same line as the property.
+* The opening brace MUST be separated from the property name or its default value by a single space.
+* The closing brace MUST be on its own line, and have no comment following it.
+* The entire body of the hook definition MUST be indented one level.
+* The body of each hook MUST be indented one level.
+* If multiple hooks are declared, they MUST be separated by at least a single line break.  They
+  MAY be separated by an additional blank line to aid readability.
+
+For example:
 
 ```php
 class Example
 {
-    public string $myName { get => __CLASS__; }
+    public string $newName = 'Me' {
+        set {
+            if (strlen($value) < 3) {
+                throw new \Exception('Too short');
+            }
+            $this->newName = ucfirst($value);
+        }
+    }
 
-    public string $newName { set => ucfirst($value); }
+    public string $department {
+        get {
+            return $this->values[__PROPERTY__];
+        }
+        set {
+            $this->values[__PROPERTY__] = $value;
+        }
+    }
+    // or
+    public string $department {
+        get {
+            return $this->values[__PROPERTY__];
+        }
+
+        set {
+            $this->values[__PROPERTY__] = $value;
+        }
+    }
 }
 ```
 
-If those two criteria are not met, then the hook block MUST be spread across multiple lines:
+Property hooks also support multiple short-hook variations.
+
+For a `set` hook, if the argument name and type do not need to be redefined, then they MAY be omitted.
+
+If a hook consists of a single expression, then PHP allows it to be shortened using `=>`.  In that case:
+
+* There MUST be a single space on either side of the `=>` symbol.
+* The body MUST be on the same line as the hook declaration, unless it gets prohibitively long.  If it gets prohibitively long, the developer SHOULD consider not using the short-hook syntax.
 
 ```php
 class Example
@@ -807,44 +844,26 @@ class Example
 }
 ```
 
-When using the multi-line form, the opening brace MUST be on the same line as the property and
-the closing brace MUST be on its own line, with the body indented one level.
+Additionally, if the following criteria are met:
 
-The `=>` operator MUST have a single space on either side.
+* There is only one hook implementation.
+* That hook uses the short-hook syntax.
 
-If multiple hooks are declared, they MUST be separated by at least a single line break.  They
-MAY be separated by an additional blank line to aid readability.
+Then the hook MAY be listed entirely inline.  In that case,
 
-If the property includes a default value, there MUST be a single space between the default value
-and the opening brace.
+* The hook name MUST be separated from the opening brace and the arrow operator by a single space
+* The semicolon ending of the hook MUST be separated from the closing brace by a single space.
 
-```php
-class Example
-{
-    public string $newName = 'Me' {
-        set => ucfirst($value);
-    }
-}
-```
-
-If a hook is using its multi-line form, the opening brace MUST be on the same line as the hook
-name, and the closing brace MUST be on its own line.  The body MUST be indented one level.
+For example:
 
 ```php
 class Example
 {
-    public string $newName = 'Me' {
-        set {
-            if (strlen($value) < 3) {
-                throw new \Exception('Too short');
-            }
-            $this->newName = ucfirst($value);
-        }
-    }
+    public string $myName { get => __CLASS__; }
+
+    public string $newName { set => ucfirst($value); }
 }
 ```
-
-For a `set` hook, if the argument name and type do not need to be redefined, then they MAY be omitted.
 
 Property hooks MAY also be defined in constructor-promoted properties.  However, they
 MUST be only a single hook, with a short-syntax body, defined on a single line as above.
