@@ -308,6 +308,19 @@ separated by a space. For example:
 class MyException extends \RuntimeException {}
 ```
 
+When calling a method immeditely after instantiating a new class, the instantiation SHOULD NOT be wrapped in 
+parenthesis. For example:
+
+```php
+$methodResult = new Foo()->someMethod();
+```
+
+And the following SHOULD be avoided:
+
+```php
+$methodResult = (new Foo())->someMethod();
+```
+
 ### 4.1 Extends and Implements
 
 The `extends` and `implements` keywords MUST be declared on the same line as
