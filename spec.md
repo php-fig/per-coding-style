@@ -308,17 +308,21 @@ separated by a space. For example:
 class MyException extends \RuntimeException {}
 ```
 
-When calling a method immeditely after instantiating a new class, the instantiation SHOULD NOT be wrapped in 
+When accessing a class member immeditely after instantiating a new class, the instantiation SHOULD NOT be wrapped in 
 parenthesis. For example:
 
 ```php
-$methodResult = new Foo()->someMethod();
+new Foo()->someMethod();
+new Foo()->someStaticMethod();
+new Foo()->someProperty;
+new Foo()::someStaticProperty;
+new Foo()::SOME_CONSTANT;
 ```
 
 And the following SHOULD be avoided:
 
 ```php
-$methodResult = (new Foo())->someMethod();
+(new Foo())->someMethod();
 ```
 
 ### 4.1 Extends and Implements
