@@ -793,7 +793,7 @@ For example:
 class Example
 {
     public string $newName = 'Me' {
-        set {
+        set(string $value) {
             if (strlen($value) < 3) {
                 throw new \Exception('Too short');
             }
