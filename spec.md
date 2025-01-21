@@ -1,10 +1,14 @@
 # Coding Style Guide
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [RFC 2119][].
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
+"MAY", and "OPTIONAL" in this document are to be interpreted as
+described in [BCP 14][] [[RFC 2119][]] [[RFC 8174][]] when, and only when, they
+appear in all capitals, as shown here.
 
-[RFC 2119]: http://datatracker.ietf.org/doc/html/rfc2119
+[BCP 14]: https://datatracker.ietf.org/doc/html/bcp14/
+[RFC 2119]: https://datatracker.ietf.org/doc/html/rfc2119
+[RFC 8174]: https://datatracker.ietf.org/doc/html/rfc8174
 
 ## Overview
 
