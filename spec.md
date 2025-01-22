@@ -899,7 +899,7 @@ class Example
 
 ## 4.10 Interface properties
 
-Abstract roperties may be defined in interfaces or abstract classes, but are required to
+Abstract properties may be defined in interfaces or abstract classes, but are required to
 specify if they must support `get` operations, `set` operations, or both.
 
 * The operation block MUST be on the same line as the property.
