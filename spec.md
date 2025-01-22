@@ -829,7 +829,7 @@ For a `set` hook, if the argument name and type do not need to be redefined, the
 If a hook consists of a single expression, then PHP allows it to be shortened using `=>`.  In that case:
 
 * There MUST be a single space on either side of the `=>` symbol.
-* The body MUST be on the same line as the hook declaration, unless it gets prohibitively long.  If it gets prohibitively long, the developer SHOULD consider not using the short-hook syntax.
+* The body MUST be on the same line as the hook declaration and MUST NOT be wrapped. If wrapping is necessary to keep the line within the line length or desired for other reasons the short-hook syntax MUST NOT be used.
 
 ```php
 class Example
