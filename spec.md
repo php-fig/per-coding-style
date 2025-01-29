@@ -824,6 +824,18 @@ $someInstance
     ->run();
 ```
 
+The `exit()` and `die()` functions SHOULD always be called with parentheses even if no argument is given to clearly
+distinguish them from an access to a constant named `exit` or `die`. For example:
+
+```php
+exit();
+exit(1);
+exit("Success!");
+die();
+
+$result = foo() ?? exit();
+```
+
 ### 4.8 Function Callable References
 
 A function or method may be referenced in a way that creates a closure out of it, by providing `...` in place of arguments.
