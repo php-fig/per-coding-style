@@ -295,8 +295,6 @@ When using compound namespaces, there MUST NOT be more than two sub-namespaces w
 That is, the following is allowed:
 
 ```php
-<?php
-
 use Vendor\Package\SomeNamespace\{
     SubnamespaceOne\ClassA,
     SubnamespaceOne\ClassB,
@@ -308,8 +306,6 @@ use Vendor\Package\SomeNamespace\{
 And the following would not be allowed:
 
 ```php
-<?php
-
 use Vendor\Package\SomeNamespace\{
     // This has too many namespace segments to be in a group
     SubnamespaceOne\AnotherNamespace\ClassA,
@@ -564,8 +560,6 @@ A function declaration looks like the following. Note the placement of
 parentheses, commas, spaces, and braces:
 
 ```php
-<?php
-
 function fooBarBaz($arg1, &$arg2, $arg3 = [])
 {
     // ...
@@ -770,8 +764,6 @@ each comma, and there MUST be one space after each comma.
 The following lines show correct calls:
 
 ```php
-<?php
-
 bar();
 $foo->bar($arg1);
 Foo::bar($arg2, $arg3);
@@ -786,8 +778,6 @@ array) does not constitute splitting the argument list itself.
 The following examples show correct argument usage.
 
 ```php
-<?php
-
 $foo->bar(
     $longArgument,
     $longerArgument,
@@ -796,8 +786,6 @@ $foo->bar(
 ```
 
 ```php
-<?php
-
 somefunction($foo, $bar, [
   // ...
 ], $baz);
@@ -866,8 +854,6 @@ spaces, and braces; and that `else` and `elseif` are on the same line as the
 closing brace from the earlier body.
 
 ```php
-<?php
-
 if ($expr1) {
     // ...
 } elseif ($expr2) {
@@ -887,8 +873,6 @@ placed together on their own line with one space between them. Boolean
 operators between conditions MUST always be at the beginning. For example:
 
 ```php
-<?php
-
 if (
     $expr1
     && $expr2
@@ -911,8 +895,6 @@ indented at the same level as the `case` body. There MUST be a comment such as
 `// No break` when fall-through is intentional in a non-empty `case` body.
 
 ```php
-<?php
-
 switch ($expr) {
     case 0:
         echo 'First case, with a break';
@@ -938,8 +920,6 @@ placed together on their own line with one space between them. Boolean
 operators between conditions MUST always be at the beginning. For example:
 
 ```php
-<?php
-
 switch (
     $expr1
     && $expr2
@@ -952,8 +932,6 @@ Similarly, a `match` expression looks like the following. Note the placement
 of parentheses, spaces, and braces.
 
 ```php
-<?php
-
 $returnValue = match ($expr) {
     0 => 'First case',
     1, 2, 3 => multipleCases(),
@@ -967,8 +945,6 @@ A `while` statement looks like the following. Note the placement of
 parentheses, spaces, and braces.
 
 ```php
-<?php
-
 while ($expr) {
     // ...
 }
@@ -981,8 +957,6 @@ placed together on their own line with one space between them. Boolean
 operators between conditions MUST always be at the beginning.
 
 ```php
-<?php
-
 while (
     $expr1
     && $expr2
@@ -995,8 +969,6 @@ Similarly, a `do while` statement looks like the following. Note the placement
 of parentheses, spaces, and braces.
 
 ```php
-<?php
-
 do {
     // ...
 } while ($expr);
@@ -1008,8 +980,6 @@ MUST be on the next line. Boolean operators between conditions MUST
 always be at the beginning. For example:
 
 ```php
-<?php
-
 do {
     // ...
 } while (
@@ -1024,8 +994,6 @@ A `for` statement looks like the following. Note the placement of parentheses,
 spaces, and braces.
 
 ```php
-<?php
-
 for ($i = 0; $i < 10; $i++) {
     // ...
 }
@@ -1037,8 +1005,6 @@ MUST be on the next line. The closing parenthesis and opening brace MUST be
 placed together on their own line with one space between them. For example:
 
 ```php
-<?php
-
 for (
     $i = 0;
     $i < 10;
@@ -1054,8 +1020,6 @@ A `foreach` statement looks like the following. Note the placement of
 parentheses, spaces, and braces.
 
 ```php
-<?php
-
 foreach ($iterable as $key => $value) {
     // ...
 }
@@ -1067,8 +1031,6 @@ A `try-catch-finally` block looks like the following. Note the placement of
 parentheses, spaces, and braces.
 
 ```php
-<?php
-
 try {
     // ...
 } catch (FirstThrowableType $e) {
@@ -1185,8 +1147,6 @@ A closure declaration looks like the following. Note the placement of
 parentheses, commas, spaces, and braces:
 
 ```php
-<?php
-
 $closureWithArgs = function ($arg1, $arg2) {
     // ...
 };
@@ -1213,8 +1173,6 @@ The following are examples of closures with and without argument lists and
 variable lists split across multiple lines.
 
 ```php
-<?php
-
 $longArgs_noVars = function (
     $longArgument,
     $longerArgument,
@@ -1264,8 +1222,6 @@ Note that the formatting rules also apply when the closure is used directly
 in a function or method call as an argument.
 
 ```php
-<?php
-
 $foo->bar(
     $arg1,
     function ($arg2) use ($var1) {
@@ -1312,8 +1268,6 @@ Anonymous Classes MUST follow the same guidelines and principles as closures
 in the above section.
 
 ```php
-<?php
-
 $instance = new class {};
 ```
 
@@ -1325,8 +1279,6 @@ interface.
 If the anonymous class has no arguments, the `()` after `class` MUST be omitted. For example:
 
 ```php
-<?php
-
 // Brace on the same line
 // No arguments
 $instance = new class extends \Foo implements \HandleableInterface {
@@ -1462,8 +1414,6 @@ function allowed()
 Arrays MUST be declared using the short array syntax.
 
 ```php
-<?php
-
 $arr = [];
 ```
 
@@ -1482,8 +1432,6 @@ or multiple lines.
 The following example shows correct array usage:
 
 ```php
-<?php
-
 $arr1 = ['single', 'line', 'declaration'];
 
 $arr2 = [
