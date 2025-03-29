@@ -772,7 +772,6 @@ A function or method may be referenced in a way that creates a closure out of it
 
 If so, the `...` MUST NOT include any whitespace before or after. That is, the correct format is `foo(...)`.
 
-
 ### 4.9 Property Hooks
 
 Object properties may also include hooks, which have a number of syntactic options.
@@ -897,10 +896,27 @@ class Example
 }
 ```
 
-## 4.10 Interface properties
+## 4.10 Interface and abstract properties
 
 Abstract properties may be defined in interfaces or abstract classes, but are required to
-specify if they must support `get` operations, `set` operations, or both.
+specify if they must support `get` operations, `set` operations, or both.  In the case
+of abstract classes, they MAY include a body for one or another hook.
+
+If there is a body for any hook, then the entire hook block MUST follow
+the same rules as for defined hooks above.  The only difference is that
+a hook that has no body specified have a single semicolon after the hook
+keyword, with no space before it.
+
+```php
+abstract class Example {
+    abstract public string $name {
+        get => ucfirst($this->name);
+        set;
+    }
+}
+```
+
+If there is no body for either hook, then the following rules apply:
 
 * The operation block MUST be on the same line as the property.
 * There MUST be a single space between the property name and the operation block `{}`.
