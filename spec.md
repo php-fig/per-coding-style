@@ -369,7 +369,7 @@ separated by a space. For example:
 class MyException extends \RuntimeException {}
 ```
 
-When accessing a class member immeditely after instantiating a new class, the instantiation SHOULD NOT be wrapped in 
+When accessing a class member immediately after instantiating a new class, the instantiation SHOULD NOT be wrapped in 
 parenthesis. For example:
 
 ```php
