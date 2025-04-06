@@ -848,6 +848,7 @@ Additionally, if the following criteria are met:
 
 * There is only one hook implementation.
 * That hook uses the short-hook syntax.
+* That hook expression does not contain any wrapping.
 
 Then the hook MAY be listed entirely inline.  In that case,
 
