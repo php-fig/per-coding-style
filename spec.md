@@ -859,6 +859,173 @@ A function or method may be referenced in a way that creates a closure out of it
 
 If so, the `...` MUST NOT include any whitespace before or after. That is, the correct format is `foo(...)`.
 
+### 4.9 Property Hooks
+
+Object properties may also include hooks, which have a number of syntactic options.
+
+When using the long form of hooks:
+
+* The opening brace MUST be on the same line as the property.
+* The opening brace MUST be separated from the property name or its default value by a single space.
+* The closing brace MUST be on its own line, and have no comment following it.
+* The entire body of the hook definition MUST be indented one level.
+* The body of each hook MUST be indented one level.
+* If multiple hooks are declared, they MUST be separated by at least a single line break.  They
+  MAY be separated by an additional blank line to aid readability.
+
+For example:
+
+```php
+class Example
+{
+    public string $newName = 'Me' {
+        set(string $value) {
+            if (strlen($value) < 3) {
+                throw new \Exception('Too short');
+            }
+            $this->newName = ucfirst($value);
+        }
+    }
+
+    public string $department {
+        get {
+            return $this->values[__PROPERTY__];
+        }
+        set {
+            $this->values[__PROPERTY__] = $value;
+        }
+    }
+    // or
+    public string $department {
+        get {
+            return $this->values[__PROPERTY__];
+        }
+
+        set {
+            $this->values[__PROPERTY__] = $value;
+        }
+    }
+}
+```
+
+Property hooks also support multiple short-hook variations.
+
+For a `set` hook, if the argument name and type do not need to be redefined, then they MAY be omitted.
+
+If a hook consists of a single expression, then PHP allows it to be shortened using `=>`.  In that case:
+
+* There MUST be a single space on either side of the `=>` symbol.
+* The body MUST begin on the same line as the hook name and `=>`.
+* Wrapping is allowed if the expression used allows for wrapping, using the rules defined elsewhere in this document.
+
+```php
+class Example
+{
+    public string $myName {
+        get => __CLASS__;
+    }
+
+    public string $newName {
+        set => ucfirst($value);
+    }
+}
+```
+
+Additionally, if the following criteria are met:
+
+* There is only one hook implementation.
+* That hook uses the short-hook syntax.
+* That hook expression does not contain any wrapping.
+
+Then the hook MAY be listed entirely inline.  In that case,
+
+* The hook name MUST be separated from the opening brace and the arrow operator by a single space
+* The semicolon ending of the hook MUST be separated from the closing brace by a single space.
+
+For example:
+
+```php
+class Example
+{
+    public string $myName { get => __CLASS__; }
+
+    public string $newName { set => ucfirst($value); }
+}
+```
+
+Property hooks MAY also be defined in constructor-promoted properties.  However, they
+MUST be only a single hook, with a short-syntax body, defined on a single line as above.
+If those criteria are not met, then the promoted property MUST NOT have any hooks defined
+inline.
+
+```php
+class Example
+{
+    public function __construct(
+        public string $name { set => ucfirst($value); }
+    ) {}
+}
+```
+
+The following is ***not allowed*** due to the hook being too complex:
+
+```php
+class Example
+{
+    public function __construct(
+        public string $name {
+            set {
+                if (strlen($value) < 3) {
+                    throw new \Exception('Too short');
+                }
+                $this->newName = ucfirst($value);
+            }
+        }
+    ) {}
+}
+```
+
+## 4.10 Interface and abstract properties
+
+Abstract properties may be defined in interfaces or abstract classes, but are required to
+specify if they must support `get` operations, `set` operations, or both.  In the case
+of abstract classes, they MAY include a body for one or another hook.
+
+If there is a body for any hook, then the entire hook block MUST follow
+the same rules as for defined hooks above.  The only difference is that
+a hook that has no body specified have a single semicolon after the hook
+keyword, with no space before it.
+
+```php
+abstract class Example {
+    abstract public string $name {
+        get => ucfirst($this->name);
+        set;
+    }
+}
+```
+
+If there is no body for either hook, then the following rules apply:
+
+* The operation block MUST be on the same line as the property.
+* There MUST be a single space between the property name and the operation block `{}`.
+* There MUST be a single space after the opening `{`.
+* There MUST be a single space before the closing `}`;
+* There MUST NOT be a space between the operation and its required semicolon.
+* If multiple operations are specified, they MUST be separated by a single space.
+* The `get` operation MUST be listed before the `set` operation.
+
+```php
+interface Example
+{
+    public string $readable { get; }
+
+    public string $writeable { set; }
+
+    public string $both { get; set; }
+}
+```
+
 ## 5. Control Structures
 
 The general style rules for control structures are as follows:
