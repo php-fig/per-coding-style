@@ -1092,7 +1092,7 @@ A `switch` structure looks like the following. Note the placement of
 parentheses, spaces, and braces. The `case` statement MUST be indented once
 from `switch`, and the `break` keyword (or other terminating keywords) MUST be
 indented at the same level as the `case` body. There MUST be a comment such as
-`// No break` when fall-through is intentional in a non-empty `case` body.
+`// no break` when fall-through is intentional in a non-empty `case` body.
 
 ```php
 <?php
@@ -1103,7 +1103,7 @@ switch ($expr) {
         break;
     case 1:
         echo 'Second case, which falls through';
-        // No break
+        // no break
     case 2:
     case 3:
     case 4:
