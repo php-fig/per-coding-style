@@ -519,7 +519,7 @@ class Talker
 
 ### 4.3 Properties and Constants
 
-Visibility MUST be declared on all properties.
+Visibility MUST be declared on all properties.  If set-visibility is specified, then the general visibility MAY be omitted.
 
 Visibility MUST be declared on all constants.
 
