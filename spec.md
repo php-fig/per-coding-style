@@ -370,7 +370,7 @@ class MyException extends \RuntimeException {}
 ```
 
 When accessing a class member immediately after instantiating a new class, the instantiation SHOULD NOT be wrapped in 
-parenthesis. For example:
+parentheses. For example:
 
 ```php
 new Foo()->someMethod();
