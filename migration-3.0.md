@@ -1,4 +1,4 @@
-# Migrating from PER-CS v1.0 (PSR-12) to PER-CS v2.0 ###
+# Migrating from PER-CS v2.0 to PER-CS v3.0 ###
 
 ## Summary
 
