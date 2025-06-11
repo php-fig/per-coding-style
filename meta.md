@@ -118,6 +118,7 @@ burden on projects to reformat incoming contributions to their chosen style defi
 
 _**Note:** Order descending chronologically._
 
+* **[Migration Document: PER-CS v2.0 to v3.0](migration-3.0.md)**
 * **[Migration Document: PER-CS v1.0 to v2.0](migration-2.0.md)**
 * **PSR-12:** https://www.php-fig.org/psr/psr-12/
 * **PSR-2:** https://www.php-fig.org/psr/psr-2/
