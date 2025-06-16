@@ -106,15 +106,15 @@ burden on projects to reformat incoming contributions to their chosen style defi
 * Korvin Szanto
 * Luke Diggins
 
-### 7.4. Special Thanks
+### 5.4. Special Thanks
 
 * Everyone involved in PSR-1, PSR-2, PSR-12.
 
-## 8. Votes
+## 6. Votes
 
 * **Entrance Vote:** https://groups.google.com/g/php-fig/c/YqPDYGK0RhM/m/pJmThkNKBgAJ
 
-## 9. Relevant Links
+## 7. Relevant Links
 
 _**Note:** Order descending chronologically._
 
