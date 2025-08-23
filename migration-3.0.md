@@ -63,8 +63,6 @@ If using PHP 8.4 or later, parentheses should be omitted around a `new` declarat
 
 ## [Section 4.3 - Properties and Constants](https://www.php-fig.org/per/coding-style/#43-properties-and-constants)
 
-Class constants must have a visibility and type declared.
-
 If a property has a `set`-visibility defined, the `get` visibility may be omitted.
 
 ```php
