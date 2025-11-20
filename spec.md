@@ -224,7 +224,7 @@ $result = match ($a) {
 
 ### 2.7 Naming
 
-This STANDARD RECOMMENDS following the [php-src coding standards](https://github.com/php/php-src/blob/master/CODING_STANDARDS.md#user-functionsmethods-naming-conventions) with regard to abbreviations and acronyms.
+This Standard RECOMMENDS following the [php-src coding standards](https://github.com/php/php-src/blob/master/CODING_STANDARDS.md#user-functionsmethods-naming-conventions) with regard to abbreviations and acronyms.
 
 Specifically:
 
