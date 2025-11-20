@@ -17,7 +17,7 @@ requires adherence to [PSR-1][], the basic coding standard.
 
 Like [PSR-12][], the intent of this specification is to reduce cognitive friction when
 scanning code from different authors. It does so by enumerating a shared set of rules
-and expectations about how to format PHP code. This PSR seeks to provide a set that
+and expectations about how to format PHP code. This Standard seeks to provide a set that
 coding style tools can implement, projects can declare adherence to and developers
 can easily relate to between different projects. When various authors collaborate
 across multiple projects, it helps to have one set of guidelines to be used among
@@ -224,7 +224,7 @@ $result = match ($a) {
 
 ### 2.7 Naming
 
-This PSR RECOMMENDS following the [php-src coding standards](https://github.com/php/php-src/blob/master/CODING_STANDARDS.md#user-functionsmethods-naming-conventions) with regard to abbreviations and acronyms.
+This Standard RECOMMENDS following the [php-src coding standards](https://github.com/php/php-src/blob/master/CODING_STANDARDS.md#user-functionsmethods-naming-conventions) with regard to abbreviations and acronyms.
 
 Specifically:
 
