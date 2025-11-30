@@ -1292,9 +1292,11 @@ $intValue = (int) $input;
 
 ### 6.2. Binary operators
 
-All binary [arithmetic][], [comparison][], [assignment][], [bitwise][],
-[logical][], [string][], and [type][] operators MUST be preceded and
-followed by at least one space:
+All binary operators – including [arithmetic][] (`** * / % + -`), [comparison][]
+ (`< <= > >= == != === !== <> <=>`), [assignment][] (`= += -= *= **= /= .= %= &=
+ |= ^= <<= >>= ??=`), [bitwise][] (`<< >> & ^ |`), [logical][] (`&& || and xor
+or`), [string][] (`.`), [type][] (`instanceof`) and [functional][] (`|>`)
+operators – MUST be preceded and followed by at least one space:
 
 ```php
 if ($a === $b) {
@@ -1782,12 +1784,13 @@ class Demo
 
 [PSR-1]: https://www.php-fig.org/psr/psr-1/
 [PSR-12]: https://www.php-fig.org/psr/psr-12/
-[keywords]: http://php.net/manual/en/reserved.keywords.php
-[types]: http://php.net/manual/en/reserved.other-reserved-words.php
-[arithmetic]: http://php.net/manual/en/language.operators.arithmetic.php
-[assignment]: http://php.net/manual/en/language.operators.assignment.php
-[comparison]: http://php.net/manual/en/language.operators.comparison.php
-[bitwise]: http://php.net/manual/en/language.operators.bitwise.php
-[logical]: http://php.net/manual/en/language.operators.logical.php
-[string]: http://php.net/manual/en/language.operators.string.php
-[type]: http://php.net/manual/en/language.operators.type.php
+[keywords]: https://php.net/manual/en/reserved.keywords.php
+[types]: https://php.net/manual/en/reserved.other-reserved-words.php
+[arithmetic]: https://php.net/manual/en/language.operators.arithmetic.php
+[assignment]: https://php.net/manual/en/language.operators.assignment.php
+[comparison]: https://php.net/manual/en/language.operators.comparison.php
+[bitwise]: https://php.net/manual/en/language.operators.bitwise.php
+[logical]: https://php.net/manual/en/language.operators.logical.php
+[string]: https://php.net/manual/en/language.operators.string.php
+[type]: https://php.net/manual/en/language.operators.type.php
+[functional]: https://php.net/manual/en/language.operators.functional.php
