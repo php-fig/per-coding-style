@@ -1292,11 +1292,7 @@ $intValue = (int) $input;
 
 ### 6.2. Binary operators
 
-All binary operators – including [arithmetic][] (`** * / % + -`), [comparison][]
- (`< <= > >= == != === !== <> <=>`), [assignment][] (`= += -= *= **= /= .= %= &=
- |= ^= <<= >>= ??=`), [bitwise][] (`<< >> & ^ |`), [logical][] (`&& || and xor
-or`), [string][] (`.`), [type][] (`instanceof`) and [functional][] (`|>`)
-operators – MUST be preceded and followed by at least one space:
+All binary operators MUST be preceded and followed by at least one space:
 
 ```php
 if ($a === $b) {
@@ -1305,6 +1301,17 @@ if ($a === $b) {
     $foo = $a + $b * $c;
 }
 ```
+
+As of writing, this applies to:
+
+* `** * / % + -` [arithmetic][] operators
+* `< <= > >= == != === !== <> <=>` [comparison][] operators
+* `= += -= *= **= /= .= %= &= |= ^= <<= >>= ??=` [assignment][] operators
+* `<< >> & ^ |` [bitwise][] operators
+* `&& || and xor or` [logical][] operators
+* `.` [string][] operator ("concatenation")
+* `instanceof` [type][] operator
+* `|>` [functional][] operator ("pipe")
 
 ### 6.3. Ternary operators
 
