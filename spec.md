@@ -1399,6 +1399,13 @@ $closureWithArgsVarsAndReturn = function ($arg1, $arg2) use ($var1, $var2): bool
 };
 ```
 
+If a closure contains no statements or comments then the body SHOULD be abbreviated
+as `{}` and placed on the same line as the previous symbol, separated by a space. For example:
+
+```php
+$noOpClosure = function () {};
+```
+
 Argument lists and variable lists MAY be split across multiple lines, where
 each subsequent line is indented once. When doing so, the first item in the
 list MUST be on the next line, and there MUST be only one argument or variable
