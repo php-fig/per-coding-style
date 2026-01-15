@@ -1399,11 +1399,10 @@ $closureWithArgsVarsAndReturn = function ($arg1, $arg2) use ($var1, $var2): bool
 };
 ```
 
-If a closure contains no statements or comments then the body SHOULD be abbreviated
-as `{}` and placed on the same line as the previous symbol, separated by a space. For example:
+If a closure contains no statements, MUST use the short-hand syntax:
 
 ```php
-$noOpClosure = function () {};
+fn() => null;
 ```
 
 Argument lists and variable lists MAY be split across multiple lines, where
