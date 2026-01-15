@@ -1399,7 +1399,7 @@ $closureWithArgsVarsAndReturn = function ($arg1, $arg2) use ($var1, $var2): bool
 };
 ```
 
-If a closure contains no statements, MUST use the short-hand syntax:
+If a closure contains no statements, it MUST use the "arrow function" style syntax:
 
 ```php
 fn() => null;
