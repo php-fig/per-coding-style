@@ -1399,10 +1399,17 @@ $closureWithArgsVarsAndReturn = function ($arg1, $arg2) use ($var1, $var2): bool
 };
 ```
 
-If a closure contains no statements, it MUST use the "arrow function" style syntax:
+If a closure contains no statements, then the body MUST be abbreviated as `{}` and placed on the same
+line as the previous symbol, separated by a space:
 
 ```php
-fn() => null;
+$noOpFunction = function () {};
+```
+
+If possible, empty-body closures SHOULD be replaced with arrow functions:
+
+```php
+$noOpFunction = fn() => null;
 ```
 
 Argument lists and variable lists MAY be split across multiple lines, where
