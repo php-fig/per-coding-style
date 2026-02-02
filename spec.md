@@ -1093,6 +1093,8 @@ parentheses, spaces, and braces. The `case` statement MUST be indented once
 from `switch`, and the `break` keyword (or other terminating keywords) MUST be
 indented at the same level as the `case` body. There MUST be a comment such as
 `// no break` when fall-through is intentional in a non-empty `case` body.
+The `case` and `default` keywords MUST use colons as shown in the sample code below.
+
 
 ```php
 <?php
