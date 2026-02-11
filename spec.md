@@ -1561,7 +1561,7 @@ $instance = new class ($a) extends \Foo implements
 
 If an anonymous class has attributes, they MUST be placed starting on the next line after the `new` keyword, indented
 once, and otherwise follow the same rules as other attributes specified in section 12. The remaining anonymous class 
-declaration after the final attribute MUST keep the same indentation as the attributes:
+declaration after the final attribute MUST start on a new line and keep the same indentation as the attributes:
 
 ```php
 $example = new
