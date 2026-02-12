@@ -1139,6 +1139,9 @@ switch (
 }
 ```
 
+If necessary a `case` statement MAY spread over multiple lines so to be
+compliant with other PER-CS rules. For example:
+
 ```php
 <?php
 
