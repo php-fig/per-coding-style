@@ -1150,6 +1150,7 @@ switch (true) {
         $a === 10
         && $b === 20
     ):
+        flashLights(intervalsMs: 10, increaseLux: 20);
         break;
 }
 ```
