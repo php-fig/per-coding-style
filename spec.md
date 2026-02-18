@@ -1088,11 +1088,18 @@ if (
 
 ### 5.2 `switch`, `case`, `match`
 
-A `switch` structure looks like the following. Note the placement of
-parentheses, spaces, and braces. The `case` statement MUST be indented once
-from `switch`, and the `break` keyword (or other terminating keywords) MUST be
-indented at the same level as the `case` body. There MUST be a comment such as
-`// no break` when fall-through is intentional in a non-empty `case` body.
+A switch structure must follow the rules below:
+
+* `case` statements MUST be indented one level from the `switch`.
+* The `case` statements line MUST consist only of the `case` keyword, a single space, the case condition (an expression), and a colon.
+* If the case condition is sufficiently complex to warrant being multi-line, it MUST be wrapped in parentheses, MUST have the opening parenthesis on the same line as the `case` keyword, and MUST end with a line containing only the closing parenthesis and colon, with no space between them.
+* The body of a `case` statement MUST be indented one level from the `case`.
+* If a non-empty case intends to continue into the following case, then a clear comment MUST be included to highlight the deliberate lack of a `break`, `return`, or similar termination statement.  Examples include "No break," "Deliberate fall-through," etc.
+* All other non-empty cases MUST have a terminating `break`, `return`, or similar termination statement, even if they are the final one in the `switch` block.
+* The `case` body MUST NOT be wrapped in `{}`.
+* The default statement MUST be indented one level from the `switch`, and the default keyword MUST be followed by a colon.
+
+See the example below.
 
 ```php
 <?php
@@ -1103,7 +1110,7 @@ switch ($expr) {
         break;
     case 1:
         echo 'Second case, which falls through';
-        // no break
+        // No break
     case 2:
     case 3:
     case 4:
@@ -1129,6 +1136,23 @@ switch (
     && $expr2
 ) {
     // ...
+}
+```
+
+If necessary a `case` statement MAY spread over multiple lines so to be
+compliant with other PER-CS rules. For example:
+
+```php
+<?php
+
+switch (true) {
+    case (
+        $a === 10
+        && $b === 20
+        && $c === 'fl'
+    ):
+        flashLights(intervalsMs: 10, increaseLux: 20);
+        break;
 }
 ```
 
