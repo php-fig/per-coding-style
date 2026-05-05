@@ -853,6 +853,16 @@ die();
 $result = foo() ?? exit();
 ```
 
+The `clone()` function SHOULD always be called with parenthesis, even when the optional `$withProperties` argument is
+not provided. For example:
+
+```php
+$b = clone($a);
+$b = clone($a, [
+    'foo' => 'bar',
+]);
+```
+
 ### 4.8 Function Callable References
 
 A function or method may be referenced in a way that creates a closure out of it, by providing `...` in place of arguments.
