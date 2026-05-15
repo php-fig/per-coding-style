@@ -179,7 +179,7 @@ function veryComplex(
 
 If one of the ORed conditions is `null`, it MUST be the last item in the list.
 
-An intersection of a single simple type with `null` SHOULD be abbreviated using the `?` alternate syntax: `?T`.
+A union of a single simple type with `null` SHOULD be abbreviated using the `?` alternate syntax: `?T`.
 
 ### 2.6 Trailing commas
 
