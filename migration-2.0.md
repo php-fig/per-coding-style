@@ -138,6 +138,15 @@ $returnValue = match ($expr) {
 };
 ```
 
+## [Section 6.1 - Unary operators](https://www.php-fig.org/per/coding-style/#61-unary-operators)
+
+The type casting operators rule was updated to also require a single space between the cast and the variable it operates on.
+
+```php
+<?php
+$intValue = (int) $input;
+```
+
 ## [Section 7.1 - Short Closures](https://www.php-fig.org/per/coding-style/#71-short-closures)
 
 A new subsection about Short Closures, as per the link above. Example as follows:
