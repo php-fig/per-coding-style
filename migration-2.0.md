@@ -40,6 +40,15 @@ function beep(
 }
 ```
 
+## [Section 4 - Classes, Properties, and Methods](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#4-classes-properties-and-methods)
+
+A new rule was added stating that if a class contains no additional declarations, then the body of the class SHOULD be abbreviated as `{}` and placed on the same line as the previous symbol, separated by a space.
+
+```php
+<?php
+class MyException extends \RuntimeException {}
+```
+
 ## [Section 4.4 - Methods and Functions](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#44-methods-and-functions)
 
 If a function or method contains no statements or comments (such as an empty
