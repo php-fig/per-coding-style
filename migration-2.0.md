@@ -167,6 +167,19 @@ $func = fn(
 $result = $collection->reduce(fn(int $x, int $y): int => $x + $y, 0);
 ```
 
+## [Section 8 - Anonymous Classes](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#8-anonymous-classes)
+
+A new rule was added stating that if an anonymous class has no arguments, the `()` after `class` MUST be omitted.
+
+```php
+<?php
+
+// No arguments: `()` must be omitted.
+$instance = new class extends \Foo {
+    // Class content
+};
+```
+
 ## [Section 9 - Enumerations](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#9-enumerations)
 
 Enums are now covered, as per the link above. Please see below for examples.
