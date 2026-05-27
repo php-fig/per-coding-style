@@ -73,6 +73,11 @@ class Foo
 }
 ```
 
+Two rules previously stated only for properties were extended to also apply to constants:
+
+* There MUST NOT be more than one property or constant declared per statement.
+* Property or constant names MUST NOT be prefixed with a single underscore.
+
 ## [Section 4.6 - Modifier Keywords](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#46-modifier-keywords)
 
 At least one of `readonly`, `get`-visibility, and `set`-visibility must be specified.  If at least one is specified, the others may be omitted.
