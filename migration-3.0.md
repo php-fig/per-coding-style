@@ -51,7 +51,7 @@ function veryComplex(
 
 ## [Section 2.7 - Naming](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#27-naming)
 
-PER-CS now recommends following the same naming conventions as PHP Internals for abbreviations and acronyms.  Specifically, only uppercase the first character of the acronym: `XmlFormatter`, not `XMLFormatter`.
+PER-CS now recommends following the same naming conventions as PHP Internals for abbreviations and acronyms. Abbreviations, acronyms, and initialisms SHOULD be avoided wherever possible, unless they are much more widely used than the long form (e.g. `HTTP` or `URL`). When they are used, only the first character should be uppercased: `XmlFormatter`, not `XMLFormatter`.
 
 ## [Section 3 - Declare Statements, Namespace, and Import Statements](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#3-declare-statements-namespace-and-import-statements)
 
