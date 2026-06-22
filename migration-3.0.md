@@ -16,10 +16,10 @@ and focuses on the changes on a section-by-section basis as its focus is to be m
 This document intends to provide a summary of these changes that can
 then be used to drive action lists for toolset producers to support PER-CS v3.0.
 
-This document is non-normative.  The published [3.0 PER-CS](https://www.php-fig.org/per/coding-style/) specification 
+This document is non-normative.  The published [3.0 PER-CS](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md) specification 
 is the canonical source for the PER-CS formatting expectations.
 
-## [Section 2.5 - Keywords and Types](https://www.php-fig.org/per/coding-style/#25-keywords-and-types)
+## [Section 2.5 - Keywords and Types](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#25-keywords-and-types)
 
 Formatting conventions are now provided for compound types (those that include union or intersection type declarations).
 
@@ -49,19 +49,19 @@ function veryComplex(
 }
 ```
 
-## [Section 2.7 - Naming](https://www.php-fig.org/per/coding-style/#27-naming)
+## [Section 2.7 - Naming](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#27-naming)
 
 PER-CS now recommends following the same naming conventions as PHP Internals for abbreviations and acronyms.  Specifically, only uppercase the first character of the acronym: `XmlFormatter`, not `XMLFormatter`.
 
-## [Section 3 - Declare Statements, Namespace, and Import Statements](https://www.php-fig.org/per/coding-style/#3-declare-statements-namespace-and-import-statements)
+## [Section 3 - Declare Statements, Namespace, and Import Statements](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#3-declare-statements-namespace-and-import-statements)
 
 The `<?php` tag must always be all-lowercase.
 
-## [Section 4 - Classes, Properties, and Methods](https://www.php-fig.org/per/coding-style/#4-classes-properties-and-methods)
+## [Section 4 - Classes, Properties, and Methods](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#4-classes-properties-and-methods)
 
 If using PHP 8.4 or later, parentheses should be omitted around a `new` declaration.
 
-## [Section 4.3 - Properties and Constants](https://www.php-fig.org/per/coding-style/#43-properties-and-constants)
+## [Section 4.3 - Properties and Constants](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#43-properties-and-constants)
 
 If a property has a `set`-visibility defined, the `get` visibility may be omitted.
 
@@ -73,7 +73,7 @@ class Foo
 }
 ```
 
-## [Section 4.6 - Modifier Keywords](https://www.php-fig.org/per/coding-style/#46-modifier-keywords)
+## [Section 4.6 - Modifier Keywords](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#46-modifier-keywords)
 
 At least one of `readonly`, `get`-visibility, and `set`-visibility must be specified.  If at least one is specified, the others may be omitted.
 
@@ -90,11 +90,11 @@ class Foo
 }
 ```
 
-## [Section 4.7 - Methods and Function Calls](https://www.php-fig.org/per/coding-style/#47-method-and-function-calls)
+## [Section 4.7 - Methods and Function Calls](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#47-method-and-function-calls)
 
 The `exit()` and `die()` functions should always be called with parentheses, even though PHP technically permits them without.
 
-## [Section 4.9 - Property hooks](https://www.php-fig.org/per/coding-style/#49-property-hooks)
+## [Section 4.9 - Property hooks](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#49-property-hooks)
 
 Formatting guidelines for property hooks are now included.
 
@@ -129,13 +129,13 @@ class Example
 }
 ```
 
-## [Section 5.2 - Switch, Case, and Match](https://www.php-fig.org/per/coding-style/#52-switch-case-match)
+## [Section 5.2 - Switch, Case, and Match](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#52-switch-case-match)
 
 When breaking a series of boolean operators across multiple lines, the operator MUST be at the beginning of each line, not the end of each line.
 
 (This applies to `switch`, `match`, `while`, `do while`, and any other expression.)
 
-## [Section 6.4 - Operator placement](https://www.php-fig.org/per/coding-style/#64-operator-placement)
+## [Section 6.4 - Operator placement](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#64-operators-placement)
 
 When breaking a series of chained operations across multiple lines, the operator MUST be at the beginning of each line, not the end of each line, and all lines but the first MUST be indented.  Examples include `??` and ternary conditionals. Ternaries MUST occupy 3 lines, never 2.
 
