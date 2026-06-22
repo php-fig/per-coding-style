@@ -24,7 +24,10 @@ is the canonical source for the PER-CS formatting expectations.
 Formatting conventions are now provided for compound types (those that include union or intersection type declarations).
 
 * The `|` and `&` symbols and parentheses MUST NOT have leading or trailing spaces.
-* If a type declaration is long enough to split to multiple lines, each ANDed block must be on one line, and each ORed block on its own line.
+* If a type declaration is long enough to split to multiple lines:
+  * If the type is only unions or only intersections, each line holds a single type.
+  * If it mixes both, each line holds one union segment, with that segment's intersected types kept together.
+  * The symbol on which it is split MUST be at the start of each line.
 * If one of the types listed is `null`, it must come last.
 * Favor `?` over `|null` in cases where both work.
 * A multi-catch statement must follow the same rules.  (See section 5.6 as well.)
