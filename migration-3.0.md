@@ -134,6 +134,30 @@ class Example
 }
 ```
 
+## [Section 4.10 - Interface and abstract properties](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#410-interface-and-abstract-properties)
+
+This is a new section about interface and abstract properties, as per the link above. Examples follow:
+
+```php
+abstract class Example {
+    abstract public string $name {
+        get => ucfirst($this->name);
+        set;
+    }
+}
+```
+
+```php
+interface Example
+{
+    public string $readable { get; }
+
+    public string $writeable { set; }
+
+    public string $both { get; set; }
+}
+```
+
 ## [Section 5.2 - Switch, Case, and Match](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#52-switch-case-match)
 
 When breaking a series of boolean operators across multiple lines, the operator MUST be at the beginning of each line, not the end of each line.
