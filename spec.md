@@ -1597,10 +1597,10 @@ $example = new
 
 ## 9. Enumerations
 
-Enumerations (enums) MUST follow the same guidelines as classes, except where otherwise noted below.
+Enumerations (enums) MUST follow the same guidelines as classes (including the guidelines for class methods and
+constants), except where otherwise noted below.
 
-Methods in enums MUST follow the same guidelines as methods in classes. Non-public methods MUST use `private`
-instead of `protected`, as enums do not support inheritance.
+Non-public methods and constants MUST use `private` instead of `protected`, as enums do not support inheritance.
 
 When using a backed enum, there MUST NOT be a space between the enum name and colon, and there MUST be exactly one
 space between the colon and the backing type. This is consistent with the style for return types.
