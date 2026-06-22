@@ -137,7 +137,7 @@ When breaking a series of boolean operators across multiple lines, the operator 
 
 ## [Section 6.4 - Operator placement](https://www.php-fig.org/per/coding-style/#64-operator-placement)
 
-When breaking a series of chained operations across multiple lines, the operator MUST be at the beginning of each line, not the end of each line, and all lines but the first MUST be indented.  Examples include `??` and ternary conditionals.
+When breaking a series of chained operations across multiple lines, the operator MUST be at the beginning of each line, not the end of each line, and all lines but the first MUST be indented.  Examples include `??` and ternary conditionals. Ternaries MUST occupy 3 lines, never 2.
 
 ```php
 <?php
