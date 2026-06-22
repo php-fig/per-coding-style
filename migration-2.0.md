@@ -17,10 +17,10 @@ and focuses on the changes on a section-by-section basis as its focus is to be m
 This document intends to provide a summary of these changes that can
 then be used to drive action lists for toolset producers to support PER-CS v2.0.
 
-This document is non-normative.  The published [2.0 PER-CS](https://www.php-fig.org/per/coding-style/) specification 
+This document is non-normative.  The published [2.0 PER-CS](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md) specification 
 is the canonical source for the PER-CS formatting expectations.
 
-## [Section 2.6 - Trailing Commas](https://www.php-fig.org/per/coding-style/#26-trailing-commas)
+## [Section 2.6 - Trailing Commas](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#26-trailing-commas)
 
 Numerous constructs now allow a sequence of values to have an optional trailing
 comma:
@@ -40,7 +40,7 @@ function beep(
 }
 ```
 
-## [Section 4.4 - Methods and Functions](https://www.php-fig.org/per/coding-style/#44-methods-and-functions)
+## [Section 4.4 - Methods and Functions](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#44-methods-and-functions)
 
 If a function or method contains no statements or comments (such as an empty
 no-op implementation or when using constructor property promotion), then the
@@ -56,7 +56,7 @@ class SubClass extends BaseClass
 }
 ```
 
-## [Section 4.6 - Modifier Keywords](https://www.php-fig.org/per/coding-style/#46-modifier-keywords)
+## [Section 4.6 - Modifier Keywords](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#46-modifier-keywords)
 
 Modifier keywords are keywords that alter how PHP handles classes,
 properties and methods.
@@ -87,7 +87,7 @@ abstract class ClassName
 Furthermore, all keywords must be on a single line and MUST be separated
 by a single space.
 
-## [Section 4.7 - Method and Function Calls](https://www.php-fig.org/per/coding-style/#47-method-and-function-calls)
+## [Section 4.7 - Method and Function Calls](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#47-method-and-function-calls)
 
 If using named arguments, there MUST NOT be a space between the argument name and the colon, 
 and there MUST be a single space between the colon and the argument value.
@@ -107,7 +107,7 @@ $someInstance
     ->run();
 ```
 
-## [Section 4.8 - Function Callable References](https://www.php-fig.org/per/coding-style/#48-function-callable-references)
+## [Section 4.8 - Function Callable References](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#48-function-callable-references)
 
 Function callable references - there must not be whitespace surrounding the '...' operator ()
 
@@ -116,7 +116,7 @@ Function callable references - there must not be whitespace surrounding the '...
 $callable = $item->doSomething(...);
 ```
 
-## [Section 5.2 - Switch, Case, Match](https://www.php-fig.org/per/coding-style/#52-switch-case-match)
+## [Section 5.2 - Switch, Case, Match](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#52-switch-case-match)
 
 The match keyword is now covered.
 
@@ -138,7 +138,7 @@ $returnValue = match ($expr) {
 };
 ```
 
-## [Section 6.1 - Unary operators](https://www.php-fig.org/per/coding-style/#61-unary-operators)
+## [Section 6.1 - Unary operators](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#61-unary-operators)
 
 The type casting operators rule was updated to also require a single space between the cast and the variable it operates on.
 
@@ -147,7 +147,7 @@ The type casting operators rule was updated to also require a single space betwe
 $intValue = (int) $input;
 ```
 
-## [Section 7.1 - Short Closures](https://www.php-fig.org/per/coding-style/#71-short-closures)
+## [Section 7.1 - Short Closures](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#71-short-closures)
 
 A new subsection about Short Closures, as per the link above. Example as follows:
 
@@ -167,7 +167,7 @@ $func = fn(
 $result = $collection->reduce(fn(int $x, int $y): int => $x + $y, 0);
 ```
 
-## [Section 9 - Enumerations](https://www.php-fig.org/per/coding-style/#9-enumerations)
+## [Section 9 - Enumerations](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#9-enumerations)
 
 Enums are now covered, as per the link above. Please see below for examples.
 
@@ -194,7 +194,7 @@ enum Size
 }
 ```
 
-## [Section 10 - Heredoc and Nowdoc](https://www.php-fig.org/per/coding-style/#10-heredoc-and-nowdoc)
+## [Section 10 - Heredoc and Nowdoc](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#10-heredoc-and-nowdoc)
 
 This is a new section about Heredoc and Nowdoc notation as per the link above.
 Example follows:
@@ -233,7 +233,7 @@ function allowed()
 }
 ```
 
-## [Section 11 - Arrays](https://www.php-fig.org/per/coding-style/#11-arrays)
+## [Section 11 - Arrays](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#11-arrays)
 
 This is a new section about arrays, as per the link above.
 Example as follows:
@@ -253,7 +253,7 @@ $arr2 = [
 ];
 ```
 
-## [Section 12 - Attributes](https://www.php-fig.org/per/coding-style/#12-attributes)
+## [Section 12 - Attributes](https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#12-attributes)
 
 This is a new section, as per the above link.
 The following is an example of valid usage.
