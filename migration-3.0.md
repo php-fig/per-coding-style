@@ -80,7 +80,9 @@ Two rules previously stated only for properties were extended to also apply to c
 
 ## [Section 4.6 - Modifier Keywords](https://github.com/php-fig/per-coding-style/blob/3.0.0/spec.md#46-modifier-keywords)
 
-At least one of `readonly`, `get`-visibility, and `set`-visibility must be specified.  If at least one is specified, the others may be omitted.
+The set-visibility modifier (`public(set)`, `protected(set)`, `private(set)`) was added to the modifier ordering, between the general visibility and the `static` modifier.
+
+All modifier keywords MUST be all lower-case. The `public` keyword MAY be omitted when using a set-visibility on a public-read property.
 
 ```php
 class Foo
@@ -88,9 +90,9 @@ class Foo
     // These are all acceptable.
     public private(set) string $one;
     private(set) string $two;
-    readonly string $three;
 
     // These are not.
+    PUBLIC PROTECTED(set) string $three;
     private(set) public string $four;
 }
 ```
