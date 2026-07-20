@@ -2,7 +2,6 @@
 
 ## Summary
 
-
 This document describes the changes and additions on a section by section
 basis between PER-CS v3.1 and PER-CS v3.0.
 
