@@ -2,10 +2,6 @@
 
 ## Summary
 
-PER-CS is the next evolution of the PSR set of Coding Standards from the
-PHP-FIG (Framework Interoperability Group). It extends the Coding Standards
-laid out in PSR-12 to the newest functionality added to PHP such as the match
-keyword, enums, attributes, and more.
 
 This document describes the changes and additions on a section by section
 basis between PER-CS v3.1 and PER-CS v3.0.
