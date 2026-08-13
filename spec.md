@@ -56,7 +56,7 @@ use const Vendor\Package\{ConstantA, ConstantB, ConstantC};
 
 class Foo extends Bar implements FooInterface
 {
-    public function sampleFunction(int $a, int $b = null): array
+    public function sampleFunction(int $a, ?int $b = null): array
     {
         if ($a === $b) {
             bar();
@@ -80,7 +80,7 @@ enum Beep: int
 
     public function isOdd(): bool
     {
-        return $this->value() % 2;
+        return $this->value % 2 !== 0;
     }
 }
 ```
@@ -132,9 +132,9 @@ Any new types and keywords added to future PHP versions MUST be in lower case.
 Short form of type keywords MUST be used i.e. `bool` instead of `boolean`,
 `int` instead of `integer` etc.
 
-Compound types includes intersection, union, and mixed intersection and union type declarations. PHP requires
-that all compound types be structured as an ORed (unioned) series of ANDs (intersections), and that each set of
-intersections be encased with parentheses.
+Compound types include intersection, union, and mixed intersection and union type declarations. PHP requires
+that mixed intersection and union types be structured as an ORed (unioned) series of ANDs (intersections),
+and that each intersection in such a union be encased with parentheses.
 
 The union symbol `|` and intersection symbol `&` MUST NOT have a leading or trailing space.  The parentheses MUST NOT
 have a leading or trailing space.
@@ -160,7 +160,7 @@ function somethingWithReflection(
     |\ReflectionParameter
     |\ReflectionProperty $reflect
 ): object|null {
-        // ...
+    // ...
 }
 
 function complex(array|(ArrayAccess&Traversable) $input): ArrayAccess&Traversable
@@ -255,8 +255,8 @@ When the opening `<?php` tag is on the first line of the file, it MUST be on its
 own line with no other statements unless it is a file containing markup outside of PHP
 opening and closing tags.  The `<?php` tag MUST always be lower case.
 
-Import statements MUST never begin with a leading backslash as they
-must always be fully qualified.
+Import statements MUST never begin with a leading backslash, as imported names
+are always resolved from the namespace root.
 
 The following example illustrates a complete list of all blocks:
 
@@ -335,8 +335,8 @@ For example:
 </html>
 ```
 
-Declare statements MUST NOT contain any spaces and MUST be exactly `declare(strict_types=1)`
-(with an optional semicolon terminator).
+Declare statements MUST NOT contain any spaces inside the parentheses. For example:
+`declare(strict_types=1)` (with an optional semicolon terminator).
 
 Block declare statements are allowed and MUST be formatted as below. Note position of
 braces and spacing:
@@ -606,8 +606,8 @@ class Point
 class Point
 {
     public function __construct(
-      public readonly int $x,
-      public readonly int $y,
+        public readonly int $x,
+        public readonly int $y,
     ) {}
 }
 ```
@@ -816,7 +816,7 @@ $foo->bar(
 <?php
 
 somefunction($foo, $bar, [
-  // ...
+    // ...
 ], $baz);
 
 $app->get('/hello/{name}', function ($name) use ($app) {
@@ -1098,7 +1098,7 @@ if (
 
 ### 5.2 `switch`, `case`, `match`
 
-A switch structure must follow the rules below:
+A switch structure MUST follow the rules below:
 
 * `case` statements MUST be indented one level from the `switch`.
 * The `case` statements line MUST consist only of the `case` keyword, a single space, the case condition (an expression), and a colon.
@@ -1466,7 +1466,7 @@ $longArgs_noVars = function (
     $longerArgument,
     $muchLongerArgument,
 ) {
-   // ...
+    // ...
 };
 
 $noArgs_longVars = function () use (
@@ -1474,7 +1474,7 @@ $noArgs_longVars = function () use (
     $longerVar2,
     $muchLongerVar3,
 ) {
-   // ...
+    // ...
 };
 
 $longArgs_longVars = function (
@@ -1486,7 +1486,7 @@ $longArgs_longVars = function (
     $longerVar2,
     $muchLongerVar3,
 ) {
-   // ...
+    // ...
 };
 
 $longArgs_shortVars = function (
@@ -1494,7 +1494,7 @@ $longArgs_shortVars = function (
     $longerArgument,
     $muchLongerArgument,
 ) use ($var1) {
-   // ...
+    // ...
 };
 
 $shortArgs_longVars = function ($arg) use (
@@ -1502,7 +1502,7 @@ $shortArgs_longVars = function ($arg) use (
     $longerVar2,
     $muchLongerVar3,
 ) {
-   // ...
+    // ...
 };
 ```
 
@@ -1731,8 +1731,8 @@ Array declarations MAY be split across multiple lines, where each subsequent lin
 is indented once. When doing so, the first value in the array MUST be on the 
 next line, and there MUST be only one value per line.
 
-When the array declaration is split across multiple lines, the opening bracket 
-MUST be placed on the same line as the equals sign. The closing bracket 
+When an array declaration is split across multiple lines, the opening bracket
+MUST NOT be placed on its own line. The closing bracket
 MUST be placed on the next line after the last value. There MUST NOT be more 
 than one value assignment per line. Value assignments MAY use a single line
 or multiple lines.

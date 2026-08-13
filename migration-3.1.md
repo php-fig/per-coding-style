@@ -113,3 +113,22 @@ enum Size
     private const Huge = self::Large;
 }
 ```
+
+## [Section 11 - Arrays](https://github.com/php-fig/per-coding-style/blob/3.1.0/spec.md#11-arrays)
+
+The opening bracket of a multiline array MUST NOT be placed on its own line.
+This rule applies to arrays in all contexts, not only assignments. For example:
+
+```php
+<?php
+
+return [
+    'foo',
+    'bar',
+];
+
+someFunction([
+    'foo',
+    'bar',
+]);
+```
