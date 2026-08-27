@@ -924,7 +924,6 @@ For a `set` hook, if the argument name and type do not need to be redefined, the
 
 If a hook consists of a single expression, then PHP allows it to be shortened using `=>`.  In that case:
 
-* There MUST be a single space on either side of the `=>` symbol.
 * The body MUST begin on the same line as the hook name and `=>`.
 * Wrapping is allowed if the expression used allows for wrapping, using the rules defined elsewhere in this document.
 
@@ -1302,8 +1301,10 @@ try {
 
 Style rules for operators are grouped by arity (the number of operands they take).
 
-When space is permitted around an operator, multiple spaces MAY be
-used for readability purposes.
+When space is permitted around an operator or the `=>` symbol, multiple spaces
+MAY be used for readability purposes.
+
+The `=>` symbol MUST be preceded and followed by at least one space.
 
 All operators not described here are left undefined.
 
@@ -1527,8 +1528,6 @@ Short closures, also known as arrow functions, MUST follow the same guidelines
 and principles as long closures above, with the following additions.
 
 The `fn` keyword MUST NOT be succeeded by a space.
-
-The `=>` symbol MUST be preceded and succeeded by a space.
 
 The semicolon at the end of the expression MUST NOT be preceded by a space.
 
