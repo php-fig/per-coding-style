@@ -1727,6 +1727,9 @@ $arr = [];
 
 Arrays MUST follow the trailing comma guidelines.
 
+In a single-line array declaration, there MUST NOT be a space before each comma,
+and there MUST be one space after each comma.
+
 Array declarations MAY be split across multiple lines, where each subsequent line 
 is indented once. When doing so, the first value in the array MUST be on the 
 next line, and there MUST be only one value per line.
@@ -1754,6 +1757,24 @@ $arr2 = [
         'array',
     ],
 ];
+```
+
+### 11.1 Destructuring
+
+Both short array syntax and `list()` syntax MAY be used for array destructuring.
+
+Short-form destructuring MUST follow the array declaration formatting rules for
+comma spacing, trailing commas, and multiline layout. `list()` destructuring
+MUST follow the method and function call formatting rules for parentheses,
+comma spacing, trailing commas, and multiline layout.
+
+The following are examples of correct array destructuring:
+
+```php
+<?php
+
+[$first, $second] = $values;
+list($first, $second) = $values;
 ```
 
 ## 12. Attributes
