@@ -1732,7 +1732,12 @@ is indented once. When doing so, the first value in the array MUST be on the
 next line, and there MUST be only one value per line.
 
 When an array declaration is split across multiple lines, the opening bracket
-MUST NOT be placed on its own line. The closing bracket
+MUST NOT be placed on its own line, except in these cases:
+
+* The array is nested in a multiline array and has no explicit key.
+* The array is passed as an unnamed argument in a multiline argument list.
+
+The closing bracket
 MUST be placed on the next line after the last value. There MUST NOT be more 
 than one value assignment per line. Value assignments MAY use a single line
 or multiple lines.

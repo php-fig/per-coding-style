@@ -116,7 +116,12 @@ enum Size
 
 ## [Section 11 - Arrays](https://github.com/php-fig/per-coding-style/blob/3.1.0/spec.md#11-arrays)
 
-The opening bracket of a multiline array MUST NOT be placed on its own line.
+The opening bracket of a multiline array MUST NOT be placed on its own line,
+except in these cases:
+
+* The array is nested in a multiline array and has no explicit key.
+* The array is passed as an unnamed argument in a multiline argument list.
+
 This rule applies to arrays in all contexts, not only assignments. For example:
 
 ```php
